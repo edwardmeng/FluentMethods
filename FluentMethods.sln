@@ -5,7 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.Core", "src\Core\FluentMethods.Core.csproj", "{2487DB59-C58E-41EC-8D37-54AD60FBA722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.Web", "src\Web\FluentMethods.Web\FluentMethods.Web.csproj", "{2FD1207F-CAAF-4B2D-BE86-FE2148EFFEFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.Web", "src\Web\FluentMethods.Web.csproj", "{2FD1207F-CAAF-4B2D-BE86-FE2148EFFEFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{78E94854-9AF4-4255-9855-0A9E044088C9}"
+	ProjectSection(SolutionItems) = preProject
+		FluentMethods.snk = FluentMethods.snk
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
