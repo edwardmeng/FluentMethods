@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2487DB59-C58E-41EC-8D37-54AD60FBA722}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMethods</RootNamespace>
+    <AssemblyName>FluentMethods</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.Guid\IsEmpty.cs" />
+    <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.String\As.cs" />
+    <Compile Include="System.String\Base64Decode.cs" />
+    <Compile Include="System.String\Base64Encode.cs" />
+    <Compile Include="System.String\Br2Nl.cs" />
+    <Compile Include="System.String\Format.cs" />
+    <Compile Include="System.String\IfEmpty.cs" />
+    <Compile Include="System.String\Is.cs" />
+    <Compile Include="System.String\IsEmpty.cs" />
+    <Compile Include="System.String\IsNotEmpty.cs" />
+    <Compile Include="System.String\IsNotNullOrEmpty.cs" />
+    <Compile Include="System.String\IsNullOrEmpty.cs" />
+    <Compile Include="System.String\Left.cs" />
+    <Compile Include="System.String\Nbsp2Ws.cs" />
+    <Compile Include="System.String\Nl2Br.cs" />
+    <Compile Include="System.String\Replace.cs" />
+    <Compile Include="System.String\Reverse.cs" />
+    <Compile Include="System.String\Right.cs" />
+    <Compile Include="System.String\ToPlural.cs" />
+    <Compile Include="System.String\ToTitle.cs" />
+    <Compile Include="System.String\Truncate.cs" />
+    <Compile Include="System.String\Ws2Nbsp.cs" />
+    <Compile Include="System.String\XmlDecode.cs" />
+    <Compile Include="System.String\XmlEncode.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
