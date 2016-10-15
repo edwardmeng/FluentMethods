@@ -120,6 +120,9 @@
   <data name="MoreThanOneMatch" xml:space="preserve">
     <value>Sequence contains more than one matching element</value>
   </data>
+  <data name="NeedNonNegNum" xml:space="preserve">
+    <value>Non negative number is required.</value>
+  </data>
   <data name="NoElements" xml:space="preserve">
     <value>Sequence contains no elements</value>
   </data>

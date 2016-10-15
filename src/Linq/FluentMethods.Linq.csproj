@@ -77,6 +77,15 @@
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SumAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\Union.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\WhereIf.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\WhereIf.cs" />
+    <Compile Include="System.Linq.IQueryable\Any.cs" />
+    <Compile Include="System.Linq.IQueryable\Count.cs" />
+    <Compile Include="System.Linq.IQueryable\Paginate.cs" />
+    <Compile Include="System.Linq.IQueryable\Range.cs" />
+    <Compile Include="System.Linq.IQueryable\Skip.cs" />
+    <Compile Include="System.Linq.IQueryable\Take.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">

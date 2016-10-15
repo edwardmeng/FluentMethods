@@ -70,6 +70,15 @@ namespace FluentMethods.Linq {
         }
         
         /// <summary>
+        ///   查找类似 Non negative number is required. 的本地化字符串。
+        /// </summary>
+        internal static string NeedNonNegNum {
+            get {
+                return ResourceManager.GetString("NeedNonNegNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sequence contains no elements 的本地化字符串。
         /// </summary>
         internal static string NoElements {
