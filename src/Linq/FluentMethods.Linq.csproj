@@ -76,6 +76,8 @@
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SingleOrDefaultAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SumAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\Union.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqualAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\WhereIf.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
