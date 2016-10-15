@@ -10,6 +10,6 @@ public static partial class Extensions
     /// <returns>The encoded string to Base64.</returns>
     public static string Base64Encode(this string @this)
     {
-        return @this.IsNullOrEmpty() ? @this : Convert.ToBase64String(Encoding.UTF8.GetBytes(@this));
+        return @this.IsNullOrEmpty() ? @this : Encoding.UTF8.GetBytes(@this).ToBase64String();
     }
 }

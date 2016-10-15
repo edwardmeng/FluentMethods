@@ -50,6 +50,10 @@
     <Compile Include="System.Array\Insert.cs" />
     <Compile Include="System.Array\Remove.cs" />
     <Compile Include="System.Array\Slice.cs" />
+    <Compile Include="System.Boolean\IfFalse.cs" />
+    <Compile Include="System.Boolean\IfTrue.cs" />
+    <Compile Include="System.Boolean\ToString.cs" />
+    <Compile Include="System.ByteArray\ToBase64String.cs" />
     <Compile Include="System.DateTime\Age.cs" />
     <Compile Include="System.DateTime\EndOfDay.cs" />
     <Compile Include="System.DateTime\EndOfMonth.cs" />
@@ -83,6 +87,61 @@
     <Compile Include="System.DateTime\ToString\ToUniversalSortableLongDateTimeString.cs" />
     <Compile Include="System.DateTime\ToString\ToYearMonthString.cs" />
     <Compile Include="System.DateTime\Yesterday.cs" />
+    <Compile Include="System.Decimal\Abs.cs" />
+    <Compile Include="System.Decimal\Ceiling.cs" />
+    <Compile Include="System.Decimal\Floor.cs" />
+    <Compile Include="System.Decimal\Round.cs" />
+    <Compile Include="System.Decimal\Sign.cs" />
+    <Compile Include="System.Decimal\Truncate.cs" />
+    <Compile Include="System.Double\Abs.cs" />
+    <Compile Include="System.Double\Acos.cs" />
+    <Compile Include="System.Double\Asin.cs" />
+    <Compile Include="System.Double\Atan.cs" />
+    <Compile Include="System.Double\Ceiling.cs" />
+    <Compile Include="System.Double\Cos.cs" />
+    <Compile Include="System.Double\Cosh.cs" />
+    <Compile Include="System.Double\Exp.cs" />
+    <Compile Include="System.Double\Floor.cs" />
+    <Compile Include="System.Double\IsInfinity.cs" />
+    <Compile Include="System.Double\IsNaN.cs" />
+    <Compile Include="System.Double\IsNegativeInfinity.cs" />
+    <Compile Include="System.Double\IsPositiveInfinity.cs" />
+    <Compile Include="System.Double\Log.cs" />
+    <Compile Include="System.Double\Log10.cs" />
+    <Compile Include="System.Double\Pow.cs" />
+    <Compile Include="System.Double\Round.cs" />
+    <Compile Include="System.Double\Sign.cs" />
+    <Compile Include="System.Double\Sin.cs" />
+    <Compile Include="System.Double\Sinh.cs" />
+    <Compile Include="System.Double\Sqrt.cs" />
+    <Compile Include="System.Double\Tan.cs" />
+    <Compile Include="System.Double\Tanh.cs" />
+    <Compile Include="System.Double\Truncate.cs" />
+    <Compile Include="System.Enum\AddFlag.cs" />
+    <Compile Include="System.Enum\HasFlag.cs" />
+    <Compile Include="System.Enum\RemoveFlag.cs" />
+    <Compile Include="System.Int16\Abs.cs" />
+    <Compile Include="System.Int16\IsEven.cs" />
+    <Compile Include="System.Int16\IsOdd.cs" />
+    <Compile Include="System.Int16\Sign.cs" />
+    <Compile Include="System.Int32\Abs.cs" />
+    <Compile Include="System.Int32\IsEven.cs" />
+    <Compile Include="System.Int32\IsOdd.cs" />
+    <Compile Include="System.Int32\Sign.cs" />
+    <Compile Include="System.Int64\Abs.cs" />
+    <Compile Include="System.Int64\IsEven.cs" />
+    <Compile Include="System.Int64\IsOdd.cs" />
+    <Compile Include="System.Int64\Sign.cs" />
+    <Compile Include="System.SByte\Abs.cs" />
+    <Compile Include="System.SByte\IsEven.cs" />
+    <Compile Include="System.SByte\IsOdd.cs" />
+    <Compile Include="System.SByte\Sign.cs" />
+    <Compile Include="System.Single\Abs.cs" />
+    <Compile Include="System.Single\IsInfinity.cs" />
+    <Compile Include="System.Single\IsNaN.cs" />
+    <Compile Include="System.Single\IsNegativeInfinity.cs" />
+    <Compile Include="System.Single\IsPositiveInfinity.cs" />
+    <Compile Include="System.Single\Sign.cs" />
     <Compile Include="TArray\Add.cs" />
     <Compile Include="TArray\Insert.cs" />
     <Compile Include="TArray\RemoveAll.cs" />
@@ -127,6 +186,7 @@
       <Link>FluentMethods.snk</Link>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
