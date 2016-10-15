@@ -45,8 +45,22 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.Array\Add.cs" />
+    <Compile Include="System.Array\Each.cs" />
+    <Compile Include="System.Array\Insert.cs" />
+    <Compile Include="System.Array\Remove.cs" />
+    <Compile Include="System.Array\Slice.cs" />
+    <Compile Include="TArray\Add.cs" />
+    <Compile Include="TArray\Insert.cs" />
+    <Compile Include="TArray\RemoveAll.cs" />
+    <Compile Include="System.Array\RemoveAt.cs" />
     <Compile Include="System.Guid\IsEmpty.cs" />
     <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.Runtime.Serialization.SerializationInfo\GetValue.cs" />
+    <Compile Include="System.Runtime.Serialization\Deserialize.cs" />
+    <Compile Include="System.Runtime.Serialization\DeserializeBinary.cs" />
+    <Compile Include="System.Runtime.Serialization\Serialize.cs" />
+    <Compile Include="System.Runtime.Serialization\SerializeBinary.cs" />
     <Compile Include="System.String\As.cs" />
     <Compile Include="System.String\Base64Decode.cs" />
     <Compile Include="System.String\Base64Encode.cs" />
@@ -70,6 +84,10 @@
     <Compile Include="System.String\Ws2Nbsp.cs" />
     <Compile Include="System.String\XmlDecode.cs" />
     <Compile Include="System.String\XmlEncode.cs" />
+    <Compile Include="TArray\Remove.cs" />
+    <Compile Include="TArray\RemoveAt.cs" />
+    <Compile Include="TArray\Slice.cs" />
+    <Compile Include="TArray\Union.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
