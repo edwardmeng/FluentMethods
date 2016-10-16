@@ -1,16 +1,21 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 public static partial class Extensions
 {
     /// <summary>
     ///     An IDbConnection extension method that ensures that open.
     /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    public static void EnsureOpen(this IDbConnection @this)
+    /// <param name="connection">The connection to act on.</param>
+    public static void EnsureOpen(this IDbConnection connection)
     {
-        if (@this.State == ConnectionState.Closed)
+        if (connection == null)
         {
-            @this.Open();
+            throw new ArgumentNullException(nameof(connection));
+        }
+        if (connection.State == ConnectionState.Closed)
+        {
+            connection.Open();
         }
     }
 }
