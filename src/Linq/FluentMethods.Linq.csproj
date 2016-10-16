@@ -79,11 +79,13 @@
     <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqualAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\WhereIf.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\OrderBy.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
     <Compile Include="System.Linq.IQueryable[T]\WhereIf.cs" />
     <Compile Include="System.Linq.IQueryable\Any.cs" />
     <Compile Include="System.Linq.IQueryable\Count.cs" />
+    <Compile Include="System.Linq.IQueryable\OrderBy.cs" />
     <Compile Include="System.Linq.IQueryable\Paginate.cs" />
     <Compile Include="System.Linq.IQueryable\Range.cs" />
     <Compile Include="System.Linq.IQueryable\Skip.cs" />

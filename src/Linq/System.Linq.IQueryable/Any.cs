@@ -13,6 +13,6 @@ public static partial class Extensions
     public static bool Any(this IQueryable source)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
-        return (bool)source.Provider.Execute(Expression.Call(typeof(Queryable), "Any", new[] { source.ElementType }, source.Expression));
+        return source.Provider.Execute<bool>(Expression.Call(typeof(Queryable), "Any", new[] { source.ElementType }, source.Expression));
     }
 }

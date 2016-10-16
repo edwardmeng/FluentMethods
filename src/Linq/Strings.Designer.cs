@@ -61,6 +61,33 @@ namespace FluentMethods.Linq {
         }
         
         /// <summary>
+        ///   查找类似 The field or property &apos;{0}&apos; cannot be found in the type {1}. 的本地化字符串。
+        /// </summary>
+        internal static string CannotFindTypeMember {
+            get {
+                return ResourceManager.GetString("CannotFindTypeMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The value cannot be null or empty. 的本地化字符串。
+        /// </summary>
+        internal static string CannotNullOrEmpty {
+            get {
+                return ResourceManager.GetString("CannotNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The order syntax is invalid: {0}. 的本地化字符串。
+        /// </summary>
+        internal static string InvalidOrderSyntax {
+            get {
+                return ResourceManager.GetString("InvalidOrderSyntax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sequence contains more than one matching element 的本地化字符串。
         /// </summary>
         internal static string MoreThanOneMatch {

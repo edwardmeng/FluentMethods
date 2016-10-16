@@ -13,6 +13,6 @@ public static partial class Extensions
     public static int Count(this IQueryable source)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
-        return (int)source.Provider.Execute(Expression.Call(typeof(Queryable), "Count", new[] { source.ElementType }, source.Expression));
+        return source.Provider.Execute<int>(Expression.Call(typeof(Queryable), "Count", new[] { source.ElementType }, source.Expression));
     }
 }
