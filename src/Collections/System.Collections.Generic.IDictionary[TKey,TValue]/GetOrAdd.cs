@@ -38,7 +38,7 @@ public static partial class Extensions
     /// <typeparam name="TValue">The type of the values in the dictionary.</typeparam>
     /// <param name="dictionary">The dictionary to act on.</param>
     /// <param name="key">The key of the element to add.</param>
-    /// <param name="valueFactory">TThe function used to generate a value for the key.</param>
+    /// <param name="valueFactory">The function used to generate a value for the key.</param>
     /// <returns>
     ///     The value for the key. This will be either the existing value for the key if the key is already in the
     ///     dictionary, or the new value for the key as returned by valueFactory if the key was not in the dictionary.

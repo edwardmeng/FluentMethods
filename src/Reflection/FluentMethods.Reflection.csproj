@@ -60,11 +60,14 @@
     <Compile Include="System.Reflection.Module\GetCustomAttribute.cs" />
     <Compile Include="System.Reflection.Module\GetCustomAttributes.cs" />
     <Compile Include="System.Reflection.Module\IsDefined.cs" />
-    <Compile Include="System.Reflection.TypeInfo\GetDescription.cs" />
-    <Compile Include="System.Reflection.TypeInfo\GetDisplayName.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\GetCustomAttribute.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\GetCustomAttributes.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\GetDescription.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\GetDisplayName.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\IsDefined.cs" />
+    <Compile Include="System.Reflection.MemberInfo\GetDescription.cs" />
+    <Compile Include="System.Reflection.MemberInfo\GetDisplayName.cs" />
     <Compile Include="System.Reflection.TypeInfo\IsNullable.cs" />
-    <Compile Include="System.Type\GetDescription.cs" />
-    <Compile Include="System.Type\GetDisplayName.cs" />
     <Compile Include="System.Type\IsNullable.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,9 +75,7 @@
       <Link>FluentMethods.snk</Link>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="System.Reflection.ParameterInfo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
