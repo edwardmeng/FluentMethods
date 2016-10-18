@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -36,7 +37,7 @@ public static partial class Extensions
         }
         if (startIndex + length > sourceArray.Length)
         {
-            throw new ArgumentException("Start index is out of bounds for the array or length is greater than the number of elements from index to the end of the source array.");
+            throw new ArgumentException(Strings.ArgumentOutOfRange_ArraySlice);
         }
         var copyArray = new T[length];
         Array.Copy(sourceArray, startIndex, copyArray, 0, length);
