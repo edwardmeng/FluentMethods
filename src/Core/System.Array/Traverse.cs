@@ -10,7 +10,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    public static void Each(this Array array, Action<object, int[]> action)
+    public static void Traverse(this Array array, Action<object, int[]> action)
     {
         if (array == null)
         {
@@ -21,10 +21,10 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(action));
         }
         if (array.LongLength == 0) return;
-        var walker = new ArrayTraverse(array);
-        while (walker.Step())
+        var traverser = new ArrayTraverse(array);
+        while (traverser.Step())
         {
-            action(array.GetValue(walker.Position), walker.Position);
+            action(array.GetValue(traverser.Position), traverser.Position);
         }
     }
 
@@ -36,7 +36,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    public static void Each(this Array array, Action<object> action)
+    public static void Traverse(this Array array, Action<object> action)
     {
         if (array == null)
         {
@@ -46,12 +46,11 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(action));
         }
-        array.Each((element, indices) => action(element));
+        array.Traverse((element, indices) => action(element));
     }
 
     private class ArrayTraverse
     {
-        private readonly int[] _position;
         private readonly int[] _maxLengths;
         private readonly long _longLength;
         private long _index = -1;
@@ -60,17 +59,14 @@ public static partial class Extensions
         {
             _longLength = array.LongLength;
             _maxLengths = new int[array.Rank];
-            _position = new int[array.Rank];
+            Position = new int[array.Rank];
             for (int i = 0; i < array.Rank; ++i)
             {
                 _maxLengths[i] = array.GetLength(i);
             }
         }
 
-        public int[] Position
-        {
-            get { return _position; }
-        }
+        public int[] Position { get; }
 
         public bool Step()
         {
@@ -81,12 +77,12 @@ public static partial class Extensions
                 return false;
             }
             if (_index == 0) return true;
-            _position[0]++;
-            for (int i = 0; i < _position.Length; i++)
+            Position[0]++;
+            for (int i = 0; i < Position.Length; i++)
             {
-                if (_position[i] < _maxLengths[i]) break;
-                _position[i] = 0;
-                _position[i + 1]++;
+                if (Position[i] < _maxLengths[i]) break;
+                Position[i] = 0;
+                Position[i + 1]++;
             }
             return true;
         }
