@@ -160,6 +160,14 @@
     <Compile Include="System.Int64\IsEven.cs" />
     <Compile Include="System.Int64\IsOdd.cs" />
     <Compile Include="System.Int64\Sign.cs" />
+    <Compile Include="System.Object\IsBetween.cs" />
+    <Compile Include="System.Object\IsIn.cs" />
+    <Compile Include="System.Object\IsInstanceOf.cs" />
+    <Compile Include="System.Object\IsDefault.cs" />
+    <Compile Include="System.Object\IsNotNull.cs" />
+    <Compile Include="System.Object\IsNull.cs" />
+    <Compile Include="System.Object\IsNotIn.cs" />
+    <Compile Include="System.Object\ReferenceEquals.cs" />
     <Compile Include="System.SByte\Abs.cs" />
     <Compile Include="System.SByte\IsEven.cs" />
     <Compile Include="System.SByte\IsOdd.cs" />
