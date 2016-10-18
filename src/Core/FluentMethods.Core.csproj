@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
   </ItemGroup>
@@ -62,6 +63,7 @@
     <Compile Include="System.Boolean\IfTrue.cs" />
     <Compile Include="System.Boolean\ToString.cs" />
     <Compile Include="System.ByteArray\ToBase64String.cs" />
+    <Compile Include="System.Byte\ToEnum.cs" />
     <Compile Include="System.Char\GetNumericValue.cs" />
     <Compile Include="System.Char\GetUnicodeCategory.cs" />
     <Compile Include="System.Char\IsControl.cs" />
@@ -146,20 +148,24 @@
     <Compile Include="System.Double\Tanh.cs" />
     <Compile Include="System.Double\Truncate.cs" />
     <Compile Include="System.Enum\AddFlag.cs" />
+    <Compile Include="System.Enum\GetEnumMembers.cs" />
     <Compile Include="System.Enum\HasFlag.cs" />
     <Compile Include="System.Enum\RemoveFlag.cs" />
     <Compile Include="System.Int16\Abs.cs" />
     <Compile Include="System.Int16\IsEven.cs" />
     <Compile Include="System.Int16\IsOdd.cs" />
     <Compile Include="System.Int16\Sign.cs" />
+    <Compile Include="System.Int16\ToEnum.cs" />
     <Compile Include="System.Int32\Abs.cs" />
     <Compile Include="System.Int32\IsEven.cs" />
     <Compile Include="System.Int32\IsOdd.cs" />
     <Compile Include="System.Int32\Sign.cs" />
+    <Compile Include="System.Int32\ToEnum.cs" />
     <Compile Include="System.Int64\Abs.cs" />
     <Compile Include="System.Int64\IsEven.cs" />
     <Compile Include="System.Int64\IsOdd.cs" />
     <Compile Include="System.Int64\Sign.cs" />
+    <Compile Include="System.Int64\ToEnum.cs" />
     <Compile Include="System.Object\IsBetween.cs" />
     <Compile Include="System.Object\IsIn.cs" />
     <Compile Include="System.Object\IsInstanceOf.cs" />
@@ -172,12 +178,16 @@
     <Compile Include="System.SByte\IsEven.cs" />
     <Compile Include="System.SByte\IsOdd.cs" />
     <Compile Include="System.SByte\Sign.cs" />
+    <Compile Include="System.SByte\ToEnum.cs" />
     <Compile Include="System.Single\Abs.cs" />
     <Compile Include="System.Single\IsInfinity.cs" />
     <Compile Include="System.Single\IsNaN.cs" />
     <Compile Include="System.Single\IsNegativeInfinity.cs" />
     <Compile Include="System.Single\IsPositiveInfinity.cs" />
     <Compile Include="System.Single\Sign.cs" />
+    <Compile Include="System.UInt16\ToEnum.cs" />
+    <Compile Include="System.UInt32\ToEnum.cs" />
+    <Compile Include="System.UInt64\ToEnum.cs" />
     <Compile Include="TArray\Add.cs" />
     <Compile Include="TArray\Insert.cs" />
     <Compile Include="TArray\RemoveAll.cs" />
