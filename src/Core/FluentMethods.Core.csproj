@@ -167,6 +167,7 @@
     <Compile Include="System.Int64\IsEven.cs" />
     <Compile Include="System.Int64\IsOdd.cs" />
     <Compile Include="System.Int64\Sign.cs" />
+    <Compile Include="System.Object\BindValues.cs" />
     <Compile Include="System.Object\ConvertTo.cs" />
     <Compile Include="System.Object\IsBetween.cs" />
     <Compile Include="System.Object\IsIn.cs" />

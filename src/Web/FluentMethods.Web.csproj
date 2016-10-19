@@ -75,12 +75,20 @@
     <Compile Include="System.Web.UI.Control\RemoveCssClass.cs" />
     <Compile Include="System.Web.UI.Control\ResolveAbsoluteUrl.cs" />
     <Compile Include="System.Web.UI.Control\ToggleCssClass.cs" />
+    <Compile Include="System.Web.UI.IBindableControl\ExtractValues.cs" />
     <Compile Include="System.Web.UI.Page\IsDebuggingEnabled.cs" />
+    <Compile Include="System.Web.UI.WebControls.GridViewRow\ExtractValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
       <Link>FluentMethods.snk</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\FluentMethods.Core.csproj">
+      <Project>{2487db59-c58e-41ec-8d37-54ad60fba722}</Project>
+      <Name>FluentMethods.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
