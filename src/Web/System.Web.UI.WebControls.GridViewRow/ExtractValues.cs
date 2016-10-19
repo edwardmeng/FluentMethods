@@ -1,10 +1,11 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.Reflection;
 using System.Web.UI.WebControls;
 
 public static partial class Extensions
 {
-    private static readonly MethodInfo _methodExtractRowValues = typeof(GridView).GetMethod("ExtractValues", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+    private static readonly MethodInfo _methodGridViewExtractRowValues = typeof(GridView).GetMethod("ExtractRowValues", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
     /// <summary>
     /// Retrieves the values of each field declared within the specified row and stores them in the specified <see cref="IOrderedDictionary"/> object.
@@ -15,8 +16,16 @@ public static partial class Extensions
     /// <param name="includePrimaryKey"><c>true</c> to include the primary key field or fields; otherwise, <c>false</c>.</param>
     public static void ExtractValues(this GridViewRow row, IOrderedDictionary fieldValues, bool includeReadOnlyFields, bool includePrimaryKey)
     {
+        if (row == null)
+        {
+            throw new ArgumentNullException(nameof(row));
+        }
+        if (fieldValues == null)
+        {
+            throw new ArgumentNullException(nameof(fieldValues));
+        }
         var gridView = (GridView)row.NamingContainer;
-        _methodExtractRowValues.Invoke(gridView, new object[] { fieldValues, row, includeReadOnlyFields, includePrimaryKey });
+        _methodGridViewExtractRowValues.Invoke(gridView, new object[] { fieldValues, row, includeReadOnlyFields, includePrimaryKey });
         if (includePrimaryKey && gridView.DataKeyNames.Length > 0 && gridView.DataKeys.Count > row.RowIndex)
         {
             var dataKey = gridView.DataKeys[row.RowIndex];
@@ -60,6 +69,7 @@ public static partial class Extensions
     /// <param name="row">The <see cref="System.Web.UI.WebControls.GridViewRow"/> from which to retrieve the field values.</param>
     /// <param name="includeReadOnlyFields"><c>true</c> to include read-only fields; otherwise, <c>false</c>.</param>
     /// <param name="includePrimaryKey"><c>true</c> to include the primary key field or fields; otherwise, <c>false</c>.</param>
+    /// <returns>An <see cref="IOrderedDictionary"/> used to store the field values of the current data item.</returns>
     public static IOrderedDictionary ExtractValues(this GridViewRow row, bool includeReadOnlyFields, bool includePrimaryKey)
     {
         var fieldValues = new OrderedDictionary();
@@ -72,6 +82,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="row">The <see cref="System.Web.UI.WebControls.GridViewRow"/> from which to retrieve the field values.</param>
     /// <param name="includePrimaryKey"><c>true</c> to include the primary key field or fields; otherwise, <c>false</c>.</param>
+    /// <returns>An <see cref="IOrderedDictionary"/> used to store the field values of the current data item.</returns>
     public static IOrderedDictionary ExtractValues(this GridViewRow row, bool includePrimaryKey)
     {
         return row.ExtractValues(true, includePrimaryKey);
@@ -81,6 +92,7 @@ public static partial class Extensions
     /// Retrieves the values of each field declared within the specified row and stores them in the specified <see cref="IOrderedDictionary"/> object.
     /// </summary>
     /// <param name="row">The <see cref="System.Web.UI.WebControls.GridViewRow"/> from which to retrieve the field values.</param>
+    /// <returns>An <see cref="IOrderedDictionary"/> used to store the field values of the current data item.</returns>
     public static IOrderedDictionary ExtractValues(this GridViewRow row)
     {
         return row.ExtractValues(true);

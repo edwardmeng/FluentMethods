@@ -77,6 +77,8 @@
     <Compile Include="System.Web.UI.Control\ToggleCssClass.cs" />
     <Compile Include="System.Web.UI.IBindableControl\ExtractValues.cs" />
     <Compile Include="System.Web.UI.Page\IsDebuggingEnabled.cs" />
+    <Compile Include="System.Web.UI.WebControls.DetailsView\ExtractValues.cs" />
+    <Compile Include="System.Web.UI.WebControls.FormView\ExtractValues.cs" />
     <Compile Include="System.Web.UI.WebControls.GridViewRow\ExtractValues.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +92,7 @@
       <Name>FluentMethods.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
