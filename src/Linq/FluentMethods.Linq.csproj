@@ -75,6 +75,8 @@
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SingleAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SingleOrDefaultAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\SumAsync.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\Traverse.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\TraverseAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\Union.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\UnorderedEqualAsync.cs" />

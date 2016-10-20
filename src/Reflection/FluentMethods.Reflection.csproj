@@ -54,6 +54,9 @@
     <Compile Include="System.Reflection.Assembly\GetCustomAttribute.cs" />
     <Compile Include="System.Reflection.Assembly\GetCustomAttributes.cs" />
     <Compile Include="System.Reflection.Assembly\IsDefined.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\IsDefined.cs" />
     <Compile Include="System.Reflection.MemberInfo\GetCustomAttribute.cs" />
     <Compile Include="System.Reflection.MemberInfo\GetCustomAttributes.cs" />
     <Compile Include="System.Reflection.MemberInfo\IsDefined.cs" />
