@@ -155,6 +155,7 @@
     <Compile Include="System.Enum\GetEnumMembers.cs" />
     <Compile Include="System.Enum\HasFlag.cs" />
     <Compile Include="System.Enum\RemoveFlag.cs" />
+    <Compile Include="System.Exception\ReThrow.cs" />
     <Compile Include="System.Int16\Abs.cs" />
     <Compile Include="System.Int16\IsEven.cs" />
     <Compile Include="System.Int16\IsOdd.cs" />
@@ -187,6 +188,8 @@
     <Compile Include="System.Single\IsNegativeInfinity.cs" />
     <Compile Include="System.Single\IsPositiveInfinity.cs" />
     <Compile Include="System.Single\Sign.cs" />
+    <Compile Include="System.String\EnsureEndsWith.cs" />
+    <Compile Include="System.String\EnsureStartsWith.cs" />
     <Compile Include="TArray\Add.cs" />
     <Compile Include="TArray\Insert.cs" />
     <Compile Include="TArray\RemoveAll.cs" />

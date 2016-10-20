@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 public static partial class Extensions
 {
     private static readonly MethodInfo _methodDetailsViewExtractRowValues = typeof(DetailsView).GetMethod("ExtractRowValues",
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] {typeof(IOrderedDictionary), typeof(bool), typeof(bool)}, null);
+        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, new[] {typeof(IOrderedDictionary), typeof(bool), typeof(bool)}, null);
 
     /// <summary>
     /// Retrieves the values of each field declared within the details view and stores them in the specified <see cref="IOrderedDictionary"/> object.

@@ -57,6 +57,7 @@
     <Compile Include="System.Reflection.MemberInfo\GetCustomAttribute.cs" />
     <Compile Include="System.Reflection.MemberInfo\GetCustomAttributes.cs" />
     <Compile Include="System.Reflection.MemberInfo\IsDefined.cs" />
+    <Compile Include="System.Reflection.MethodInfo\IsAsync.cs" />
     <Compile Include="System.Reflection.Module\GetCustomAttribute.cs" />
     <Compile Include="System.Reflection.Module\GetCustomAttributes.cs" />
     <Compile Include="System.Reflection.Module\IsDefined.cs" />
