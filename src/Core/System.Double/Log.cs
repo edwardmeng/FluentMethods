@@ -26,8 +26,6 @@ public static partial class Extensions
     ///     = +InfinityNaN = NaN(any value)NaN(any value) = NaNNaN(any value) = 1NaN = 00 &lt;&lt; 1 +Infinity = 0&gt; 1-
     ///     Infinity =  +Infinity0 &lt;&lt; 1-Infinity =  +Infinity&gt; 1+Infinity = 1 = 00 = 1 = +Infinity0.
     /// </returns>
-    /// ###
-    /// <param name="a">The number whose logarithm is to be found.</param>
     public static double Log(this double d, double newBase)
     {
         return Math.Log(d, newBase);

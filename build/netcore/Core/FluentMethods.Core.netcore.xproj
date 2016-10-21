@@ -376,6 +376,9 @@
     <Compile Include="..\..\..\src\Core\System.Int64\Sign.cs">
       <Link>System.Int64\Sign.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\src\Core\System.IServiceProvider\GetService.cs">
+      <Link>System.IServiceProvider\GetService.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\src\Core\System.Object\BindValues.cs">
       <Link>System.Object\BindValues.cs</Link>
     </Compile>

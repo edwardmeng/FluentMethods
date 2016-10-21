@@ -21,8 +21,6 @@ public static partial class Extensions
     ///     The one-dimensional  that contains the items that correspond to each of the keys in the .-or-
     ///     null to sort only the .
     /// </param>
-    /// ###
-    /// <param name="keys">The one-dimensional  that contains the keys to sort.</param>
     public static void Sort(this Array array, Array items)
     {
         Array.Sort(array, items);
@@ -51,8 +49,6 @@ public static partial class Extensions
     /// </param>
     /// <param name="index">The starting index of the range to sort.</param>
     /// <param name="length">The number of elements in the range to sort.</param>
-    /// ###
-    /// <param name="keys">The one-dimensional  that contains the keys to sort.</param>
     public static void Sort(this Array array, Array items, int index, int length)
     {
         Array.Sort(array, items, index, length);
@@ -84,8 +80,6 @@ public static partial class Extensions
     ///     The  implementation to use when comparing elements.-or-null to use the  implementation of
     ///     each element.
     /// </param>
-    /// ###
-    /// <param name="keys">The one-dimensional  that contains the keys to sort.</param>
     public static void Sort(this Array array, Array items, IComparer comparer)
     {
         Array.Sort(array, items, comparer);
@@ -121,8 +115,6 @@ public static partial class Extensions
     ///     The  implementation to use when comparing elements.-or-null to use the  implementation of
     ///     each element.
     /// </param>
-    /// ###
-    /// <param name="keys">The one-dimensional  that contains the keys to sort.</param>
     public static void Sort(this Array array, Array items, int index, int length, IComparer comparer)
     {
         Array.Sort(array, items, index, length, comparer);
