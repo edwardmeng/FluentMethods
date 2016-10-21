@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 
 public static partial class Extensions
 {
@@ -8,7 +7,7 @@ public static partial class Extensions
     /// </summary>
     public static string EnsureStartsWith(this string value, string prefix)
     {
-        return EnsureStartsWith(value, prefix, StringComparison.InvariantCulture);
+        return EnsureStartsWith(value, prefix, StringComparison.CurrentCulture);
     }
 
     /// <summary>
@@ -29,10 +28,12 @@ public static partial class Extensions
         return prefix + value;
     }
 
+#if !NetCore
+    
     /// <summary>
     /// Adds a prefix to beginning of given string if it does not starts with the prefix.
     /// </summary>
-    public static string EnsureStartsWith(this string value, string prefix, bool ignoreCase, CultureInfo culture)
+    public static string EnsureStartsWith(this string value, string prefix, bool ignoreCase, System.Globalization.CultureInfo culture)
     {
         if (value == null)
         {
@@ -46,4 +47,5 @@ public static partial class Extensions
 
         return prefix + value;
     }
+#endif
 }

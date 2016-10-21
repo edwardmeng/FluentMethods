@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Globalization;
 
 public static partial class Extensions
 {
@@ -12,19 +10,15 @@ public static partial class Extensions
     /// <returns><c>true</c> if <paramref name="value"/> can be converted to the specified type; otherwise, <c>false</c>.</returns>
     public static bool Is<TValue>(this string value)
     {
-        TypeConverter converter = TypeDescriptor.GetConverter(typeof(TValue));
         try
         {
-            if ((value == null) || converter.CanConvertFrom(null, value.GetType()))
-            {
-                converter.ConvertFrom(null, CultureInfo.CurrentCulture, value);
-                return true;
-            }
+            value.ConvertTo<TValue>();
+            return true;
         }
         catch
         {
+            return false;
         }
-        return false;
     }
 
     /// <summary>
@@ -110,8 +104,20 @@ public static partial class Extensions
     /// <returns><c>true</c> if <paramref name="value"/> can be converted to <see cref="Guid"/> type; otherwise, <c>false</c>.</returns>
     public static bool IsGuid(this string value)
     {
+#if Net35
+        try
+        {
+            var guid = new Guid(value);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+#else
         Guid guid;
         return Guid.TryParse(value, out guid);
+#endif
     }
 
 }

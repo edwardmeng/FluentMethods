@@ -28,6 +28,8 @@ public static partial class Extensions
         Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
     }
 
+#if !NetCore
+    
     /// <summary>
     ///     Copies a range of elements from an  starting at the first element and pastes them into another  starting at
     ///     the first element. The length is specified as a 64-bit integer.
@@ -59,4 +61,5 @@ public static partial class Extensions
     {
         Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
     }
+#endif
 }

@@ -20,7 +20,11 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(action));
         }
+#if NetCore
+        if (array.Length == 0) return;
+#else
         if (array.LongLength == 0) return;
+#endif
         var traverser = new ArrayTraverse(array);
         while (traverser.MoveNext())
         {
@@ -58,7 +62,11 @@ public static partial class Extensions
 
         public ArrayTraverse(Array array)
         {
+#if NetCore
+            _longLength = array.Length;
+#else
             _longLength = array.LongLength;
+#endif
             _lowerBounds = new int[array.Rank];
             _upperBounds = new int[array.Rank];
             Indices = new int[array.Rank];

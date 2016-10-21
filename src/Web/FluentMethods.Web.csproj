@@ -86,12 +86,6 @@
       <Link>FluentMethods.snk</Link>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\FluentMethods.Core.csproj">
-      <Project>{2487db59-c58e-41ec-8d37-54ad60fba722}</Project>
-      <Name>FluentMethods.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

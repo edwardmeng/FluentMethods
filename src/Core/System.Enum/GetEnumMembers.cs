@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 
@@ -27,10 +26,17 @@ public static partial class Extensions
         protected override void FillAttributes(IList attributeList)
         {
             base.FillAttributes(attributeList);
+#if NetCore
+            foreach (var attribute in _field.GetCustomAttributes())
+            {
+                attributeList.Add(attribute);
+            }
+#else
             foreach (var attribute in Attribute.GetCustomAttributes(_field))
             {
                 attributeList.Add(attribute);
             }
+#endif
         }
 
         public override string Category
@@ -40,10 +46,12 @@ public static partial class Extensions
                 if (_category == null)
                 {
                     _category = ((CategoryAttribute)Attributes[typeof(CategoryAttribute)])?.Category;
+#if !Net35
                     if (string.IsNullOrEmpty(_category))
                     {
-                        _category = ((DisplayAttribute)Attributes[typeof(DisplayAttribute)])?.GetGroupName() ?? string.Empty;
+                        _category = ((System.ComponentModel.DataAnnotations.DisplayAttribute)Attributes[typeof(System.ComponentModel.DataAnnotations.DisplayAttribute)])?.GetGroupName() ?? string.Empty;
                     }
+#endif
                 }
                 return _category;
             }
@@ -56,10 +64,12 @@ public static partial class Extensions
                 if (_description == null)
                 {
                     _description = ((DescriptionAttribute)Attributes[typeof(DescriptionAttribute)])?.Description;
+#if !Net35
                     if (string.IsNullOrEmpty(_description))
                     {
-                        _description = ((DisplayAttribute)Attributes[typeof(DisplayAttribute)])?.GetDescription() ?? string.Empty;
+                        _description = ((System.ComponentModel.DataAnnotations.DisplayAttribute)Attributes[typeof(System.ComponentModel.DataAnnotations.DisplayAttribute)])?.GetDescription() ?? string.Empty;
                     }
+#endif
                 }
                 return _description;
             }
@@ -72,10 +82,12 @@ public static partial class Extensions
                 if (_displayName == null)
                 {
                     _displayName = ((DisplayNameAttribute)Attributes[typeof(DisplayNameAttribute)])?.DisplayName;
+#if !Net35
                     if (string.IsNullOrEmpty(_displayName))
                     {
-                        _displayName = ((DisplayAttribute)Attributes[typeof(DisplayAttribute)])?.GetName() ?? string.Empty;
+                        _displayName = ((System.ComponentModel.DataAnnotations.DisplayAttribute)Attributes[typeof(System.ComponentModel.DataAnnotations.DisplayAttribute)])?.GetName() ?? string.Empty;
                     }
+#endif
                 }
                 return _displayName;
             }
@@ -111,7 +123,15 @@ public static partial class Extensions
         {
             if (!_enumMembersCache.ContainsKey(@enum))
             {
-                _enumMembersCache.Add(@enum, @enum.GetType().GetEnumMembers().Where(member=> @enum.HasFlag((Enum)((EnumFieldDescriptor)member).GetValue())).ToArray());
+                _enumMembersCache.Add(@enum, @enum.GetType().GetEnumMembers().Where(member =>
+                {
+#if Net35
+                    var flagValue = ((IConvertible)((EnumFieldDescriptor)member).GetValue()).ToInt32(System.Globalization.CultureInfo.CurrentCulture);
+                    return (((IConvertible)@enum).ToInt32(System.Globalization.CultureInfo.CurrentCulture) & flagValue) == flagValue;
+#else
+                    return @enum.HasFlag((Enum) ((EnumFieldDescriptor) member).GetValue());
+#endif
+                }).ToArray());
             }
             return (IEnumerable<MemberDescriptor>) _enumMembersCache[@enum];
         }
@@ -128,7 +148,13 @@ public static partial class Extensions
         {
             if (!_typeMembersCache.ContainsKey(type))
             {
-                _typeMembersCache.Add(type, type.GetFields(BindingFlags.Static | BindingFlags.Public).Select(field => new EnumFieldDescriptor(field)).ToArray());
+                FieldInfo[] fields;
+#if NetCore
+                fields = type.GetTypeInfo().GetFields(BindingFlags.Static | BindingFlags.Public);
+#else
+                fields = type.GetFields(BindingFlags.Static | BindingFlags.Public);
+#endif
+                _typeMembersCache.Add(type, fields.Select(field => new EnumFieldDescriptor(field)).ToArray());
             }
             return (IEnumerable<MemberDescriptor>)_typeMembersCache[type];
         }

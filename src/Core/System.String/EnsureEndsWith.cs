@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 
 public static partial class Extensions
 {
@@ -8,7 +7,7 @@ public static partial class Extensions
     /// </summary>
     public static string EnsureEndsWith(this string value, string suffix)
     {
-        return EnsureEndsWith(value, suffix, StringComparison.InvariantCulture);
+        return EnsureEndsWith(value, suffix, StringComparison.CurrentCulture);
     }
 
     /// <summary>
@@ -29,10 +28,12 @@ public static partial class Extensions
         return value + suffix;
     }
 
+#if !NetCore
+    
     /// <summary>
     /// Adds a suffix to end of given string if it does not ends with the suffix.
     /// </summary>
-    public static string EnsureEndsWith(this string value, string suffix, bool ignoreCase, CultureInfo culture)
+    public static string EnsureEndsWith(this string value, string suffix, bool ignoreCase, System.Globalization.CultureInfo culture)
     {
         if (value == null)
         {
@@ -46,4 +47,5 @@ public static partial class Extensions
 
         return value + suffix;
     }
+#endif
 }

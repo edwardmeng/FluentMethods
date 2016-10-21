@@ -1,50 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
 
 public static partial class Extensions
 {
     /// <summary>
-    ///  Converts the string to an equivalent enumerated object, A parameter specifies whether the  operation is case-sensitive.
+    /// Converts a string to a Boolean (true/false) value.
     /// </summary>
-    /// <typeparam name="T">The Type of the enum</typeparam>
-    /// <param name="name">To be converted  string</param>
-    /// <param name="ignoreCase">True - ignore case; False - regard case. </param>
-    /// <returns>An specify enumType value</returns>
-    public static T AsEnum<T>(this string name, bool ignoreCase = false) where T : struct
-    {
-        if (name == null)
-        {
-            throw new ArgumentNullException("name");
-        }
-        return (T)Enum.Parse(typeof(T), name, ignoreCase);
-    }
-
-    /// <summary>
-    /// Converts a string to the specified data type and specifies a default value.
-    /// </summary>
-    /// <typeparam name="TValue">The data type to convert to.</typeparam>
     /// <param name="value">The value to convert.</param>
-    /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static TValue As<TValue>(this string value, TValue defaultValue = default(TValue))
+    public static bool AsBool(this string value)
     {
-        try
-        {
-            TypeConverter converter = TypeDescriptor.GetConverter(typeof(TValue));
-            if (converter.CanConvertFrom(typeof(string)))
-            {
-                return (TValue)converter.ConvertFrom(value);
-            }
-            converter = TypeDescriptor.GetConverter(typeof(string));
-            if (converter.CanConvertTo(typeof(TValue)))
-            {
-                return (TValue)converter.ConvertTo(value, typeof(TValue));
-            }
-        }
-        catch
-        {
-        }
-        return defaultValue;
+        return bool.Parse(value);
     }
 
     /// <summary>
@@ -53,7 +18,7 @@ public static partial class Extensions
     /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static bool AsBool(this string value, bool defaultValue = false)
+    public static bool AsBool(this string value, bool defaultValue)
     {
         bool flag;
         if (!bool.TryParse(value, out flag))
@@ -70,7 +35,7 @@ public static partial class Extensions
     /// <returns>The converted value.</returns>
     public static DateTime AsDateTime(this string value)
     {
-        return value.AsDateTime(new DateTime());
+        return DateTime.Parse(value);
     }
 
     /// <summary>
@@ -96,11 +61,36 @@ public static partial class Extensions
     /// Converts a string to a <see cref="Decimal"/> number and specifies a default value.
     /// </summary>
     /// <param name="value">The value to convert.</param>
+    /// <returns>The converted value.</returns>
+    public static decimal AsDecimal(this string value)
+    {
+        return decimal.Parse(value);
+    }
+
+    /// <summary>
+    /// Converts a string to a <see cref="Decimal"/> number and specifies a default value.
+    /// </summary>
+    /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or invalid.</param>
     /// <returns>The converted value.</returns>
-    public static decimal AsDecimal(this string value, decimal defaultValue = default(decimal))
+    public static decimal AsDecimal(this string value, decimal defaultValue)
     {
-        return value.As(defaultValue);
+        decimal num;
+        if (!decimal.TryParse(value, out num))
+        {
+            return defaultValue;
+        }
+        return num;
+    }
+
+    /// <summary>
+    /// Converts a string to a <see cref="Single"/> number.
+    /// </summary>
+    /// <param name="value">The value to convert.</param>
+    /// <returns>The converted value.</returns>
+    public static float AsFloat(this string value)
+    {
+        return float.Parse(value);
     }
 
     /// <summary>
@@ -109,7 +99,7 @@ public static partial class Extensions
     /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static float AsFloat(this string value, float defaultValue = 0f)
+    public static float AsFloat(this string value, float defaultValue)
     {
         float num;
         if (!float.TryParse(value, out num))
@@ -120,12 +110,22 @@ public static partial class Extensions
     }
 
     /// <summary>
+    /// Converts a string to an 32 bit integer.
+    /// </summary>
+    /// <param name="value">The value to convert.</param>
+    /// <returns>The converted value.</returns>
+    public static short AsInt16(this string value)
+    {
+        return short.Parse(value);
+    }
+
+    /// <summary>
     /// Converts a string to an 32 bit integer and specifies a default value.
     /// </summary>
     /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static short AsInt16(this string value, short defaultValue = 0)
+    public static short AsInt16(this string value, short defaultValue)
     {
         short num;
         if (!short.TryParse(value, out num))
@@ -139,9 +139,19 @@ public static partial class Extensions
     /// Converts a string to an 32 bit integer and specifies a default value.
     /// </summary>
     /// <param name="value">The value to convert.</param>
+    /// <returns>The converted value.</returns>
+    public static int AsInt32(this string value)
+    {
+        return int.Parse(value);
+    }
+
+    /// <summary>
+    /// Converts a string to an 32 bit integer and specifies a default value.
+    /// </summary>
+    /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static int AsInt32(this string value, int defaultValue = 0)
+    public static int AsInt32(this string value, int defaultValue)
     {
         int num;
         if (!int.TryParse(value, out num))
@@ -152,12 +162,22 @@ public static partial class Extensions
     }
 
     /// <summary>
+    /// Converts a string to an 64 bit integer.
+    /// </summary>
+    /// <param name="value">The value to convert.</param>
+    /// <returns>The converted value.</returns>
+    public static long AsInt64(this string value)
+    {
+        return long.Parse(value);
+    }
+
+    /// <summary>
     /// Converts a string to an 64 bit integer and specifies a default value.
     /// </summary>
     /// <param name="value">The value to convert.</param>
     /// <param name="defaultValue">The value to return if <paramref name="value"/> is <see langword="null"/> or is an invalid value.</param>
     /// <returns>The converted value.</returns>
-    public static long AsInt64(this string value, long defaultValue = 0)
+    public static long AsInt64(this string value, long defaultValue)
     {
         long num;
         if (!long.TryParse(value, out num))
@@ -174,7 +194,7 @@ public static partial class Extensions
     /// <returns>The converted value.</returns>
     public static Guid AsGuid(this string value)
     {
-        return value.AsGuid(Guid.Empty);
+        return new Guid(value);
     }
 
     /// <summary>
@@ -185,11 +205,22 @@ public static partial class Extensions
     /// <returns>The converted value.</returns>
     public static Guid AsGuid(this string value, Guid defaultValue)
     {
+#if Net35
+        try
+        {
+            return new Guid(value);
+        }
+        catch
+        {
+            return defaultValue;
+        }
+#else
         Guid guid;
         if (!Guid.TryParse(value, out guid))
         {
             return defaultValue;
         }
         return guid;
+#endif
     }
 }

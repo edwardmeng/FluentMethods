@@ -13,6 +13,8 @@ public static partial class Extensions
         return Convert.ToBase64String(inArray);
     }
 
+#if !NetCore
+    
     /// <summary>
     ///     Converts an array of 8-bit unsigned integers to its equivalent string representation that is encoded with
     ///     base-64 digits. A parameter specifies whether to insert line breaks in the return value.
@@ -24,6 +26,8 @@ public static partial class Extensions
     {
         return Convert.ToBase64String(inArray, options);
     }
+
+#endif
 
     /// <summary>
     ///     Converts a subset of an array of 8-bit unsigned integers to its equivalent string representation that is
@@ -39,6 +43,8 @@ public static partial class Extensions
         return Convert.ToBase64String(inArray, offset, length);
     }
 
+#if !NetCore
+    
     /// <summary>
     ///     Converts a subset of an array of 8-bit unsigned integers to its equivalent string representation that is
     ///     encoded with base-64 digits. Parameters specify the subset as an offset in the input array, the number of
@@ -53,4 +59,6 @@ public static partial class Extensions
     {
         return Convert.ToBase64String(inArray, offset, length, options);
     }
+
+#endif
 }

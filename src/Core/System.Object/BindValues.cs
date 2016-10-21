@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel;
+using System.Reflection;
 
 public static partial class Extensions
 {
@@ -42,7 +43,19 @@ public static partial class Extensions
             var property = properties.Find(propertyName, false) ?? properties.Find(propertyName, true);
             if (property != null && !property.IsReadOnly)
             {
-                property.SetValue(component, entry.Value.ConvertTo(property.PropertyType, new TypeDescriptorContext(property, component)));
+                var propertyValue = entry.Value;
+                var converter = property.Converter;
+                if (entry.Value != null &&
+#if NetCore
+                    !property.PropertyType.GetTypeInfo().IsInstanceOfType(entry.Value)
+#else
+                    !property.PropertyType.IsInstanceOfType(entry.Value) 
+#endif
+                    && converter != null && converter.CanConvertFrom(entry.Value.GetType()))
+                {
+                    propertyValue = converter.ConvertFrom(entry.Value);
+                }
+                property.SetValue(component, propertyValue.ConvertTo(property.PropertyType, new TypeDescriptorContext(property, component)));
             }
         }
     }

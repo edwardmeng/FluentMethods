@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 public static partial class Extensions
 {
@@ -21,6 +22,10 @@ public static partial class Extensions
     /// <returns>true if instance of the specified type, false if not.</returns>
     public static bool IsInstanceOf(this object value, Type targetType)
     {
+#if NetCore
+        return targetType.GetTypeInfo().IsInstanceOfType(value);
+#else
         return targetType.IsInstanceOfType(value);
+#endif
     }
 }
