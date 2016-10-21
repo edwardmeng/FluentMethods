@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9053F51F-2DEF-4A01-A77A-1E708CF120DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMethods.Web</RootNamespace>
+    <AssemblyName>FluentMethods.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Net35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Net35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\FluentMethods.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\ParameterMissedException.cs">
+      <Link>ParameterMissedException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\HtmlAttributeEncode.cs">
+      <Link>System.String\HtmlAttributeEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\HtmlDecode.cs">
+      <Link>System.String\HtmlDecode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\HtmlEncode.cs">
+      <Link>System.String\HtmlEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\ParseQueryString.cs">
+      <Link>System.String\ParseQueryString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\UrlDecode.cs">
+      <Link>System.String\UrlDecode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\UrlEncode.cs">
+      <Link>System.String\UrlEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.String\UrlPathEncode.cs">
+      <Link>System.String\UrlPathEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.HttpContext\SendFile.cs">
+      <Link>System.Web.HttpContext\SendFile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.HttpRequest\GetClientAddress.cs">
+      <Link>System.Web.HttpRequest\GetClientAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.HttpRequest\GetParameter.cs">
+      <Link>System.Web.HttpRequest\GetParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.HttpRequest\GetRequiredParameter.cs">
+      <Link>System.Web.HttpRequest\GetRequiredParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\AddCssClass.cs">
+      <Link>System.Web.UI.Control\AddCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\FindChildren.cs">
+      <Link>System.Web.UI.Control\FindChildren.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\FindControl.cs">
+      <Link>System.Web.UI.Control\FindControl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\GetDataItem.cs">
+      <Link>System.Web.UI.Control\GetDataItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\GetParent.cs">
+      <Link>System.Web.UI.Control\GetParent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\HasCssClass.cs">
+      <Link>System.Web.UI.Control\HasCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\IsViewStateEnabled.cs">
+      <Link>System.Web.UI.Control\IsViewStateEnabled.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\Remove.cs">
+      <Link>System.Web.UI.Control\Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\RemoveCssClass.cs">
+      <Link>System.Web.UI.Control\RemoveCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\ResolveAbsoluteUrl.cs">
+      <Link>System.Web.UI.Control\ResolveAbsoluteUrl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Control\ToggleCssClass.cs">
+      <Link>System.Web.UI.Control\ToggleCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.IBindableControl\ExtractValues.cs">
+      <Link>System.Web.UI.IBindableControl\ExtractValues.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.Page\IsDebuggingEnabled.cs">
+      <Link>System.Web.UI.Page\IsDebuggingEnabled.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.WebControls.DetailsView\ExtractValues.cs">
+      <Link>System.Web.UI.WebControls.DetailsView\ExtractValues.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.WebControls.FormView\ExtractValues.cs">
+      <Link>System.Web.UI.WebControls.FormView\ExtractValues.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Web\System.Web.UI.WebControls.GridViewRow\ExtractValues.cs">
+      <Link>System.Web.UI.WebControls.GridViewRow\ExtractValues.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\FluentMethods.snk">
+      <Link>FluentMethods.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\FluentMethods.Core.net35.csproj">
+      <Project>{59dd64ec-172a-454a-a304-ffd93af6c4c5}</Project>
+      <Name>FluentMethods.Core.net35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

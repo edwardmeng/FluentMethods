@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Web;
 
 public static partial class Extensions
@@ -40,7 +39,7 @@ public static partial class Extensions
         {
             return (T)(object)paraValue.ToString();
         }
-        return (T)(TypeDescriptor.GetConverter(typeof(T)).ConvertFrom(paraValue) ?? defaultValue);
+        return (T)(paraValue.ConvertTo(typeof(T)) ?? defaultValue);
     }
 
     /// <summary>

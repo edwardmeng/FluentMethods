@@ -19,7 +19,7 @@ public static partial class Extensions
             (cssClass1, cssClass2) =>
                 string.Join(" ", (cssClass1 ?? string.Empty)
                     .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
-                    .Except((cssClass2 ?? string.Empty).Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)));
+                    .Except((cssClass2 ?? string.Empty).Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)).ToArray());
         var webControl = control as WebControl;
         if (webControl != null)
         {

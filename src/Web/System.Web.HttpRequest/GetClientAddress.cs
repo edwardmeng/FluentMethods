@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 
 public static partial class Extensions
 {
@@ -8,6 +9,25 @@ public static partial class Extensions
     /// <returns>Prevents proxy issues by using the X_Forwarded_For header</returns>
     public static string GetClientAddress(this HttpRequest request)
     {
-       return new HttpRequestWrapper(request).GetClientAddress();
+#if Net35
+        if (request == null)
+        {
+            throw new ArgumentNullException(nameof(request));
+        }
+        var ipAddress = request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+        if (!string.IsNullOrEmpty(ipAddress))
+        {
+            var addresses = ipAddress.Split(',');
+            if (addresses.Length != 0)
+            {
+                return addresses[0];
+            }
+        }
+
+        return request.ServerVariables["REMOTE_ADDR"];
+#else
+        return new HttpRequestWrapper(request).GetClientAddress();
+#endif
     }
 }

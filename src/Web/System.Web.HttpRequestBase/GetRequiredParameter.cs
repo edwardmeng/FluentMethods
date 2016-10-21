@@ -22,16 +22,6 @@ public static partial class Extensions
     /// <returns></returns>
     public static T GetRequiredParameter<T>(this HttpRequestBase request, string paraName)
     {
-        object paraValue = request.GetRequiredParameter(paraName);
-        if (paraValue is T)
-        {
-            return (T)paraValue;
-        }
-        if (typeof(T) == typeof(string))
-        {
-            return (T)(object)paraValue.ToString();
-        }
-        TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
-        return (T)converter.ConvertFrom(paraValue);
+        return request.GetRequiredParameter(paraName).ConvertTo<T>();
     }
 }

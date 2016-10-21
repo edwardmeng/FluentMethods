@@ -36,7 +36,7 @@ public static partial class Extensions
             }
             if (_propertyIsDebuggingEnabled!=null)
             {
-                return (bool) _propertyIsDebuggingEnabled.GetValue(scriptManager);
+                return (bool) _propertyIsDebuggingEnabled.GetValue(scriptManager, new object[0]);
             }
         }
         return HttpContext.Current.IsDebuggingEnabled;

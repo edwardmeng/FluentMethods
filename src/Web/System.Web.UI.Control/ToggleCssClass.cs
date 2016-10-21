@@ -31,7 +31,7 @@ public static partial class Extensions
                     classNames.Add(togglingClassName);
                 }
             }
-            return string.Join(" ", classNames);
+            return string.Join(" ", classNames.ToArray());
         };
         var webControl = control as WebControl;
         if (webControl != null)
