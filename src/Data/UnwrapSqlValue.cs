@@ -46,7 +46,16 @@ public static partial class Extensions
             using (var memoryStream = new MemoryStream())
             {
                 memoryStream.Seek(0, SeekOrigin.Begin);
+#if Net35
+                int length;
+                byte[] buffer = new byte[0x14000];
+                while ((length = stream.Read(buffer, 0, buffer.Length)) != 0)
+                {
+                    memoryStream.Write(buffer, 0, length);
+                }
+#else
                 stream.CopyTo(memoryStream);
+#endif
                 return (T)(object)memoryStream.ToArray();
             }
         }

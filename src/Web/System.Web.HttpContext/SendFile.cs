@@ -82,10 +82,10 @@ public static partial class Extensions
     /// A HttpContext extension method that sends a file.
     /// </summary>
     /// <param name="context">The <see cref="HttpContext"/> to act on.</param>
-    /// <param name="steam">The stream to file.</param>
+    /// <param name="stream">The stream to file.</param>
     /// <param name="fileName">The file name of the output file.</param>
     /// <param name="contentType">The content type of the output file. Default to download the output file anyway.</param>
-    public static void SendFile(this HttpContext context, Stream steam, string fileName, string contentType = null)
+    public static void SendFile(this HttpContext context, Stream stream, string fileName, string contentType = null)
     {
 #if Net35
         if (context == null)
@@ -93,21 +93,21 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(context));
         }
 
-        if (steam == null)
+        if (stream == null)
         {
-            throw new ArgumentNullException(nameof(steam));
+            throw new ArgumentNullException(nameof(stream));
         }
         context.SendFile(fileName, contentType, response =>
         {
             int length;
             byte[] buffer = new byte[0x14000];
-            while ((length = steam.Read(buffer, 0, buffer.Length)) != 0)
+            while ((length = stream.Read(buffer, 0, buffer.Length)) != 0)
             {
                 response.OutputStream.Write(buffer, 0, length);
             }
         });
 #else
-        new HttpContextWrapper(context).SendFile(steam, fileName, contentType);
+        new HttpContextWrapper(context).SendFile(stream, fileName, contentType);
 #endif
     }
 }

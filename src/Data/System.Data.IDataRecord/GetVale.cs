@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlTypes;
+using System.Reflection;
 using FluentMethods.Data;
 
 public static partial class Extensions
@@ -24,7 +24,11 @@ public static partial class Extensions
         }
         if (record.IsDBNull(ordinal))
         {
+#if NetCore
+            if (!typeof(T).GetTypeInfo().IsValueType || (typeof(T).GetTypeInfo().IsGenericType && typeof(T).GetTypeInfo().GetGenericTypeDefinition() == typeof(Nullable<>)))
+#else
             if (!typeof(T).IsValueType || (typeof(T).IsGenericType && typeof(T).GetGenericTypeDefinition() == typeof(Nullable<>)))
+#endif
             {
                 return default(T);
             }
