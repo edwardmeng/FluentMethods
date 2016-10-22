@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{956732CE-EC86-4D01-8091-1D3F1D1D0F91}</ProjectGuid>
+    <ProjectGuid>{25BE96C1-1B72-4ABD-9A18-772A1925C9CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FluentMethods.Web</RootNamespace>
     <AssemblyName>FluentMethods.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Net45</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;Net40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -27,7 +27,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;Net45</DefineConstants>
+    <DefineConstants>TRACE;Net40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -77,17 +77,11 @@
     <Compile Include="..\..\..\src\Web\System.String\UrlPathEncode.cs">
       <Link>System.String\UrlPathEncode.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Web\System.Web.HttpContextBase\SendFileAsync.cs">
-      <Link>System.Web.HttpContextBase\SendFileAsync.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\src\Web\System.Web.HttpContextBase\SendFile.cs">
       <Link>System.Web.HttpContextBase\SendFile.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Web\System.Web.HttpContext\SendFile.cs">
       <Link>System.Web.HttpContext\SendFile.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Web\System.Web.HttpContext\SendFileAsync.cs">
-      <Link>System.Web.HttpContext\SendFileAsync.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Web\System.Web.HttpRequestBase\GetClientAddress.cs">
       <Link>System.Web.HttpRequestBase\GetClientAddress.cs</Link>

@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Reflection;
-
 namespace FluentMethods {
     using System;
     
@@ -41,12 +39,7 @@ namespace FluentMethods {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-#if NetCore
-                    var assembly = typeof(Strings).GetTypeInfo().Assembly;
-#else
-                    var assembly = typeof(Strings).Assembly;
-#endif
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FluentMethods.Strings", assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FluentMethods.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
