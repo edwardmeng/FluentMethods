@@ -16,6 +16,10 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(method));
         }
         var returnType = method.ReturnType;
+#if NetCore
+        return returnType == typeof(Task) || (returnType.GetTypeInfo().IsGenericType && returnType.GetTypeInfo().GetGenericTypeDefinition() == typeof(Task<>));
+#else
         return returnType == typeof(Task) || (returnType.IsGenericType && returnType.GetGenericTypeDefinition() == typeof(Task<>));
+#endif
     }
 }

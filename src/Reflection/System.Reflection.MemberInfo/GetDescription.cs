@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 public static partial class Extensions
@@ -44,11 +43,13 @@ public static partial class Extensions
         {
             return descriptionAttribute.Description;
         }
-        var displayAttribute = member.GetCustomAttribute<DisplayAttribute>();
+#if !Net35
+        var displayAttribute = member.GetCustomAttribute<System.ComponentModel.DataAnnotations.DisplayAttribute>();
         if (displayAttribute != null)
         {
             return displayAttribute.GetDescription();
         }
+#endif
         return defaultValueFactory(member);
     }
 }

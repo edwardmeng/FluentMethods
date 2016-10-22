@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -15,11 +16,18 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(member));
         }
+        var displayNameAttribute = member.GetCustomAttribute<DisplayNameAttribute>();
+        if (displayNameAttribute != null)
+        {
+            return displayNameAttribute.DisplayName;
+        }
+#if !Net35
         var displayAttribute = member.GetCustomAttribute<DisplayAttribute>();
         if (displayAttribute != null)
         {
             return displayAttribute.GetName();
         }
+#endif
         var defaultValue = defaultValueFactory();
         return string.IsNullOrEmpty(defaultValue) ? member.Name : defaultValue;
     }
