@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using FluentMethods.Linq;
 
 public static partial class Extensions
@@ -42,12 +43,12 @@ public static partial class Extensions
                 throw new ArgumentException(string.Format(Strings.InvalidOrderSyntax, ordering), nameof(ordering));
             }
             Type fieldType;
-            var orderExpression = GetPropertyOrFieldExpression(source.ElementType,fieldName,out fieldType);
+            var orderExpression = GetPropertyOrFieldExpression(source.ElementType, fieldName, out fieldType);
             if (orderExpression == null)
             {
                 throw new InvalidOperationException(string.Format(Strings.CannotFindTypeMember, fieldName, source.ElementType));
             }
-            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] {source.ElementType, fieldType}, expression, orderExpression);
+            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] { source.ElementType, fieldType }, expression, orderExpression);
             ascendingMethod = "ThenBy";
             descendingMethod = "ThenByDescending";
         }
@@ -57,9 +58,14 @@ public static partial class Extensions
     private static Expression GetPropertyOrFieldExpression(Type elementType, string name, out Type memberType)
     {
         memberType = null;
-        var properties = elementType.GetProperties();
-        var fields = elementType.GetFields();
-        var parameter = Expression.Parameter(elementType);
+#if NetCore
+        var properties = elementType.GetTypeInfo().GetProperties(BindingFlags.Public|BindingFlags.Instance);
+        var fields = elementType.GetTypeInfo().GetFields(BindingFlags.Public | BindingFlags.Instance);
+#else
+        var properties = elementType.GetProperties(BindingFlags.Public|BindingFlags.Instance);
+        var fields = elementType.GetFields(BindingFlags.Public|BindingFlags.Instance);
+#endif
+        var parameter = Expression.Parameter(elementType, "x");
         var property = properties.SingleOrDefault(p => p.Name == name);
         if (property != null)
         {

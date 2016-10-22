@@ -23,7 +23,7 @@ public static partial class Extensions
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TSource> FirstOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -63,7 +63,7 @@ public static partial class Extensions
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> FirstOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken token)
     {
         return source.FirstOrDefaultAsync(async (x, t) => await predicate(x), token);
@@ -85,7 +85,7 @@ public static partial class Extensions
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> FirstOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate)
     {
         return source.FirstOrDefaultAsync(predicate, CancellationToken.None);

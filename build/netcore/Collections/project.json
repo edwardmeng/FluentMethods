@@ -10,9 +10,7 @@
         "imports": "dnxcore50",
         "buildOptions": {
             "compile": {
-                "include": [ "../../../*.cs", "../../../src/Collections/**/*.cs" ],
-                "excludeFiles": [
-                ]
+                "include": [ "../../../*.cs", "../../../src/Collections/**/*.cs" ]
             },
             "embed": {
                 "include": [ "../../../src/Core/*.resx" ]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,6 +24,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<int>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -54,6 +56,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -76,6 +79,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -99,6 +103,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<int?>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -130,6 +135,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int?>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -152,6 +158,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int?>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -175,6 +182,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<long>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -206,6 +214,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -228,6 +237,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -251,6 +261,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<long?>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -282,6 +293,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long?>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -304,6 +316,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long?>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -327,6 +340,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<float>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -352,6 +366,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -374,6 +389,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -397,6 +413,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<float?>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -422,6 +439,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float?>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -444,6 +462,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float?>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -467,6 +486,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<double>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -492,6 +512,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -514,6 +535,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -537,6 +559,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<double?>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -562,6 +585,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double?>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -584,6 +608,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double?>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -607,6 +632,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<decimal>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -632,6 +658,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -654,6 +681,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);
@@ -677,6 +705,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<decimal?>> selector, CancellationToken token)
     {
         if (source == null) throw new ArgumentNullException(nameof(source));
@@ -702,6 +731,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal?>> selector, CancellationToken token)
     {
         return source.SumAsync(async (x, t) => await selector(x), token);
@@ -724,6 +754,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal?> SumAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal?>> selector)
     {
         return source.SumAsync(selector, CancellationToken.None);

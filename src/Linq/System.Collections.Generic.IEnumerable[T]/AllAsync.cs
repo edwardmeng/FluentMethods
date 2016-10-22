@@ -22,7 +22,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<bool> AllAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -61,7 +61,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> AllAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken token)
     {
         return source.AllAsync(async (x, t) => await predicate(x), token);
@@ -82,7 +82,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> AllAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate)
     {
         return source.AllAsync(predicate, CancellationToken.None);

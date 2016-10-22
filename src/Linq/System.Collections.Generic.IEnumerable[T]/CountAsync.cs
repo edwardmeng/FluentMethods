@@ -23,7 +23,7 @@ public static partial class Extensions
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
     /// <exception cref="OverflowException">The number of elements in source is larger than <see cref="Int32.MaxValue"/>.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<int> CountAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -67,7 +67,7 @@ public static partial class Extensions
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
     /// <exception cref="OverflowException">The number of elements in source is larger than <see cref="Int32.MaxValue"/>.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<int> CountAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken token)
     {
         return source.CountAsync(async (x, t) => await predicate(x), token);
@@ -89,7 +89,7 @@ public static partial class Extensions
     /// </remarks>
     /// <exception cref="System.ArgumentNullException"><paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
     /// <exception cref="OverflowException">The number of elements in source is larger than <see cref="Int32.MaxValue"/>.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<int> CountAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate)
     {
         return source.CountAsync(predicate, CancellationToken.None);

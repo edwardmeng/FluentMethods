@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Linq.Expressions;
 using FluentMethods.Linq;
 
 public static partial class Extensions

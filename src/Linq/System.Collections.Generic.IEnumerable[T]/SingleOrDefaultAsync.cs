@@ -27,7 +27,7 @@ public static partial class Extensions
     /// <exception cref="System.InvalidOperationException">
     /// More than one element satisfies the condition in <paramref name="predicate"/>.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TSource> SingleOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -78,7 +78,7 @@ public static partial class Extensions
     /// <exception cref="System.InvalidOperationException">
     /// More than one element satisfies the condition in <paramref name="predicate"/>.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> SingleOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken token)
     {
         return source.SingleOrDefaultAsync(async (x, t) => await predicate(x), token);
@@ -103,7 +103,7 @@ public static partial class Extensions
     /// <exception cref="System.InvalidOperationException">
     /// More than one element satisfies the condition in <paramref name="predicate"/>.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> SingleOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate)
     {
         return source.SingleOrDefaultAsync(predicate, CancellationToken.None);

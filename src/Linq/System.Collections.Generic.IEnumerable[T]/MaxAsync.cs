@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using FluentMethods.Linq;
@@ -24,6 +25,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<int> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<int>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -67,6 +69,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -89,6 +92,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -112,6 +116,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<int?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<int?>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -145,6 +150,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int?>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -167,6 +173,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<int?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<int?>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -190,6 +197,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<long> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<long>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -233,6 +241,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -255,6 +264,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -278,6 +288,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<long?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<long?>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -311,6 +322,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long?>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -333,6 +345,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<long?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<long?>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -356,6 +369,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<double> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<double>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -399,6 +413,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -421,6 +436,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -444,6 +460,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<double?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<double?>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -477,6 +494,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double?>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -499,6 +517,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<double?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<double?>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -522,6 +541,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<float> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<float>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -565,6 +585,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -587,6 +608,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -610,6 +632,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<float?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<float?>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -643,6 +666,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float?>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -665,6 +689,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<float?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<float?>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -688,6 +713,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<decimal> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<decimal>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -731,6 +757,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -753,6 +780,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -776,6 +804,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<decimal?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<decimal?>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -809,6 +838,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal?>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -831,6 +861,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<decimal?> MaxAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<decimal?>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);
@@ -855,6 +886,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task<TResult> MaxAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<TResult>> selector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -915,6 +947,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<TResult> MaxAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, Task<TResult>> selector, CancellationToken token)
     {
         return source.MaxAsync(async (x, t) => await selector(x), token);
@@ -938,6 +971,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task<TResult> MaxAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, Task<TResult>> selector)
     {
         return source.MaxAsync(selector, CancellationToken.None);

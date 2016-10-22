@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public static partial class Extensions
 {
@@ -17,6 +18,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="childrenFactory"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static void Traverse<T>(this IEnumerable<T> source, Func<T, IEnumerable<T>> childrenFactory, Action<T> action)
     {
         if (source == null)

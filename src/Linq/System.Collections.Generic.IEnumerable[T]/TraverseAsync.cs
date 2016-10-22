@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,6 +28,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="childrenFactory"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static async Task TraverseAsync<T>(this IEnumerable<T> source, Func<T, IEnumerable<T>> childrenFactory, Func<T, Task> action, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -70,6 +72,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="childrenFactory"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static Task TraverseAsync<T>(this IEnumerable<T> source, Func<T, IEnumerable<T>> childrenFactory, Func<T, Task> action)
     {
         return source.TraverseAsync(childrenFactory, action, CancellationToken.None);

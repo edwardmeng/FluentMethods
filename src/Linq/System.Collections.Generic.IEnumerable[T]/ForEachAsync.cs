@@ -27,7 +27,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, CancellationToken, Task> action, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -67,7 +67,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, Task> action, CancellationToken token)
     {
         return source.ForEachAsync(async (T x, CancellationToken t) => await action(x), token);
@@ -93,7 +93,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, Task> action)
     {
         return source.ForEachAsync(action, CancellationToken.None);
@@ -120,7 +120,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, int, CancellationToken, Task> action, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -162,7 +162,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, int, Task> action, CancellationToken token)
     {
         return source.ForEachAsync(async (x, i, t) => await action(x, i), token);
@@ -188,7 +188,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, int, Task> action)
     {
         return source.ForEachAsync(action, CancellationToken.None);

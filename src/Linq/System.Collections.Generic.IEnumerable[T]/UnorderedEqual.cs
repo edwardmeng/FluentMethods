@@ -18,6 +18,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="first"/>, <paramref name="second"/> or <paramref name="comparer"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static bool UnorderedEqual<T>(this IEnumerable<T> first, IEnumerable<T> second, IEqualityComparer<T> comparer)
     {
         if (first == null)
@@ -51,6 +52,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="first"/> or <paramref name="second"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static bool UnorderedEqual<T>(this IEnumerable<T> first, IEnumerable<T> second)
     {
         return first.UnorderedEqual(second, null);
@@ -69,7 +71,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="first"/>, <paramref name="second"/> or <paramref name="predicate"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static bool UnorderedEqual<T>(this ICollection<T> first, ICollection<T> second, Func<T, T, bool> predicate)
     {
         if (predicate == null)
@@ -93,7 +95,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException">
     /// <paramref name="first"/>, <paramref name="second"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static bool UnorderedEqual<T, TKey>(this ICollection<T> first, ICollection<T> second, Func<T, TKey> selector)
     {
         if (selector == null)

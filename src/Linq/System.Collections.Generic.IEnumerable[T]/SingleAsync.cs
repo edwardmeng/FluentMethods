@@ -30,7 +30,7 @@ public static partial class Extensions
     /// -or-
     /// The source sequence is empty.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TSource> SingleAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -84,7 +84,7 @@ public static partial class Extensions
     /// -or-
     /// The source sequence is empty.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> SingleAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken token)
     {
         return source.SingleAsync(async (x, t) => await predicate(x), token);
@@ -112,7 +112,7 @@ public static partial class Extensions
     /// -or-
     /// The source sequence is empty.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> SingleAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate)
     {
         return source.SingleAsync(predicate, CancellationToken.None);

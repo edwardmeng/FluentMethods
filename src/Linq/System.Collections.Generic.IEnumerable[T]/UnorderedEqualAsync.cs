@@ -27,7 +27,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<bool> UnorderedEqualAsync<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, TSource, CancellationToken, Task<bool>> predicate, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -81,7 +81,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> UnorderedEqualAsync<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, TSource, Task<bool>> predicate, CancellationToken token)
     {
         return first.UnorderedEqualAsync(second, async (x, y, t) => await predicate(x, y), token);
@@ -106,7 +106,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> UnorderedEqualAsync<TSource>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, TSource, Task<bool>> predicate)
     {
         return first.UnorderedEqualAsync(second, predicate, CancellationToken.None);
@@ -133,7 +133,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<bool> UnorderedEqualAsync<TSource, TKey>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, CancellationToken, Task<TKey>> selector, CancellationToken token)
     {
         if (first == null)
@@ -193,7 +193,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> UnorderedEqualAsync<TSource, TKey>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, Task<TKey>> selector, CancellationToken token)
     {
         return first.UnorderedEqualAsync(second, async (x, t) => await selector(x), token);
@@ -219,7 +219,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<bool> UnorderedEqualAsync<TSource, TKey>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, Task<TKey>> selector)
     {
         return first.UnorderedEqualAsync(second, selector, CancellationToken.None);

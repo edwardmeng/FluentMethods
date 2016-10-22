@@ -1,0 +1,26 @@
+﻿{
+    "version": "1.0.0-*",
+
+    "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "System.Linq.Queryable": "4.0.1"
+    },
+
+    "frameworks": {
+        "netstandard1.6": {
+            "imports": "dnxcore50",
+            "buildOptions": {
+                "compile": {
+                    "include": [ "../../../*.cs", "../../../src/Linq/**/*.cs" ]
+                },
+                "embed": {
+                    "include": [ "../../../src/Linq/*.resx" ]
+                },
+                "define": [ "NetCore" ],
+                "keyFile": "../../../FluentMethods.snk",
+                "xmlDoc": true,
+                "outputName": "FluentMethods.Linq"
+            }
+        }
+    }
+}

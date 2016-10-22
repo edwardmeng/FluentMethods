@@ -23,7 +23,7 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
     /// <exception cref="InvalidOperationException"><paramref name="source"/> contains no elements.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> AggregateAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, TSource, Task<TSource>> func)
     {
         return source.AggregateAsync(func, CancellationToken.None);
@@ -45,7 +45,7 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
     /// <exception cref="InvalidOperationException"><paramref name="source"/> contains no elements.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TSource> AggregateAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, TSource, Task<TSource>> func, CancellationToken token)
     {
         return source.AggregateAsync(async (x, y, t) => await func(x, y), token);
@@ -67,7 +67,7 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
     /// <exception cref="InvalidOperationException"><paramref name="source"/> contains no elements.</exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TSource> AggregateAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, TSource, CancellationToken, Task<TSource>> func, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -103,7 +103,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TAccumulate> AggregateAsync<TSource, TAccumulate>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func)
     {
         return source.AggregateAsync(seed, func, CancellationToken.None);
@@ -127,7 +127,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TAccumulate> AggregateAsync<TSource, TAccumulate>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, CancellationToken token)
     {
         return source.AggregateAsync(seed, async (r, x, t) => await func(r, x), token);
@@ -151,7 +151,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/> or <paramref name="func"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TAccumulate> AggregateAsync<TSource, TAccumulate>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -186,7 +186,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, Func<TAccumulate, TResult> resultSelector)
     {
         return source.AggregateAsync(seed, func, resultSelector, CancellationToken.None);
@@ -213,7 +213,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, Func<TAccumulate, TResult> resultSelector, CancellationToken token)
     {
         return source.AggregateAsync(seed, async (r, x, t) => await func(r, x), resultSelector, token);
@@ -240,7 +240,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, Func<TAccumulate, TResult> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -252,7 +252,7 @@ public static partial class Extensions
         {
             result = await func(result, element, token);
             token.ThrowIfCancellationRequested();
-        });
+        }, token);
         return resultSelector(result);
     }
 
@@ -276,7 +276,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, Task<TResult>> resultSelector)
     {
         return source.AggregateAsync(seed, func, resultSelector, CancellationToken.None);
@@ -303,7 +303,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, Task<TResult>> resultSelector, CancellationToken token)
     {
         return source.AggregateAsync(seed, func, async (r, t) => await resultSelector(r), token);
@@ -330,7 +330,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, CancellationToken, Task<TResult>> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
@@ -362,7 +362,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, Func<TAccumulate, Task<TResult>> resultSelector)
     {
         return source.AggregateAsync(seed, func, resultSelector, CancellationToken.None);
@@ -389,7 +389,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, Func<TAccumulate, Task<TResult>> resultSelector, CancellationToken token)
     {
         return source.AggregateAsync(seed, func, async (r, t) => await resultSelector(r), token);
@@ -416,7 +416,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, Func<TAccumulate, Task<TResult>> resultSelector, CancellationToken token)
     {
         return source.AggregateAsync(seed, func, async(r,t)=>await resultSelector(r), token);
@@ -443,7 +443,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, Task<TAccumulate>> func, Func<TAccumulate, CancellationToken, Task<TResult>> resultSelector, CancellationToken token)
     {
         return source.AggregateAsync(seed, async (r, x, t) => await func(r, x), resultSelector, token);
@@ -470,7 +470,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="source"/>, <paramref name="func"/> or <paramref name="resultSelector"/> is <see langword="null" />.
     /// </exception>
-    [DebuggerStepperBoundary]
+    [DebuggerStepThrough]
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, Func<TAccumulate, CancellationToken, Task<TResult>> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
