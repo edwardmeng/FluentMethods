@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>a7790d34-8da1-4950-90f7-0622fcc79767</ProjectGuid>
+    <RootNamespace>FluentMethods.IO.netcore</RootNamespace>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\src\IO\Strings.Designer.cs">
+      <Link>Strings.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.DirectoryInfo\Clear.cs">
+      <Link>System.IO.DirectoryInfo\Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.DirectoryInfo\CopyTo.cs">
+      <Link>System.IO.DirectoryInfo\CopyTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.DirectoryInfo\EnumerateAll.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.DirectoryInfo\EnumerateDirectories.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateDirectories.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.DirectoryInfo\EnumerateFiles.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateFiles.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\AppendAllLines.cs">
+      <Link>System.IO.FileInfo\AppendAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\AppendAllText.cs">
+      <Link>System.IO.FileInfo\AppendAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\ReadAllBytes.cs">
+      <Link>System.IO.FileInfo\ReadAllBytes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\ReadAllLines.cs">
+      <Link>System.IO.FileInfo\ReadAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\ReadAllText.cs">
+      <Link>System.IO.FileInfo\ReadAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\ReadLines.cs">
+      <Link>System.IO.FileInfo\ReadLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\WriteAllBytes.cs">
+      <Link>System.IO.FileInfo\WriteAllBytes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\WriteAllLines.cs">
+      <Link>System.IO.FileInfo\WriteAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.FileInfo\WriteAllText.cs">
+      <Link>System.IO.FileInfo\WriteAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.Stream\ReadToEnd.cs">
+      <Link>System.IO.Stream\ReadToEnd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\IO\System.IO.Stream\ToByteArray.cs">
+      <Link>System.IO.Stream\ToByteArray.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\..\src\IO\Strings.resx">
+      <Link>Strings.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\FluentMethods.snk">
+      <Link>FluentMethods.snk</Link>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

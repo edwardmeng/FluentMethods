@@ -13,7 +13,7 @@ public static partial class Extensions
     /// </returns>
     public static string ReadToEnd(this Stream @this)
     {
-        using (var sr = new StreamReader(@this, Encoding.Default))
+        using (var sr = new StreamReader(@this))
         {
             return sr.ReadToEnd();
         }
@@ -49,7 +49,7 @@ public static partial class Extensions
     {
         @this.Position = position;
 
-        using (var sr = new StreamReader(@this, Encoding.Default))
+        using (var sr = new StreamReader(@this))
         {
             return sr.ReadToEnd();
         }

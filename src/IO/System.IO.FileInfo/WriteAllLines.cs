@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 
 public static partial class Extensions
@@ -109,12 +108,13 @@ public static partial class Extensions
         File.WriteAllLines(file.FullName, contents, encoding);
     }
 
+#if !Net35
     /// <summary>
     ///     Creates a new file, write the specified string array to the file, and then closes the file.
     /// </summary>
     /// <param name="file">The @file to act on.</param>
     /// <param name="contents">The string array to write to the file.</param>
-    public static void WriteAllLines(this FileInfo file, IEnumerable<string> contents)
+    public static void WriteAllLines(this FileInfo file, System.Collections.Generic.IEnumerable<string> contents)
     {
         File.WriteAllLines(file.FullName, contents);
     }
@@ -129,8 +129,9 @@ public static partial class Extensions
     ///     An <see cref="T:System.Text.Encoding" /> object that represents the character encoding
     ///     applied to the string array.
     /// </param>
-    public static void WriteAllLines(this FileInfo file, IEnumerable<string> contents, Encoding encoding)
+    public static void WriteAllLines(this FileInfo file, System.Collections.Generic.IEnumerable<string> contents, Encoding encoding)
     {
         File.WriteAllLines(file.FullName, contents, encoding);
     }
+#endif
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 public static partial class Extensions
 {
@@ -9,7 +8,13 @@ public static partial class Extensions
     /// <param name="directory">The directory to act on.</param>
     public static void Clear(this DirectoryInfo directory)
     {
-        Array.ForEach(directory.GetFiles(), x => x.Delete());
-        Array.ForEach(directory.GetDirectories(), x => x.Delete(true));
+        foreach (var file in directory.GetFiles())
+        {
+            file.Delete();
+        }
+        foreach (var dir in directory.GetDirectories())
+        {
+            dir.Delete(true);
+        }
     }
 }
