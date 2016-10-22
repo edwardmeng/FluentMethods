@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55C80571-2AEB-4BC6-A41A-D78F2A98CE55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMethods.Collections</RootNamespace>
+    <AssemblyName>FluentMethods.Collections</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Net40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Net40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\FluentMethods.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AddIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AddIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AddRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AddRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\AsReadOnly.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\RemoveAll.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\RemoveIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\RemoveRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\ContainsAll.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\ContainsAny.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAny.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\Flatten.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Flatten.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\Join.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Join.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\FluentMethods.snk">
+      <Link>FluentMethods.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
