@@ -7,7 +7,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="this">The @this to act on.</param>
     /// <returns>true if '@this' is a weekend day, false if not.</returns>
-    public static bool IsWeekendDay(this DateTime @this)
+    public static bool IsWeekend(this DateTime @this)
     {
         return (@this.DayOfWeek == DayOfWeek.Saturday || @this.DayOfWeek == DayOfWeek.Sunday);
     }

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A73E2108-AB73-426D-8729-0279866C8416}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMethods.UnitTests</RootNamespace>
+    <AssemblyName>FluentMethods.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assert.cs" />
+    <Compile Include="System.DateTime\IsAfternoon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.Array\Clear.cs" />
+    <Compile Include="System.Array\WithinIndex.cs" />
+    <Compile Include="System.Boolean\IfFalse.cs" />
+    <Compile Include="System.Boolean\IfTrue.cs" />
+    <Compile Include="System.Boolean\ToString.cs" />
+    <Compile Include="System.DateTime\Age.cs" />
+    <Compile Include="System.DateTime\EndOfDay.cs" />
+    <Compile Include="System.DateTime\EndOfMonth.cs" />
+    <Compile Include="System.DateTime\EndOfWeek.cs" />
+    <Compile Include="System.DateTime\EndOfYear.cs" />
+    <Compile Include="System.DateTime\IsFuture.cs" />
+    <Compile Include="System.DateTime\IsMorning.cs" />
+    <Compile Include="System.DateTime\IsPast.cs" />
+    <Compile Include="System.DateTime\IsToday.cs" />
+    <Compile Include="System.DateTime\IsWeekDay.cs" />
+    <Compile Include="System.DateTime\IsWeekend.cs" />
+    <Compile Include="System.DateTime\StartOfDay.cs" />
+    <Compile Include="System.DateTime\StartOfMonth.cs" />
+    <Compile Include="System.DateTime\StartOfWeek.cs" />
+    <Compile Include="System.DateTime\StartOfYear.cs" />
+    <Compile Include="System.DateTime\Tomorrow.cs" />
+    <Compile Include="System.DateTime\Yesterday.cs" />
+    <Compile Include="System.Guid\IsEmpty.cs" />
+    <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.Object\IsBetween.cs" />
+    <Compile Include="System.Object\IsDefault.cs" />
+    <Compile Include="System.Object\IsIn.cs" />
+    <Compile Include="System.Object\IsInstanceOf.cs" />
+    <Compile Include="System.Object\IsNotIn.cs" />
+    <Compile Include="System.Object\IsNotNull.cs" />
+    <Compile Include="System.Object\IsNull.cs" />
+    <Compile Include="System.Object\ReferenceEquals.cs" />
+    <Compile Include="System.String\Br2Nl.cs" />
+    <Compile Include="System.String\FormatWith.cs" />
+    <Compile Include="System.String\IfNullOrEmpty.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\build\net40\Data\FluentMethods.Data.net40.csproj">
+      <Project>{01f55b79-b2a2-437c-9fec-69639a559dea}</Project>
+      <Name>FluentMethods.Data.net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net40\IO\FluentMethods.IO.net40.csproj">
+      <Project>{684b7946-6f6b-49f6-bea8-58c7d67a13b4}</Project>
+      <Name>FluentMethods.IO.net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net40\Xml\FluentMethods.Xml.net40.csproj">
+      <Project>{90f926f6-d08b-4bf6-a26d-0ecfc07e4602}</Project>
+      <Name>FluentMethods.Xml.net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net45\Collections\FluentMethods.Collections.net45.csproj">
+      <Project>{b036ae52-445e-454c-bc9e-8689bec6e504}</Project>
+      <Name>FluentMethods.Collections.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net45\Core\FluentMethods.Core.net45.csproj">
+      <Project>{64d46c48-56f1-4039-904a-870d9a3fb6b8}</Project>
+      <Name>FluentMethods.Core.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net45\Linq\FluentMethods.Linq.net45.csproj">
+      <Project>{4d234ccc-e8e7-41d6-b1b3-a249ef48d81d}</Project>
+      <Name>FluentMethods.Linq.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net45\Reflection\FluentMethods.Reflection.net45.csproj">
+      <Project>{de3af0fc-a840-41d3-ba93-6dcbf70949b4}</Project>
+      <Name>FluentMethods.Reflection.net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\build\net45\Web\FluentMethods.Web.net45.csproj">
+      <Project>{956732ce-ec86-4d01-8091-1d3f1d1d0f91}</Project>
+      <Name>FluentMethods.Web.net45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

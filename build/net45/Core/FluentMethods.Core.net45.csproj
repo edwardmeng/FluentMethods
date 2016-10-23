@@ -204,8 +204,8 @@
     <Compile Include="..\..\..\src\Core\System.DateTime\IsWeekDay.cs">
       <Link>System.DateTime\IsWeekDay.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Core\System.DateTime\IsWeekendDay.cs">
-      <Link>System.DateTime\IsWeekendDay.cs</Link>
+    <Compile Include="..\..\..\src\Core\System.DateTime\IsWeekend.cs">
+      <Link>System.DateTime\IsWeekend.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Core\System.DateTime\StartOfDay.cs">
       <Link>System.DateTime\StartOfDay.cs</Link>
@@ -507,20 +507,23 @@
     <Compile Include="..\..\..\src\Core\System.String\Br2Nl.cs">
       <Link>System.String\Br2Nl.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Core\System.String\Format.cs">
-      <Link>System.String\Format.cs</Link>
+    <Compile Include="..\..\..\src\Core\System.String\FormatWith.cs">
+      <Link>System.String\FormatWith.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Core\System.String\IfEmpty.cs">
-      <Link>System.String\IfEmpty.cs</Link>
+    <Compile Include="..\..\..\src\Core\System.String\IfNullOrEmpty.cs">
+      <Link>System.String\IfNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Core\System.String\IfNullOrWhiteSpace.cs">
+      <Link>System.String\IfNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Core\System.String\IsNullOrWhiteSpace.cs">
+      <Link>System.String\IsNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Core\System.String\IsNotNullOrWhiteSpace.cs">
+      <Link>System.String\IsNotNullOrWhiteSpace.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Core\System.String\Is.cs">
       <Link>System.String\Is.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Core\System.String\IsEmpty.cs">
-      <Link>System.String\IsEmpty.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Core\System.String\IsNotEmpty.cs">
-      <Link>System.String\IsNotEmpty.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Core\System.String\IsNotNullOrEmpty.cs">
       <Link>System.String\IsNotNullOrEmpty.cs</Link>
