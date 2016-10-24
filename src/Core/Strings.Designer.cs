@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Reflection;
-
 namespace FluentMethods {
     using System;
     
@@ -100,6 +98,15 @@ namespace FluentMethods {
         internal static string CannotConvertValue {
             get {
                 return ResourceManager.GetString("CannotConvertValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Only single dimension arrays are supported here. 的本地化字符串。
+        /// </summary>
+        internal static string Rank_MultiDimNotSupported {
+            get {
+                return ResourceManager.GetString("Rank_MultiDimNotSupported", resourceCulture);
             }
         }
     }

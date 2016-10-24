@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -20,6 +21,8 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(array));
         }
+        if (array.Rank != 1)
+            throw new RankException(Strings.Rank_MultiDimNotSupported);
         var newArray =
             (Array)Activator.CreateInstance(array.GetType(), array.Length + 1);
         Array.Copy(array, 0, newArray, 0, array.Length);

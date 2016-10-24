@@ -38,6 +38,8 @@ public static partial class Extensions
         {
             throw new ArgumentException(Strings.ArgumentOutOfRange_ArraySlice);
         }
+        if (sourceArray.Rank != 1)
+            throw new RankException(Strings.Rank_MultiDimNotSupported);
         var copyArray = (Array)Activator.CreateInstance(sourceArray.GetType(), length);
         Array.Copy(sourceArray, startIndex, copyArray, 0, length);
         return copyArray;

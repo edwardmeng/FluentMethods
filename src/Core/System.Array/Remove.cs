@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -20,6 +21,8 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(array));
         }
+        if (array.Rank != 1)
+            throw new RankException(Strings.Rank_MultiDimNotSupported);
         var index = Array.IndexOf(array, item);
         return index != -1 ? array.RemoveAt(index) : array;
     }

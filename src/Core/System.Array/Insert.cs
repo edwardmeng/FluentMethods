@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -28,6 +29,8 @@ public static partial class Extensions
         {
             throw new ArgumentOutOfRangeException(nameof(index));
         }
+        if (array.Rank != 1)
+            throw new RankException(Strings.Rank_MultiDimNotSupported);
         var copyArray = (Array)Activator.CreateInstance(array.GetType(), array.Length + 1);
         Array.Copy(array, 0, copyArray, 0, index);
         copyArray.SetValue(item, index);

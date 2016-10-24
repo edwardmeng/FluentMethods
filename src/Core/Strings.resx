@@ -129,4 +129,7 @@
   <data name="CannotConvertValue" xml:space="preserve">
     <value>Cannot convert from {0} to type {1}.</value>
   </data>
+  <data name="Rank_MultiDimNotSupported" xml:space="preserve">
+    <value>Only single dimension arrays are supported here.</value>
+  </data>
 </root>
