@@ -82,6 +82,17 @@
     <Compile Include="System.String\Br2Nl.cs" />
     <Compile Include="System.String\FormatWith.cs" />
     <Compile Include="System.String\IfNullOrEmpty.cs" />
+    <Compile Include="System.String\IsNotNullOrEmpty.cs" />
+    <Compile Include="System.String\IsNotNullOrWhiteSpace.cs" />
+    <Compile Include="System.String\IsNullOrEmpty.cs" />
+    <Compile Include="System.String\IsNullOrWhiteSpace.cs" />
+    <Compile Include="System.String\Left.cs" />
+    <Compile Include="System.String\Nl2Br.cs" />
+    <Compile Include="System.String\Reverse.cs" />
+    <Compile Include="System.String\Right.cs" />
+    <Compile Include="System.String\ToPlural.cs" />
+    <Compile Include="System.String\ToTitle.cs" />
+    <Compile Include="System.String\Truncate.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
