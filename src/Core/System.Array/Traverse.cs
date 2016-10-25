@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 public static partial class Extensions
 {
@@ -10,6 +11,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static void Traverse(this Array array, Action<object, int[]> action)
     {
         if (array == null)
@@ -40,6 +42,7 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
+    [DebuggerStepThrough]
     public static void Traverse(this Array array, Action<object> action)
     {
         if (array == null)
@@ -51,6 +54,36 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(action));
         }
         array.Traverse((element, indices) => action(element));
+    }
+
+    /// <summary>
+    /// Performs an action for each item in the array.
+    /// </summary>
+    /// <typeparam name="T">The array element type.</typeparam>
+    /// <param name="array">The array that the action to be performed for.</param>
+    /// <param name="action">The action to be performed.</param>
+    /// <exception cref="System.ArgumentNullException">
+    /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
+    /// </exception>
+    [DebuggerStepThrough]
+    public static void Traverse<T>(this Array array, Action<T, int[]> action)
+    {
+        array.Traverse((x, i) => action((T)x, i));
+    }
+
+    /// <summary>
+    /// Performs an action for each item in the array.
+    /// </summary>
+    /// <typeparam name="T">The array element type.</typeparam>
+    /// <param name="array">The array that the action to be performed for.</param>
+    /// <param name="action">The action to be performed.</param>
+    /// <exception cref="System.ArgumentNullException">
+    /// <paramref name="array"/> or <paramref name="action"/> is <see langword="null" />.
+    /// </exception>
+    [DebuggerStepThrough]
+    public static void Traverse<T>(this Array array, Action<T> action)
+    {
+        array.Traverse(x => action((T)x));
     }
 
     private class ArrayTraverse
@@ -87,7 +120,7 @@ public static partial class Extensions
             _index++;
             if (_index >= _longLength) return false;
             Indices[Indices.Length - 1]++;
-            for (var i = Indices.Length - 1; i >=0; i--)
+            for (var i = Indices.Length - 1; i >= 0; i--)
             {
                 if (Indices[i] <= _upperBounds[i]) break;
                 if (i == 0) return false;

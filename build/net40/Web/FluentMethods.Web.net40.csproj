@@ -154,6 +154,7 @@
     <None Include="..\..\..\FluentMethods.snk">
       <Link>FluentMethods.snk</Link>
     </None>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\net40\Core\FluentMethods.Core.net40.csproj">

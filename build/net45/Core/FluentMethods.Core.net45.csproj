@@ -84,6 +84,9 @@
     <Compile Include="..\..\..\src\Core\System.Array\Traverse.cs">
       <Link>System.Array\Traverse.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\src\Core\System.Array\TraverseAsync.cs">
+      <Link>System.Array\TraverseAsync.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\src\Core\System.Array\Insert.cs">
       <Link>System.Array\Insert.cs</Link>
     </Compile>

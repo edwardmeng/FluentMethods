@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FluentMethods.UnitTests
 {
@@ -84,6 +85,36 @@ namespace FluentMethods.UnitTests
             Xunit.Assert.False(condition);
 #else
             NUnit.Framework.Assert.False(condition);
+#endif
+        }
+        public static void Throws<TException>(Action code)
+            where TException : Exception
+        {
+#if NetCore
+            Xunit.Assert.Throws<TException>(code);
+#else
+            NUnit.Framework.Assert.Throws<TException>(() => code());
+#endif
+        }
+
+#if !Net35
+        public static async System.Threading.Tasks.Task ThrowsAsync<TException>(Func<System.Threading.Tasks.Task> code)
+            where TException : Exception
+        {
+#if NetCore
+            await Xunit.Assert.ThrowsAsync<TException>(code);
+#else
+            NUnit.Framework.Assert.ThrowsAsync<TException>(() => code());
+#endif
+        }
+#endif
+
+        public static void NotThrow(Action code)
+        {
+#if NetCore
+            code();
+#else
+            NUnit.Framework.Assert.DoesNotThrow(() => code());
 #endif
         }
     }
