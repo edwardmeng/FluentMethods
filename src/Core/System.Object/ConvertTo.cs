@@ -82,7 +82,12 @@ public static partial class Extensions
         {
             destinationType = destinationType.GetElementType();
         }
-        if (value == null || (value is string && string.IsNullOrEmpty((string)value)))
+        var underlyingType = Nullable.GetUnderlyingType(destinationType);
+        if (value == null ||
+#if !NetCore
+            Convert.IsDBNull(value) ||
+#endif
+            (value is string && string.IsNullOrEmpty((string)value)))
         {
             if (destinationType == typeof(string)) return value;
             bool isClass;
@@ -91,7 +96,7 @@ public static partial class Extensions
 #else
             isClass = destinationType.IsClass;
 #endif
-            if (!isClass && Nullable.GetUnderlyingType(destinationType) == null)
+            if (!isClass && underlyingType == null)
                 throw new InvalidOperationException(string.Format(Strings.CannotConvertNullToValueType, destinationType));
             return null;
         }
@@ -108,34 +113,47 @@ public static partial class Extensions
         }
         var converter = GetConverter(sourceType, destinationType);
         if (converter != null) return converter(context, value);
+        if (underlyingType!=null) destinationType = underlyingType;
         object enumValue;
 #if NetCore
-        if (type.GetTypeInfo().IsEnum && TryConvertToEnum(value, type, out enumValue))
+        if (destinationType.GetTypeInfo().IsEnum && TryConvertToEnum(value, destinationType, out enumValue))
         {
-            return TryConvertToEnum(value, type, out enumValue);
+            return enumValue;
         }
         if (typeof(IConvertible).GetTypeInfo().IsAssignableFrom(sourceType) && typeof(IConvertible).GetTypeInfo().IsAssignableFrom(destinationType))
         {
             return Convert.ChangeType(value, destinationType);
         }
 #else
-        if (type.IsEnum && TryConvertToEnum(value, type, out enumValue))
+        if (destinationType.IsEnum && TryConvertToEnum(value, destinationType, out enumValue))
         {
-            return TryConvertToEnum(value, type, out enumValue);
+            return enumValue;
         }
         if (typeof(IConvertible).IsAssignableFrom(sourceType) && typeof(IConvertible).IsAssignableFrom(destinationType))
         {
             return Convert.ChangeType(value, destinationType);
         }
 #endif
-        throw CreateCannotConvertException(value, sourceType, destinationType, context);
+        throw CreateCannotConvertException(value, sourceType, type, context);
     }
 
+    /// <summary>
+    /// Converts value to the specified type.
+    /// </summary>
+    /// <param name="value">The value to be converted.</param>
+    /// <param name="type">The type to convert to.</param>
+    /// <returns>The converted value of the target type.</returns>
     public static object ConvertTo(this object value, Type type)
     {
         return value.ConvertTo(type, null);
     }
 
+    /// <summary>
+    /// Converts value to the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to convert to.</typeparam>
+    /// <param name="value">The value to be converted.</param>
+    /// <returns>The converted value of the target type.</returns>
     public static T ConvertTo<T>(this object value)
     {
         return (T)value.ConvertTo(typeof(T));
@@ -234,6 +252,7 @@ public static partial class Extensions
         }
         return false;
     }
+
 #if NetCore
     private static Func<ITypeDescriptorContext, object, object> CreateConverterFromDestination(Type sourceType, Type destinationType)
     {
