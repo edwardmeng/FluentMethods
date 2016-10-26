@@ -77,6 +77,7 @@
     <Compile Include="System.DateTime\Yesterday.cs" />
     <Compile Include="System.Guid\IsEmpty.cs" />
     <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.Object\BindValues.cs" />
     <Compile Include="System.Object\ConvertTo.cs" />
     <Compile Include="System.Object\IsBetween.cs" />
     <Compile Include="System.Object\IsDefault.cs" />
