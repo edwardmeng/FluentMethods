@@ -93,13 +93,14 @@ public static partial class Extensions
             }
         }
 
-        public object GetValue()
+        public Enum GetValue()
         {
-            return _field.GetValue(null);
+            return (Enum)_field.GetValue(null);
         }
     }
 
     private static readonly Hashtable _typeMembersCache = new Hashtable();
+    private static readonly Hashtable _typeDistinctCache = new Hashtable();
     private static readonly Hashtable _enumMembersCache = new Hashtable();
 
     /// <summary>
@@ -123,17 +124,17 @@ public static partial class Extensions
         {
             if (!_enumMembersCache.ContainsKey(@enum))
             {
-                _enumMembersCache.Add(@enum, @enum.GetType().GetEnumMembers().Where(member =>
+                _enumMembersCache.Add(@enum, @enum.GetType().GetDistinctEnumMembers().Where(member =>
                 {
 #if Net35
                     var flagValue = ((IConvertible)((EnumFieldDescriptor)member).GetValue()).ToInt32(System.Globalization.CultureInfo.CurrentCulture);
                     return (((IConvertible)@enum).ToInt32(System.Globalization.CultureInfo.CurrentCulture) & flagValue) == flagValue;
 #else
-                    return @enum.HasFlag((Enum) ((EnumFieldDescriptor) member).GetValue());
+                    return @enum.HasFlag((Enum)((EnumFieldDescriptor)member).GetValue());
 #endif
                 }).ToArray());
             }
-            return (IEnumerable<MemberDescriptor>) _enumMembersCache[@enum];
+            return (IEnumerable<MemberDescriptor>)_enumMembersCache[@enum];
         }
     }
 
@@ -150,13 +151,52 @@ public static partial class Extensions
             {
                 FieldInfo[] fields;
 #if NetCore
-                fields = type.GetTypeInfo().GetFields(BindingFlags.Static | BindingFlags.Public);
+                fields = type.GetTypeInfo().GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.DeclaredOnly);
 #else
-                fields = type.GetFields(BindingFlags.Static | BindingFlags.Public);
+                fields = type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.DeclaredOnly);
 #endif
                 _typeMembersCache.Add(type, fields.Select(field => new EnumFieldDescriptor(field)).ToArray());
             }
             return (IEnumerable<MemberDescriptor>)_typeMembersCache[type];
+        }
+    }
+
+    private static IEnumerable<MemberDescriptor> GetDistinctEnumMembers(this Type type)
+    {
+        lock (_typeDistinctCache.SyncRoot)
+        {
+            if (!_typeDistinctCache.ContainsKey(type))
+            {
+                var members = type.GetEnumMembers().ToList();
+                var distinctMembers = new List<MemberDescriptor>();
+                for (var i = 0; i < members.Count; i++)
+                {
+                    var remainValue = ((IConvertible)((EnumFieldDescriptor)members[i]).GetValue()).ToInt32(System.Globalization.CultureInfo.CurrentCulture);
+                    for (var j = 0; j < members.Count; j++)
+                    {
+                        if (i != j)
+                        {
+                            var memberValue = ((IConvertible)((EnumFieldDescriptor)members[j]).GetValue()).ToInt32(System.Globalization.CultureInfo.CurrentCulture);
+                            if ((remainValue & memberValue) == memberValue)
+                            {
+                                remainValue &= ~memberValue;
+                                if (remainValue == 0) break;
+                            }
+                        }
+                    }
+                    if (remainValue == 0)
+                    {
+                        members.RemoveAt(i);
+                        i--;
+                    }
+                    else
+                    {
+                        distinctMembers.Add(members[i]);
+                    }
+                }
+                _typeDistinctCache.Add(type, distinctMembers.ToArray());
+            }
+            return (IEnumerable<MemberDescriptor>)_typeDistinctCache[type];
         }
     }
 }
