@@ -87,6 +87,8 @@
     <Compile Include="System.Object\IsNotNull.cs" />
     <Compile Include="System.Object\IsNull.cs" />
     <Compile Include="System.Object\ReferenceEquals.cs" />
+    <Compile Include="System.Runtime.Serialization.SerializationInfo\GetValue.cs" />
+    <Compile Include="System.Runtime.Serialization\SerializeBinary.cs" />
     <Compile Include="System.String\Br2Nl.cs" />
     <Compile Include="System.String\FormatWith.cs" />
     <Compile Include="System.String\IfNullOrEmpty.cs" />

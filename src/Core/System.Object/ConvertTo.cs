@@ -97,7 +97,7 @@ public static partial class Extensions
             isClass = destinationType.IsClass;
 #endif
             if (!isClass && underlyingType == null)
-                throw new InvalidOperationException(string.Format(Strings.CannotConvertNullToValueType, destinationType));
+                throw new InvalidCastException(string.Format(Strings.CannotConvertNullToValueType, destinationType));
             return null;
         }
 #if NetCore
@@ -185,9 +185,9 @@ public static partial class Extensions
         var property = context?.PropertyDescriptor;
         if (property != null)
         {
-            return new InvalidOperationException(string.Format(Strings.CannotConvertPropertyValue, sourceString, destinationType, property.Name, property.ComponentType));
+            return new InvalidCastException(string.Format(Strings.CannotConvertPropertyValue, sourceString, destinationType, property.Name, property.ComponentType));
         }
-        return new InvalidOperationException(string.Format(Strings.CannotConvertValue, sourceString, destinationType));
+        return new InvalidCastException(string.Format(Strings.CannotConvertValue, sourceString, destinationType));
     }
 
     private static Array ConvertArray(Array sourceArray, Type destinationType)

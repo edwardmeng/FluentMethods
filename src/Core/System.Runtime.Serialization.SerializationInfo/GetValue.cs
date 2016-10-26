@@ -15,40 +15,47 @@ public static partial class Extensions
     /// <exception cref="SerializationException">An element with the specified <paramref name="name"/> is not found in the current instance.</exception>
     public static T GetValue<T>(this SerializationInfo info, string name)
     {
-        object value;
-        if (typeof(T) == typeof(bool))
-            value = info.GetBoolean(name);
-        else if (typeof(T) == typeof(byte))
-            value = info.GetByte(name);
-        else if (typeof(T) == typeof(char))
-            value = info.GetChar(name);
-        else if (typeof(T) == typeof(DateTime))
-            value = info.GetDateTime(name);
-        else if (typeof(T) == typeof(decimal))
-            value = info.GetDecimal(name);
-        else if (typeof(T) == typeof(double))
-            value = info.GetDouble(name);
-        else if (typeof(T) == typeof(short))
-            value = info.GetInt16(name);
-        else if (typeof(T) == typeof(int))
-            value = info.GetInt32(name);
-        else if (typeof(T) == typeof(long))
-            value = info.GetInt64(name);
-        else if (typeof(T) == typeof(sbyte))
-            value = info.GetSByte(name);
-        else if (typeof(T) == typeof(float))
-            value = info.GetSingle(name);
-        else if (typeof(T) == typeof(string))
-            value = info.GetString(name);
-        else if (typeof(T) == typeof(ushort))
-            value = info.GetUInt16(name);
-        else if (typeof(T) == typeof(uint))
-            value = info.GetUInt32(name);
-        else if (typeof(T) == typeof(ulong))
-            value = info.GetUInt64(name);
-        else
-            value = info.GetValue(name, typeof(T));
-        return (T)value;
+        try
+        {
+            object value;
+            if (typeof(T) == typeof(bool))
+                value = info.GetBoolean(name);
+            else if (typeof(T) == typeof(byte))
+                value = info.GetByte(name);
+            else if (typeof(T) == typeof(char))
+                value = info.GetChar(name);
+            else if (typeof(T) == typeof(DateTime))
+                value = info.GetDateTime(name);
+            else if (typeof(T) == typeof(decimal))
+                value = info.GetDecimal(name);
+            else if (typeof(T) == typeof(double))
+                value = info.GetDouble(name);
+            else if (typeof(T) == typeof(short))
+                value = info.GetInt16(name);
+            else if (typeof(T) == typeof(int))
+                value = info.GetInt32(name);
+            else if (typeof(T) == typeof(long))
+                value = info.GetInt64(name);
+            else if (typeof(T) == typeof(sbyte))
+                value = info.GetSByte(name);
+            else if (typeof(T) == typeof(float))
+                value = info.GetSingle(name);
+            else if (typeof(T) == typeof(string))
+                value = info.GetString(name);
+            else if (typeof(T) == typeof(ushort))
+                value = info.GetUInt16(name);
+            else if (typeof(T) == typeof(uint))
+                value = info.GetUInt32(name);
+            else if (typeof(T) == typeof(ulong))
+                value = info.GetUInt64(name);
+            else
+                value = info.GetValue(name, typeof(T));
+            return (T)value;
+        }
+        catch (InvalidCastException)
+        {
+            return info.GetValue(name, typeof(object)).ConvertTo<T>();
+        }
     }
 
     /// <summary>
