@@ -10,11 +10,12 @@ public static partial class Extensions
     /// <param name="info">The object that holds the serialized object data.</param>
     /// <param name="name">The name associated with the value to retrieve.</param>
     /// <returns>The object of the specified type associated with <paramref name="name"/>.</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="name"/> is null.</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="info"/> or <paramref name="name"/> is null.</exception>
     /// <exception cref="InvalidCastException">The value associated with <paramref name="name"/> cannot be converted to type <typeparamref name="T"/>.</exception>
     /// <exception cref="SerializationException">An element with the specified <paramref name="name"/> is not found in the current instance.</exception>
     public static T GetValue<T>(this SerializationInfo info, string name)
     {
+        if (info == null) throw new ArgumentNullException(nameof(info));
         try
         {
             object value;

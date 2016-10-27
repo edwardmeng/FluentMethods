@@ -89,9 +89,23 @@
     <Compile Include="System.Object\ReferenceEquals.cs" />
     <Compile Include="System.Runtime.Serialization.SerializationInfo\GetValue.cs" />
     <Compile Include="System.Runtime.Serialization\SerializeBinary.cs" />
+    <Compile Include="System.String\Nbsp2Ws.cs" />
+    <Compile Include="System.String\ToBoolean.cs" />
+    <Compile Include="System.String\ToDateTime.cs" />
+    <Compile Include="System.String\ToDecimal.cs" />
+    <Compile Include="System.String\ToFloat.cs" />
+    <Compile Include="System.String\ToGuid.cs" />
+    <Compile Include="System.String\ToInt16.cs" />
+    <Compile Include="System.String\ToInt.cs" />
+    <Compile Include="System.String\ToInt64.cs" />
     <Compile Include="System.String\Br2Nl.cs" />
     <Compile Include="System.String\FormatWith.cs" />
     <Compile Include="System.String\IfNullOrEmpty.cs" />
+    <Compile Include="System.String\IsBool.cs" />
+    <Compile Include="System.String\IsDateTime.cs" />
+    <Compile Include="System.String\IsGuid.cs" />
+    <Compile Include="System.String\IsNumber.cs" />
+    <Compile Include="System.String\IsInteger.cs" />
     <Compile Include="System.String\IsNotNullOrEmpty.cs" />
     <Compile Include="System.String\IsNotNullOrWhiteSpace.cs" />
     <Compile Include="System.String\IsNullOrEmpty.cs" />
@@ -103,6 +117,16 @@
     <Compile Include="System.String\ToPlural.cs" />
     <Compile Include="System.String\ToTitle.cs" />
     <Compile Include="System.String\Truncate.cs" />
+    <Compile Include="System.String\Ws2Nbsp.cs" />
+    <Compile Include="System.String\XmlDecode.cs" />
+    <Compile Include="System.String\XmlEncode.cs" />
+    <Compile Include="TArray\Add.cs" />
+    <Compile Include="TArray\Insert.cs" />
+    <Compile Include="TArray\Remove.cs" />
+    <Compile Include="TArray\RemoveAll.cs" />
+    <Compile Include="TArray\RemoveAt.cs" />
+    <Compile Include="TArray\Slice.cs" />
+    <Compile Include="TArray\Union.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
