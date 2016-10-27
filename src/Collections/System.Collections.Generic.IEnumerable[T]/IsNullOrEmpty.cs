@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 public static partial class Extensions
 {
@@ -12,6 +13,6 @@ public static partial class Extensions
     [DebuggerStepThrough]
     public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
     {
-        return source == null || source.IsEmpty();
+        return source == null || !source.Any();
     }
 }

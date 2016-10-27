@@ -9,7 +9,7 @@ namespace FluentMethods.UnitTests
 #else
         [NUnit.Framework.Test]
 #endif
-        public void ToString()
+        public new void ToString()
         {
             bool @thisTrue = true;
             bool @thisFalse = false;

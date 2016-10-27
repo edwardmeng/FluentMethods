@@ -4,7 +4,6 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>67223546-2f0a-4a08-b740-5d9cfaa4e49c</ProjectGuid>
@@ -71,12 +70,6 @@
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsEmpty.cs">
-      <Link>System.Collections.Generic.IEnumerable[T]\IsEmpty.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs">
-      <Link>System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs</Link>
     </Compile>
@@ -85,6 +78,9 @@
     </Compile>
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\Join.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\Join.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IList[T]\AsReadOnly.cs" >
+      <Link>System.Collections.Generic.IList[T]\AsReadOnly.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

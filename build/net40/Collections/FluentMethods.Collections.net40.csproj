@@ -95,12 +95,6 @@
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsEmpty.cs">
-      <Link>System.Collections.Generic.IEnumerable[T]\IsEmpty.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs">
-      <Link>System.Collections.Generic.IEnumerable[T]\IsNotEmpty.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs</Link>
     </Compile>
@@ -109,6 +103,9 @@
     </Compile>
     <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IEnumerable[T]\Join.cs">
       <Link>System.Collections.Generic.IEnumerable[T]\Join.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Collections\System.Collections.Generic.IList[T]\AsReadOnly.cs" >
+      <Link>System.Collections.Generic.IList[T]\AsReadOnly.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
