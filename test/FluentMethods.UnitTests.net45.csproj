@@ -75,6 +75,10 @@
     <Compile Include="System.DateTime\StartOfYear.cs" />
     <Compile Include="System.DateTime\Tomorrow.cs" />
     <Compile Include="System.DateTime\Yesterday.cs" />
+    <Compile Include="System.Enum\AddFlag.cs" />
+    <Compile Include="System.Enum\GetEnumMembers.cs" />
+    <Compile Include="System.Enum\HasFlag.cs" />
+    <Compile Include="System.Enum\RemoveFlag.cs" />
     <Compile Include="System.Guid\IsEmpty.cs" />
     <Compile Include="System.Guid\IsNotEmpty.cs" />
     <Compile Include="System.Object\BindValues.cs" />
