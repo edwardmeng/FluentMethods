@@ -18,16 +18,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException"><paramref name="dictionary"/> is null.</exception>
     public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
     {
-        if (dictionary == null)
-        {
-            throw new ArgumentNullException(nameof(dictionary));
-        }
-        if (!dictionary.ContainsKey(key))
-        {
-            dictionary.Add(key, value);
-        }
-
-        return dictionary[key];
+        return dictionary.GetOrAdd(key, x => value);
     }
 
     /// <summary>
@@ -50,11 +41,12 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(dictionary));
         }
-        if (!dictionary.ContainsKey(key))
+        TValue value;
+        if (!dictionary.TryGetValue(key, out value))
         {
-            dictionary.Add(key, valueFactory(key));
+            value = valueFactory(key);
+            dictionary.Add(key,value);
         }
-
-        return dictionary[key];
+        return value;
     }
 }

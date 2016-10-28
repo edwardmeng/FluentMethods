@@ -17,18 +17,7 @@ public static partial class Extensions
     /// </exception>
     public static void AddOrUpdate<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
     {
-        if (dictionary == null)
-        {
-            throw new ArgumentNullException(nameof(dictionary));
-        }
-        if (!dictionary.ContainsKey(key))
-        {
-            dictionary.Add(key, value);
-        }
-        else
-        {
-            dictionary[key] = value;
-        }
+        dictionary.AddOrUpdate(key, value, (x, y) => value);
     }
 
     /// <summary>
@@ -47,18 +36,7 @@ public static partial class Extensions
     /// <exception cref="ArgumentNullException"><paramref name="dictionary"/> is null.</exception>
     public static void AddOrUpdate<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue addValue, Func<TKey, TValue, TValue> updateValueFactory)
     {
-        if (dictionary == null)
-        {
-            throw new ArgumentNullException(nameof(dictionary));
-        }
-        if (!dictionary.ContainsKey(key))
-        {
-            dictionary.Add(key, addValue);
-        }
-        else
-        {
-            dictionary[key] = updateValueFactory(key, dictionary[key]);
-        }
+        dictionary.AddOrUpdate(key, x => addValue, updateValueFactory);
     }
 
     /// <summary>
