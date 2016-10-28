@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Data.Common;
+using System.Data;
 
 public static partial class Extensions
 {
     /// <summary>
-    ///     A DbCommand extension method that executes the scalar as or default operation.
+    ///     A IDbCommand extension method that executes the scalar as or default operation.
     /// </summary>
     /// <typeparam name="T">Generic type parameter.</typeparam>
     /// <param name="command">The command to act on.</param>
     /// <param name="defaultValueFactory">The default value factory.</param>
     /// <returns>A T.</returns>
-    public static T ExecuteScalarOrDefault<T>(this DbCommand command, Func<DbCommand, T> defaultValueFactory)
+    public static T ExecuteScalarOrDefault<T>(this IDbCommand command, Func<IDbCommand, T> defaultValueFactory)
     {
         if (command == null)
         {
@@ -26,7 +26,7 @@ public static partial class Extensions
     /// <param name="command">The command to act on.</param>
     /// <param name="defaultValue">The default value.</param>
     /// <returns>A T.</returns>
-    public static T ExecuteScalarOrDefault<T>(this DbCommand command, T defaultValue)
+    public static T ExecuteScalarOrDefault<T>(this IDbCommand command, T defaultValue)
     {
         return command.ExecuteScalarOrDefault(x => defaultValue);
     }
@@ -37,7 +37,7 @@ public static partial class Extensions
     /// <typeparam name="T">Generic type parameter.</typeparam>
     /// <param name="command">The command to act on.</param>
     /// <returns>A T.</returns>
-    public static T ExecuteScalarOrDefault<T>(this DbCommand command)
+    public static T ExecuteScalarOrDefault<T>(this IDbCommand command)
     {
         return command.ExecuteScalarOrDefault(default(T));
     }

@@ -89,6 +89,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net45", "test\FluentMethods.UnitTests.net45.csproj", "{A73E2108-AB73-426D-8729-0279866C8416}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.Data.net45", "build\net45\Data\FluentMethods.Data.net45.csproj", "{3FC42139-28D2-43E0-B378-82928CC2971A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +217,10 @@ Global
 		{A73E2108-AB73-426D-8729-0279866C8416}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A73E2108-AB73-426D-8729-0279866C8416}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A73E2108-AB73-426D-8729-0279866C8416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC42139-28D2-43E0-B378-82928CC2971A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC42139-28D2-43E0-B378-82928CC2971A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC42139-28D2-43E0-B378-82928CC2971A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC42139-28D2-43E0-B378-82928CC2971A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -250,5 +256,6 @@ Global
 		{684B7946-6F6B-49F6-BEA8-58C7D67A13B4} = {D6181155-E09D-4048-9455-FF2396EFB18B}
 		{A7790D34-8DA1-4950-90F7-0622FCC79767} = {D6181155-E09D-4048-9455-FF2396EFB18B}
 		{A73E2108-AB73-426D-8729-0279866C8416} = {5F9ED392-A817-4C20-8C21-E6BB1A3893B8}
+		{3FC42139-28D2-43E0-B378-82928CC2971A} = {1B4C9938-AB2C-47B0-B45F-257C9206F381}
 	EndGlobalSection
 EndGlobal

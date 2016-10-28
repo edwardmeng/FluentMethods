@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Data.Common;
+using System.Data;
 
 public static partial class Extensions
 {
     /// <summary>
-    ///     A DbCommand extension method that executes the scalar operation.
+    ///     Executes the command scalar operation.
     /// </summary>
-    /// <typeparam name="T">Generic type parameter.</typeparam>
-    /// <param name="command">The command to act on.</param>
-    /// <returns>A T.</returns>
-    public static T ExecuteScalar<T>(this DbCommand command)
+    /// <typeparam name="T">The type of return value.</typeparam>
+    /// <param name="command">The command to be executed.</param>
+    /// <returns>The scalar value.</returns>
+    public static T ExecuteScalar<T>(this IDbCommand command)
     {
         if (command == null)
         {

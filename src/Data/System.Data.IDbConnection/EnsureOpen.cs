@@ -4,7 +4,7 @@ using System.Data;
 public static partial class Extensions
 {
     /// <summary>
-    ///     An IDbConnection extension method that ensures that open.
+    ///     Ensures the specified <see cref="IDbConnection"/> opens
     /// </summary>
     /// <param name="connection">The connection to act on.</param>
     public static void EnsureOpen(this IDbConnection connection)
