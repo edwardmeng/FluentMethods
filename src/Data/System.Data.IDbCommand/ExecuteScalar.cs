@@ -15,6 +15,6 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(command));
         }
-        return (T)command.ExecuteScalar();
+        return command.ExecuteScalar().ConvertTo<T>();
     }
 }

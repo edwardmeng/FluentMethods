@@ -16,7 +16,12 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(command));
         }
-        return (T)(command.ExecuteScalar() ?? defaultValueFactory(command));
+        var value = command.ExecuteScalar();
+        if (value == null)
+        {
+            return defaultValueFactory(command);
+        }
+        return value.ConvertTo<T>();
     }
 
     /// <summary>

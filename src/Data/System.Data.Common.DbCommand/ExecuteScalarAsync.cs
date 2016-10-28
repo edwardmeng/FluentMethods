@@ -25,7 +25,7 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(command));
         }
-        return (T)await command.ExecuteScalarAsync(token);
+        return (await command.ExecuteScalarAsync(token)).ConvertTo<T>();
     }
 
     /// <summary>

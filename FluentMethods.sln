@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{78E94854-9AF4-4255-9855-0A9E044088C9}"
 	ProjectSection(SolutionItems) = preProject
 		FluentMethods.snk = FluentMethods.snk
+		global.json = global.json
 		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 	EndProjectSection
 EndProject

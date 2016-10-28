@@ -20,7 +20,7 @@ public static partial class Extensions
         var ordinal = reader.GetOrdinal(fieldName);
         if (ordinal == -1)
         {
-            throw new ArgumentException(string.Format(Strings.FieldCannotBeFound, fieldName));
+            throw new ArgumentException(string.Format(Strings.FieldCannotBeFound, fieldName), nameof(fieldName));
         }
         return reader.IsDBNull(ordinal) || ((reader.GetValue(ordinal) as INullable)?.IsNull ?? false);
     }

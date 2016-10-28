@@ -31,7 +31,9 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(defaultValueFactory));
         }
-        return (T)(await command.ExecuteScalarAsync(token) ?? await defaultValueFactory(command, token));
+        var value = await command.ExecuteScalarAsync(token);
+        if (value == null) return await defaultValueFactory(command, token);
+        return value.ConvertTo<T>();
     }
 
     /// <summary>
