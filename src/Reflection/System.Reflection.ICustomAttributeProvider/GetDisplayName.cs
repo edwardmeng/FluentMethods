@@ -9,9 +9,9 @@ public static partial class Extensions
     private static PropertyInfo GetNameProperty(Type type)
     {
 #if NetCore
-        var properties = type.GetTypeInfo().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+        var properties = type.GetTypeInfo().GetProperties(BindingFlags.Instance | BindingFlags.Public);
 #else
-        var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+        var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
 #endif
         return properties.FirstOrDefault(p => p.Name == "Name" && p.PropertyType == typeof(string)) ?? properties.FirstOrDefault(p => p.Name.EndsWith("Name") && p.PropertyType == typeof(string));
     }
@@ -50,11 +50,11 @@ public static partial class Extensions
 #endif
 
     /// <summary>
-    /// Retrieves the display name of the specified member.
+    /// Retrieves the display name of the specified <see cref="ICustomAttributeProvider"/>.
     /// </summary>
-    /// <param name="provider">The member to inspect.</param>
-    /// <param name="defaultValue">The default display name for the member.</param>
-    /// <returns>The display name of the specified member.</returns>
+    /// <param name="provider">The <see cref="ICustomAttributeProvider"/> to inspect.</param>
+    /// <param name="defaultValue">The default display name for the <see cref="ICustomAttributeProvider"/>.</param>
+    /// <returns>The display name of the specified <see cref="ICustomAttributeProvider"/>.</returns>
     public static string GetDisplayName<T>(this T provider, string defaultValue = null)
         where T : ICustomAttributeProvider
     {
@@ -62,11 +62,11 @@ public static partial class Extensions
     }
 
     /// <summary>
-    /// Retrieves the display name of the specified member.
+    /// Retrieves the display name of the specified <see cref="ICustomAttributeProvider"/>.
     /// </summary>
-    /// <param name="provider">The member to inspect.</param>
-    /// <param name="defaultValueFactory">The function used to generate the default display name for the member.</param>
-    /// <returns>The display name of the specified member.</returns>
+    /// <param name="provider">The <see cref="ICustomAttributeProvider"/> to inspect.</param>
+    /// <param name="defaultValueFactory">The function used to generate the default display name for the <see cref="ICustomAttributeProvider"/>.</param>
+    /// <returns>The display name of the specified <see cref="ICustomAttributeProvider"/>.</returns>
     public static string GetDisplayName<T>(this T provider, Func<string> defaultValueFactory)
         where T : ICustomAttributeProvider
     {
@@ -74,11 +74,11 @@ public static partial class Extensions
     }
 
     /// <summary>
-    /// Retrieves the display name of the specified member.
+    /// Retrieves the display name of the specified <see cref="ICustomAttributeProvider"/>.
     /// </summary>
-    /// <param name="provider">The member to inspect.</param>
-    /// <param name="defaultValueFactory">The function used to generate the default display name for the member.</param>
-    /// <returns>The display name of the specified member.</returns>
+    /// <param name="provider">The <see cref="ICustomAttributeProvider"/> to inspect.</param>
+    /// <param name="defaultValueFactory">The function used to generate the default display name for the <see cref="ICustomAttributeProvider"/>.</param>
+    /// <returns>The display name of the specified <see cref="ICustomAttributeProvider"/>.</returns>
     public static string GetDisplayName<T>(this T provider, Func<T, string> defaultValueFactory)
         where T : ICustomAttributeProvider
     {

@@ -4,10 +4,10 @@ using System.Reflection;
 public static partial class Extensions
 {
     /// <summary>
-    /// Retrieves a custom attribute of a specified type that is applied to a specified <see cref="ICustomAttributeProvider"/>, and optionally inspects the ancestors of that provider.
+    /// Retrieves a custom attribute of a specified type that is applied to a specified <see cref="ICustomAttributeProvider"/>, and optionally inspects the ancestors of that <see cref="ICustomAttributeProvider"/>.
     /// </summary>
     /// <typeparam name="T">The type of attribute to search for.</typeparam>
-    /// <param name="provider">The provider to inspect.</param>
+    /// <param name="provider">The <see cref="ICustomAttributeProvider"/> to inspect.</param>
     /// <param name="inherit"><c>true</c> to inspect the ancestors of <paramref name="provider"/>; otherwise, <c>false</c>.</param>
     /// <returns>A custom attribute that matches <typeparamref name="T"/>, or null if no such attribute is found.</returns>
     public static T GetCustomAttribute<T>(this ICustomAttributeProvider provider, bool inherit = true) where T : Attribute

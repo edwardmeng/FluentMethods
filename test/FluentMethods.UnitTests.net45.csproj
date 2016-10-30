@@ -37,6 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.103\lib\net45\System.Data.SQLite.dll</HintPath>
@@ -128,6 +129,13 @@
     <Compile Include="System.Object\IsNotNull.cs" />
     <Compile Include="System.Object\IsNull.cs" />
     <Compile Include="System.Object\ReferenceEquals.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\DescriptionClass.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\DisplayAnnotationClass.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\DisplayNameClass.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetDescription.cs" />
+    <Compile Include="System.Reflection.ICustomAttributeProvider\GetDisplayName.cs" />
     <Compile Include="System.Reflection.MethodInfo\IsAsync.cs" />
     <Compile Include="System.Reflection.TypeInfo\IsNullable.cs" />
     <Compile Include="System.Reflection.Type\IsNullable.cs" />
