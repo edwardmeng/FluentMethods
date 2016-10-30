@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.SqlTypes;
+﻿using System.Data.SqlTypes;
 using System.IO;
 using System.Xml;
 
@@ -38,9 +37,8 @@ public static partial class Extensions
     private static T UnwrapSqlValue<T>(object value)
     {
         value = UnwrapSqlValue(value);
-        if (value is T) return (T)value;
         var stream = value as Stream;
-        if (stream == null) return (T) Convert.ChangeType(value, typeof(T));
+        if (stream == null) return value.ConvertTo<T>();
         if (typeof(T) == typeof(byte[]))
         {
             using (var memoryStream = new MemoryStream())
@@ -66,6 +64,6 @@ public static partial class Extensions
                 return (T)(object)reader.ReadToEnd();
             }
         }
-        return (T)Convert.ChangeType(value, typeof(T));
+        return value.ConvertTo<T>();
     }
 }

@@ -57,6 +57,12 @@
     <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\IsDefined.cs">
       <Link>System.Reflection.ICustomAttributeProvider\IsDefined.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDescription.cs" >
+      <Link>System.Reflection.ICustomAttributeProvider\GetDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs" >
+      <Link>System.Reflection.ICustomAttributeProvider\GetDisplayName.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\src\Reflection\System.Reflection.MemberInfo\GetCustomAttribute.cs">
       <Link>System.Reflection.MemberInfo\GetCustomAttribute.cs</Link>
     </Compile>
@@ -72,17 +78,8 @@
     <Compile Include="..\..\..\src\Reflection\System.Reflection.ParameterInfo\GetCustomAttributes.cs">
       <Link>System.Reflection.ParameterInfo\GetCustomAttributes.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.ParameterInfo\GetDescription.cs">
-      <Link>System.Reflection.ParameterInfo\GetDescription.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\src\Reflection\System.Reflection.ParameterInfo\IsDefined.cs">
       <Link>System.Reflection.ParameterInfo\IsDefined.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.MemberInfo\GetDescription.cs">
-      <Link>System.Reflection.MemberInfo\GetDescription.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.MemberInfo\GetDisplayName.cs">
-      <Link>System.Reflection.MemberInfo\GetDisplayName.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Reflection\System.Type\IsNullable.cs">
       <Link>System.Reflection.Type\IsNullable.cs</Link>
