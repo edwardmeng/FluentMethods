@@ -128,6 +128,7 @@
     <Compile Include="System.Object\IsNotNull.cs" />
     <Compile Include="System.Object\IsNull.cs" />
     <Compile Include="System.Object\ReferenceEquals.cs" />
+    <Compile Include="System.Reflection.MethodInfo\IsAsync.cs" />
     <Compile Include="System.Reflection.TypeInfo\IsNullable.cs" />
     <Compile Include="System.Reflection.Type\IsNullable.cs" />
     <Compile Include="System.Runtime.Serialization.SerializationInfo\GetValue.cs" />

@@ -5,11 +5,11 @@ using System.Reflection;
 public static partial class Extensions
 {
     /// <summary>
-    /// Retrieves the description of the specified member.
+    /// Retrieves the description of the specified provider.
     /// </summary>
     /// <param name="provider">The provider to inspect.</param>
-    /// <param name="defaultValue">The default description for the member.</param>
-    /// <returns>The description of the specified member.</returns>
+    /// <param name="defaultValue">The default description for the provider.</param>
+    /// <returns>The description of the specified provider.</returns>
     public static string GetDescription<T>(this T provider, string defaultValue = null)
         where T : ICustomAttributeProvider
     {
@@ -17,11 +17,11 @@ public static partial class Extensions
     }
 
     /// <summary>
-    /// Retrieves the description of the specified member.
+    /// Retrieves the description of the specified provider.
     /// </summary>
     /// <param name="provider">The provider to inspect.</param>
-    /// <param name="defaultValueFactory">The function used to generate the default description for the member.</param>
-    /// <returns>The description of the specified member.</returns>
+    /// <param name="defaultValueFactory">The function used to generate the default description for the provider.</param>
+    /// <returns>The description of the specified provider.</returns>
     public static string GetDescription<T>(this T provider, Func<string> defaultValueFactory)
         where T : ICustomAttributeProvider
     {
@@ -29,11 +29,11 @@ public static partial class Extensions
     }
 
     /// <summary>
-    /// Retrieves the description of the specified member.
+    /// Retrieves the description of the specified provider.
     /// </summary>
     /// <param name="provider">The provider to inspect.</param>
-    /// <param name="defaultValueFactory">The function used to generate the default description for the member.</param>
-    /// <returns>The description of the specified member.</returns>
+    /// <param name="defaultValueFactory">The function used to generate the default description for the provider.</param>
+    /// <returns>The description of the specified provider.</returns>
     public static string GetDescription<T>(this T provider, Func<T, string> defaultValueFactory)
         where T: ICustomAttributeProvider
     {

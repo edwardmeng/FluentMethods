@@ -28,20 +28,14 @@
     <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\IsDefined.cs">
       <Link>System.Reflection.ICustomAttributeProvider\IsDefined.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDescription.cs" >
+    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDescription.cs">
       <Link>System.Reflection.ICustomAttributeProvider\GetDescription.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs" >
+    <Compile Include="..\..\..\src\Reflection\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs">
       <Link>System.Reflection.ICustomAttributeProvider\GetDisplayName.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.MemberInfo\IsDefined.cs">
-      <Link>System.Reflection.MemberInfo\IsDefined.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Reflection\System.Reflection.MethodInfo\IsAsync.cs">
       <Link>System.Reflection.MethodInfo\IsAsync.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Reflection\System.Reflection.ParameterInfo\IsDefined.cs">
-      <Link>System.Reflection.ParameterInfo\IsDefined.cs</Link>
     </Compile>
     <Compile Include="..\..\..\src\Reflection\System.Reflection.TypeInfo\IsNullable.cs">
       <Link>System.Reflection.TypeInfo\IsNullable.cs</Link>
