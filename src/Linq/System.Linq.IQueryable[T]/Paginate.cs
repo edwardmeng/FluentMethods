@@ -33,13 +33,13 @@ public static partial class Extensions
             throw new ArgumentOutOfRangeException(nameof(pageSize), Strings.NeedNonNegNum);
         }
         var query = source;
-        if (pageIndex > 0 && pageSize != int.MaxValue)
+        if (pageIndex > 0 && pageSize != int.MaxValue && pageSize > 0)
         {
-            query = Queryable.Skip(query, pageIndex * pageSize);
+            query = query.Skip(pageIndex * pageSize);
         }
         if (pageSize != int.MaxValue)
         {
-            query = Queryable.Take(query, pageSize);
+            query = query.Take(pageSize);
         }
         return query;
     }

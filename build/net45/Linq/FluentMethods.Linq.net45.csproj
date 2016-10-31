@@ -160,27 +160,6 @@
     <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable[T]\WhereIf.cs">
       <Link>System.Linq.IQueryable[T]\WhereIf.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Any.cs">
-      <Link>System.Linq.IQueryable\Any.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Count.cs">
-      <Link>System.Linq.IQueryable\Count.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\OrderBy.cs">
-      <Link>System.Linq.IQueryable\OrderBy.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Paginate.cs">
-      <Link>System.Linq.IQueryable\Paginate.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Range.cs">
-      <Link>System.Linq.IQueryable\Range.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Skip.cs">
-      <Link>System.Linq.IQueryable\Skip.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Take.cs">
-      <Link>System.Linq.IQueryable\Take.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\FluentMethods.snk">

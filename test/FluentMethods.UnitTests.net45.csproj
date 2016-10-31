@@ -119,6 +119,9 @@
     <Compile Include="System.Enum\RemoveFlag.cs" />
     <Compile Include="System.Guid\IsEmpty.cs" />
     <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\WhereIf.cs" />
     <Compile Include="System.Object\BindValues.cs" />
     <Compile Include="System.Object\ConvertTo.cs" />
     <Compile Include="System.Object\IsBetween.cs" />

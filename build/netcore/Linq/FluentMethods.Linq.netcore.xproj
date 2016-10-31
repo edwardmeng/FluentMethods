@@ -4,7 +4,6 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
     <ProjectGuid>c0fcc8b4-c704-4236-8258-3a14d70d179d</ProjectGuid>
@@ -133,27 +132,6 @@
     </Compile>
     <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable[T]\WhereIf.cs">
       <Link>System.Linq.IQueryable[T]\WhereIf.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Any.cs">
-      <Link>System.Linq.IQueryable\Any.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Count.cs">
-      <Link>System.Linq.IQueryable\Count.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\OrderBy.cs">
-      <Link>System.Linq.IQueryable\OrderBy.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Paginate.cs">
-      <Link>System.Linq.IQueryable\Paginate.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Range.cs">
-      <Link>System.Linq.IQueryable\Range.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Skip.cs">
-      <Link>System.Linq.IQueryable\Skip.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\src\Linq\System.Linq.IQueryable\Take.cs">
-      <Link>System.Linq.IQueryable\Take.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

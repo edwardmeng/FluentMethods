@@ -35,11 +35,11 @@ public static partial class Extensions
         var query = source;
         if (index > 0)
         {
-            query = Queryable.Skip(query, index);
+            query = query.Skip(index);
         }
         if (count != int.MaxValue)
         {
-            query = Queryable.Take(query, count);
+            query = query.Take(count);
         }
         return query;
     }
