@@ -132,4 +132,43 @@
   <data name="Rank_MultiDimNotSupported" xml:space="preserve">
     <value>Only single dimension arrays are supported here.</value>
   </data>
+  <data name="CannotCastNullToValueType" xml:space="preserve">
+    <value>The value of field '{0}' is null, and cannot be converted to {1}.</value>
+  </data>
+  <data name="FieldCannotBeFound" xml:space="preserve">
+    <value>The field '{0}' does not belong to the record.</value>
+  </data>
+  <data name="ArgumentOutOfRange_NeedPosNum" xml:space="preserve">
+    <value>Positive number required.</value>
+  </data>
+  <data name="NotSupported_UnreadableStream" xml:space="preserve">
+    <value>Stream does not support reading.</value>
+  </data>
+  <data name="NotSupported_UnwritableStream" xml:space="preserve">
+    <value>Stream does not support writing.</value>
+  </data>
+  <data name="ObjectDisposed_StreamClosed" xml:space="preserve">
+    <value>Cannot access a closed Stream.</value>
+  </data>
+  <data name="CannotFindTypeMember" xml:space="preserve">
+    <value>The field or property '{0}' cannot be found in the type {1}.</value>
+  </data>
+  <data name="CannotNullOrEmpty" xml:space="preserve">
+    <value>The value cannot be null or empty.</value>
+  </data>
+  <data name="InvalidOrderSyntax" xml:space="preserve">
+    <value>The order syntax is invalid: {0}.</value>
+  </data>
+  <data name="MoreThanOneMatch" xml:space="preserve">
+    <value>Sequence contains more than one matching element</value>
+  </data>
+  <data name="NeedNonNegNum" xml:space="preserve">
+    <value>Non negative number is required.</value>
+  </data>
+  <data name="NoElements" xml:space="preserve">
+    <value>Sequence contains no elements</value>
+  </data>
+  <data name="NoMatch" xml:space="preserve">
+    <value>Sequence contains no matching element</value>
+  </data>
 </root>

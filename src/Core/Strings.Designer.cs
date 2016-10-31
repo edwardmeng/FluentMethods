@@ -110,5 +110,122 @@ namespace FluentMethods {
                 return ResourceManager.GetString("Rank_MultiDimNotSupported", resourceCulture);
             }
         }
+		
+		/// <summary>
+        ///   查找类似 The value of field &apos;{0}&apos; is null, and cannot be converted to {1}. 的本地化字符串。
+        /// </summary>
+        internal static string CannotCastNullToValueType {
+            get {
+                return ResourceManager.GetString("CannotCastNullToValueType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The field &apos;{0}&apos; does not belong to the record. 的本地化字符串。
+        /// </summary>
+        internal static string FieldCannotBeFound {
+            get {
+                return ResourceManager.GetString("FieldCannotBeFound", resourceCulture);
+            }
+        }
+        
+		/// <summary>
+        ///   查找类似 Positive number required. 的本地化字符串。
+        /// </summary>
+        internal static string ArgumentOutOfRange_NeedPosNum {
+            get {
+                return ResourceManager.GetString("ArgumentOutOfRange_NeedPosNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stream does not support reading. 的本地化字符串。
+        /// </summary>
+        internal static string NotSupported_UnreadableStream {
+            get {
+                return ResourceManager.GetString("NotSupported_UnreadableStream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stream does not support writing. 的本地化字符串。
+        /// </summary>
+        internal static string NotSupported_UnwritableStream {
+            get {
+                return ResourceManager.GetString("NotSupported_UnwritableStream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cannot access a closed Stream. 的本地化字符串。
+        /// </summary>
+        internal static string ObjectDisposed_StreamClosed {
+            get {
+                return ResourceManager.GetString("ObjectDisposed_StreamClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The field or property &apos;{0}&apos; cannot be found in the type {1}. 的本地化字符串。
+        /// </summary>
+        internal static string CannotFindTypeMember {
+            get {
+                return ResourceManager.GetString("CannotFindTypeMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The value cannot be null or empty. 的本地化字符串。
+        /// </summary>
+        internal static string CannotNullOrEmpty {
+            get {
+                return ResourceManager.GetString("CannotNullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The order syntax is invalid: {0}. 的本地化字符串。
+        /// </summary>
+        internal static string InvalidOrderSyntax {
+            get {
+                return ResourceManager.GetString("InvalidOrderSyntax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sequence contains more than one matching element 的本地化字符串。
+        /// </summary>
+        internal static string MoreThanOneMatch {
+            get {
+                return ResourceManager.GetString("MoreThanOneMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Non negative number is required. 的本地化字符串。
+        /// </summary>
+        internal static string NeedNonNegNum {
+            get {
+                return ResourceManager.GetString("NeedNonNegNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sequence contains no elements 的本地化字符串。
+        /// </summary>
+        internal static string NoElements {
+            get {
+                return ResourceManager.GetString("NoElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sequence contains no matching element 的本地化字符串。
+        /// </summary>
+        internal static string NoMatch {
+            get {
+                return ResourceManager.GetString("NoMatch", resourceCulture);
+            }
+		}
     }
 }

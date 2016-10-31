@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>0d4fd2c5-da94-44e0-944d-d568913691aa</ProjectGuid>
+    <RootNamespace>FluentMethods.Core.netcore</RootNamespace>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Strings.Designer.cs">
+      <Link>Strings.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Add.cs">
+      <Link>System.Array\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\BinarySearch.cs">
+      <Link>System.Array\BinarySearch.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Clear.cs">
+      <Link>System.Array\Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\CopyTo.cs">
+      <Link>System.Array\CopyTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\IndexOf.cs">
+      <Link>System.Array\IndexOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\LastIndexOf.cs">
+      <Link>System.Array\LastIndexOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Reverse.cs">
+      <Link>System.Array\Reverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Sort.cs">
+      <Link>System.Array\Sort.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Traverse.cs">
+      <Link>System.Array\Traverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\TraverseAsync.cs">
+      <Link>System.Array\TraverseAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Insert.cs">
+      <Link>System.Array\Insert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Remove.cs">
+      <Link>System.Array\Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\Slice.cs">
+      <Link>System.Array\Slice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\WithinIndex.cs">
+      <Link>System.Array\WithinIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Array\RemoveAt.cs">
+      <Link>System.Array\RemoveAt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Boolean\IfFalse.cs">
+      <Link>System.Boolean\IfFalse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Boolean\IfTrue.cs">
+      <Link>System.Boolean\IfTrue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Boolean\ToString.cs">
+      <Link>System.Boolean\ToString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.ByteArray\ToBase64String.cs">
+      <Link>System.ByteArray\ToBase64String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\GetNumericValue.cs">
+      <Link>System.Char\GetNumericValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsControl.cs">
+      <Link>System.Char\IsControl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsDigit.cs">
+      <Link>System.Char\IsDigit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsHighSurrogate.cs">
+      <Link>System.Char\IsHighSurrogate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsLetter.cs">
+      <Link>System.Char\IsLetter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsLetterOrDigit.cs">
+      <Link>System.Char\IsLetterOrDigit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsLower.cs">
+      <Link>System.Char\IsLower.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsLowSurrogate.cs">
+      <Link>System.Char\IsLowSurrogate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsNumber.cs">
+      <Link>System.Char\IsNumber.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsPunctuation.cs">
+      <Link>System.Char\IsPunctuation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsSeparator.cs">
+      <Link>System.Char\IsSeparator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsSurrogate.cs">
+      <Link>System.Char\IsSurrogate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsSymbol.cs">
+      <Link>System.Char\IsSymbol.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsUpper.cs">
+      <Link>System.Char\IsUpper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\IsWhiteSpace.cs">
+      <Link>System.Char\IsWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\ToLower.cs">
+      <Link>System.Char\ToLower.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\ToLowerInvariant.cs">
+      <Link>System.Char\ToLowerInvariant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\ToUpper.cs">
+      <Link>System.Char\ToUpper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Char\ToUpperInvariant.cs">
+      <Link>System.Char\ToUpperInvariant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\Age.cs">
+      <Link>System.DateTime\Age.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\EndOfDay.cs">
+      <Link>System.DateTime\EndOfDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\EndOfMonth.cs">
+      <Link>System.DateTime\EndOfMonth.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\EndOfWeek.cs">
+      <Link>System.DateTime\EndOfWeek.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\EndOfYear.cs">
+      <Link>System.DateTime\EndOfYear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsAfternoon.cs">
+      <Link>System.DateTime\IsAfternoon.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsFuture.cs">
+      <Link>System.DateTime\IsFuture.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsMorning.cs">
+      <Link>System.DateTime\IsMorning.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsPast.cs">
+      <Link>System.DateTime\IsPast.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsToday.cs">
+      <Link>System.DateTime\IsToday.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsWeekDay.cs">
+      <Link>System.DateTime\IsWeekDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\IsWeekend.cs">
+      <Link>System.DateTime\IsWeekend.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\StartOfDay.cs">
+      <Link>System.DateTime\StartOfDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\StartOfMonth.cs">
+      <Link>System.DateTime\StartOfMonth.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\StartOfWeek.cs">
+      <Link>System.DateTime\StartOfWeek.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\StartOfYear.cs">
+      <Link>System.DateTime\StartOfYear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToFullDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToFullDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToLongDateShortTimeString.cs">
+      <Link>System.DateTime\ToString\ToLongDateShortTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToLongDateString.cs">
+      <Link>System.DateTime\ToString\ToLongDateString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToLongDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToLongDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToLongTimeString.cs">
+      <Link>System.DateTime\ToString\ToLongTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\Tomorrow.cs">
+      <Link>System.DateTime\Tomorrow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToMonthDayString.cs">
+      <Link>System.DateTime\ToString\ToMonthDayString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToRFC1123String.cs">
+      <Link>System.DateTime\ToString\ToRFC1123String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToShortDateLongTimeString.cs">
+      <Link>System.DateTime\ToString\ToShortDateLongTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToShortDateString.cs">
+      <Link>System.DateTime\ToString\ToShortDateString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToShortDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToShortDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToShortTimeString.cs">
+      <Link>System.DateTime\ToString\ToShortTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToSortableDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToSortableDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToUniversalSortableDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToUniversalSortableDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToUniversalSortableLongDateTimeString.cs">
+      <Link>System.DateTime\ToString\ToUniversalSortableLongDateTimeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\ToString\ToYearMonthString.cs">
+      <Link>System.DateTime\ToString\ToYearMonthString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.DateTime\Yesterday.cs">
+      <Link>System.DateTime\Yesterday.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Abs.cs">
+      <Link>System.Decimal\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Ceiling.cs">
+      <Link>System.Decimal\Ceiling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Floor.cs">
+      <Link>System.Decimal\Floor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Round.cs">
+      <Link>System.Decimal\Round.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Sign.cs">
+      <Link>System.Decimal\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Decimal\Truncate.cs">
+      <Link>System.Decimal\Truncate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Abs.cs">
+      <Link>System.Double\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Acos.cs">
+      <Link>System.Double\Acos.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Asin.cs">
+      <Link>System.Double\Asin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Atan.cs">
+      <Link>System.Double\Atan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Ceiling.cs">
+      <Link>System.Double\Ceiling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Cos.cs">
+      <Link>System.Double\Cos.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Cosh.cs">
+      <Link>System.Double\Cosh.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Exp.cs">
+      <Link>System.Double\Exp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Floor.cs">
+      <Link>System.Double\Floor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\IsInfinity.cs">
+      <Link>System.Double\IsInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\IsNaN.cs">
+      <Link>System.Double\IsNaN.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\IsNegativeInfinity.cs">
+      <Link>System.Double\IsNegativeInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\IsPositiveInfinity.cs">
+      <Link>System.Double\IsPositiveInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Log.cs">
+      <Link>System.Double\Log.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Log10.cs">
+      <Link>System.Double\Log10.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Pow.cs">
+      <Link>System.Double\Pow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Round.cs">
+      <Link>System.Double\Round.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Sign.cs">
+      <Link>System.Double\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Sin.cs">
+      <Link>System.Double\Sin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Sinh.cs">
+      <Link>System.Double\Sinh.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Sqrt.cs">
+      <Link>System.Double\Sqrt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Tan.cs">
+      <Link>System.Double\Tan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Tanh.cs">
+      <Link>System.Double\Tanh.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Double\Truncate.cs">
+      <Link>System.Double\Truncate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Enum\AddFlag.cs">
+      <Link>System.Enum\AddFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Enum\GetEnumMembers.cs">
+      <Link>System.Enum\GetEnumMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Enum\HasFlag.cs">
+      <Link>System.Enum\HasFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Enum\RemoveFlag.cs">
+      <Link>System.Enum\RemoveFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Exception\ReThrow.cs">
+      <Link>System.Exception\ReThrow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int16\Abs.cs">
+      <Link>System.Int16\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int16\IsEven.cs">
+      <Link>System.Int16\IsEven.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int16\IsOdd.cs">
+      <Link>System.Int16\IsOdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int16\Sign.cs">
+      <Link>System.Int16\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int32\Abs.cs">
+      <Link>System.Int32\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int32\IsEven.cs">
+      <Link>System.Int32\IsEven.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int32\IsOdd.cs">
+      <Link>System.Int32\IsOdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int32\Sign.cs">
+      <Link>System.Int32\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int64\Abs.cs">
+      <Link>System.Int64\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int64\IsEven.cs">
+      <Link>System.Int64\IsEven.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int64\IsOdd.cs">
+      <Link>System.Int64\IsOdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Int64\Sign.cs">
+      <Link>System.Int64\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IServiceProvider\GetService.cs">
+      <Link>System.IServiceProvider\GetService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\BindValues.cs">
+      <Link>System.Object\BindValues.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\ConvertTo.cs">
+      <Link>System.Object\ConvertTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsBetween.cs">
+      <Link>System.Object\IsBetween.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsIn.cs">
+      <Link>System.Object\IsIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsInstanceOf.cs">
+      <Link>System.Object\IsInstanceOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsDefault.cs">
+      <Link>System.Object\IsDefault.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsNotNull.cs">
+      <Link>System.Object\IsNotNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsNull.cs">
+      <Link>System.Object\IsNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\IsNotIn.cs">
+      <Link>System.Object\IsNotIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Object\ReferenceEquals.cs">
+      <Link>System.Object\ReferenceEquals.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.SByte\Abs.cs">
+      <Link>System.SByte\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.SByte\IsEven.cs">
+      <Link>System.SByte\IsEven.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.SByte\IsOdd.cs">
+      <Link>System.SByte\IsOdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.SByte\Sign.cs">
+      <Link>System.SByte\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\Abs.cs">
+      <Link>System.Single\Abs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\IsInfinity.cs">
+      <Link>System.Single\IsInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\IsNaN.cs">
+      <Link>System.Single\IsNaN.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\IsNegativeInfinity.cs">
+      <Link>System.Single\IsNegativeInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\IsPositiveInfinity.cs">
+      <Link>System.Single\IsPositiveInfinity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Single\Sign.cs">
+      <Link>System.Single\Sign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Guid\IsEmpty.cs">
+      <Link>System.Guid\IsEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Guid\IsNotEmpty.cs">
+      <Link>System.Guid\IsNotEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Base64Decode.cs">
+      <Link>System.String\Base64Decode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Base64Encode.cs">
+      <Link>System.String\Base64Encode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Br2Nl.cs">
+      <Link>System.String\Br2Nl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\FormatWith.cs">
+      <Link>System.String\FormatWith.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IfNullOrEmpty.cs">
+      <Link>System.String\IfNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IfNullOrWhiteSpace.cs">
+      <Link>System.String\IfNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsBoolean.cs" >
+      <Link>System.String\IsBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsDateTime.cs" >
+      <Link>System.String\IsDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsGuid.cs" >
+      <Link>System.String\IsGuid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsInteger.cs" >
+      <Link>System.String\IsInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsNumber.cs" >
+      <Link>System.String\IsNumber.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsNotNullOrEmpty.cs">
+      <Link>System.String\IsNotNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsNullOrEmpty.cs">
+      <Link>System.String\IsNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsNullOrWhiteSpace.cs">
+      <Link>System.String\IsNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\IsNotNullOrWhiteSpace.cs">
+      <Link>System.String\IsNotNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Left.cs">
+      <Link>System.String\Left.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Nbsp2Ws.cs">
+      <Link>System.String\Nbsp2Ws.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Nl2Br.cs">
+      <Link>System.String\Nl2Br.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Replace.cs">
+      <Link>System.String\Replace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Reverse.cs">
+      <Link>System.String\Reverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Right.cs">
+      <Link>System.String\Right.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToBoolean.cs">
+      <Link>System.String\ToBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToDateTime.cs">
+      <Link>System.String\ToDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToDecimal.cs">
+      <Link>System.String\ToDecimal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToDouble.cs">
+      <Link>System.String\ToDouble.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToFloat.cs">
+      <Link>System.String\ToFloat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToGuid.cs">
+      <Link>System.String\ToGuid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToInt.cs">
+      <Link>System.String\ToInt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToInt16.cs">
+      <Link>System.String\ToInt16.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\ToInt64.cs">
+      <Link>System.String\ToInt64.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Truncate.cs">
+      <Link>System.String\Truncate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\Ws2Nbsp.cs">
+      <Link>System.String\Ws2Nbsp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\XmlDecode.cs">
+      <Link>System.String\XmlDecode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\XmlEncode.cs">
+      <Link>System.String\XmlEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\EnsureEndsWith.cs">
+      <Link>System.String\EnsureEndsWith.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.String\EnsureStartsWith.cs">
+      <Link>System.String\EnsureStartsWith.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\Add.cs">
+      <Link>TArray\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\Insert.cs">
+      <Link>TArray\Insert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\RemoveAll.cs">
+      <Link>TArray\RemoveAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\Remove.cs">
+      <Link>TArray\Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\RemoveAt.cs">
+      <Link>TArray\RemoveAt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\Slice.cs">
+      <Link>TArray\Slice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\TArray\Union.cs">
+      <Link>TArray\Union.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AddIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AddIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AddRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AddRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\AsReadOnly.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\RemoveAll.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\RemoveIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\RemoveRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IDictionary[TKey,TValue]\AsReadOnly.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\ContainsAll.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\ContainsAny.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAny.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Flatten.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Flatten.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Join.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Join.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IList[T]\AsReadOnly.cs" >
+      <Link>System.Collections.Generic.IList[T]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDataParameter\GetValue.cs">
+      <Link>System.Data.IDataParameter\GetValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDataParameter\IsDBNull.cs">
+      <Link>System.Data.IDataParameter\IsDBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDataRecord\GetVale.cs">
+      <Link>System.Data.IDataRecord\GetVale.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDataRecord\IsDBNull.cs">
+      <Link>System.Data.IDataRecord\IsDBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDbCommand\ExecuteScalar.cs">
+      <Link>System.Data.IDbCommand\ExecuteScalar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDbCommand\ExecuteScalarOrDefault.cs">
+      <Link>System.Data.IDbCommand\ExecuteScalarOrDefault.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.IDbConnection\EnsureOpen.cs">
+      <Link>System.Data.IDbConnection\EnsureOpen.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\UnwrapSqlValue.cs">
+      <Link>UnwrapSqlValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.Common.DbCommand\ExecuteScalarAsync.cs" >
+      <Link>System.Data.Common.DbCommand\ExecuteScalarAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.Common.DbCommand\ExecuteScalarOrDefaultAsync.cs" >
+      <Link>System.Data.Common.DbCommand\ExecuteScalarOrDefaultAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Data.Common.DbConnection\EnsureOpenAsync.cs" >
+      <Link>System.Data.Common.DbConnection\EnsureOpenAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.DirectoryInfo\Clear.cs">
+      <Link>System.IO.DirectoryInfo\Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.DirectoryInfo\CopyTo.cs">
+      <Link>System.IO.DirectoryInfo\CopyTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.DirectoryInfo\EnumerateAll.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.DirectoryInfo\EnumerateDirectories.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateDirectories.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.DirectoryInfo\EnumerateFiles.cs">
+      <Link>System.IO.DirectoryInfo\EnumerateFiles.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\AppendAllLines.cs">
+      <Link>System.IO.FileInfo\AppendAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\AppendAllText.cs">
+      <Link>System.IO.FileInfo\AppendAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\ReadAllBytes.cs">
+      <Link>System.IO.FileInfo\ReadAllBytes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\ReadAllLines.cs">
+      <Link>System.IO.FileInfo\ReadAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\ReadAllText.cs">
+      <Link>System.IO.FileInfo\ReadAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\ReadLines.cs">
+      <Link>System.IO.FileInfo\ReadLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\WriteAllBytes.cs">
+      <Link>System.IO.FileInfo\WriteAllBytes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\WriteAllLines.cs">
+      <Link>System.IO.FileInfo\WriteAllLines.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.FileInfo\WriteAllText.cs">
+      <Link>System.IO.FileInfo\WriteAllText.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.Stream\ReadToEnd.cs">
+      <Link>System.IO.Stream\ReadToEnd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.IO.Stream\ToByteArray.cs">
+      <Link>System.IO.Stream\ToByteArray.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\PredicateEqualityComparer.cs">
+      <Link>PredicateEqualityComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\SelectorEqualityComparer.cs">
+      <Link>SelectorEqualityComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\AggregateAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\AggregateAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\AllAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\AllAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\AnyAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\AnyAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\AverageAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\AverageAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Contains.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Contains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\ContainsAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\CountAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\CountAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Distinct.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Distinct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Except.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Except.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\FirstAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\FirstAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\FirstOrDefaultAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\FirstOrDefaultAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\ForEach.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ForEach.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\ForEachAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ForEachAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Intersect.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Intersect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\LastAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\LastAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\LastOrDefaultAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\LastOrDefaultAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\LongCountAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\LongCountAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\MaxAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\MaxAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\MinAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\MinAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\SequenceEqual.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SequenceEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\SequenceEqualAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SequenceEqualAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\SingleAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SingleAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\SingleOrDefaultAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SingleOrDefaultAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\SumAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SumAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Traverse.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Traverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\TraverseAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\TraverseAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\Union.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Union.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\UnorderedEqualAsync.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\UnorderedEqualAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Collections.Generic.IEnumerable[T]\WhereIf.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\WhereIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.IQueryable[T]\OrderBy.cs">
+      <Link>System.Linq.IQueryable[T]\OrderBy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.IQueryable[T]\Paginate.cs">
+      <Link>System.Linq.IQueryable[T]\Paginate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.IQueryable[T]\Range.cs">
+      <Link>System.Linq.IQueryable[T]\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.IQueryable[T]\WhereIf.cs">
+      <Link>System.Linq.IQueryable[T]\WhereIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ICustomAttributeProvider\IsDefined.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\IsDefined.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ICustomAttributeProvider\GetDescription.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetDisplayName.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.MethodInfo\IsAsync.cs">
+      <Link>System.Reflection.MethodInfo\IsAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.TypeInfo\IsNullable.cs">
+      <Link>System.Reflection.TypeInfo\IsNullable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\AppendCData.cs">
+      <Link>System.Xml.XmlNode\AppendCData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\AppendElement.cs">
+      <Link>System.Xml.XmlNode\AppendElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\GetAttribute.cs">
+      <Link>System.Xml.XmlNode\GetAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\RemoveAttribute.cs">
+      <Link>System.Xml.XmlNode\RemoveAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\SetAttribute.cs">
+      <Link>System.Xml.XmlNode\SetAttribute.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\FluentMethods.snk">
+      <Link>FluentMethods.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\src\Core\Strings.resx">
+      <Link>Strings.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

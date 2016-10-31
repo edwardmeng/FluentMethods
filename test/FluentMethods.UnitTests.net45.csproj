@@ -188,37 +188,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\build\net40\IO\FluentMethods.IO.net40.csproj">
-      <Project>{684b7946-6f6b-49f6-bea8-58c7d67a13b4}</Project>
-      <Name>FluentMethods.IO.net40</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net40\Xml\FluentMethods.Xml.net40.csproj">
-      <Project>{90f926f6-d08b-4bf6-a26d-0ecfc07e4602}</Project>
-      <Name>FluentMethods.Xml.net40</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Collections\FluentMethods.Collections.net45.csproj">
-      <Project>{b036ae52-445e-454c-bc9e-8689bec6e504}</Project>
-      <Name>FluentMethods.Collections.net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Core\FluentMethods.Core.net45.csproj">
+    <ProjectReference Include="..\build\net45\FluentMethods.net45.csproj">
       <Project>{64d46c48-56f1-4039-904a-870d9a3fb6b8}</Project>
-      <Name>FluentMethods.Core.net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Data\FluentMethods.Data.net45.csproj">
-      <Project>{3fc42139-28d2-43e0-b378-82928cc2971a}</Project>
-      <Name>FluentMethods.Data.net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Linq\FluentMethods.Linq.net45.csproj">
-      <Project>{4d234ccc-e8e7-41d6-b1b3-a249ef48d81d}</Project>
-      <Name>FluentMethods.Linq.net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Reflection\FluentMethods.Reflection.net45.csproj">
-      <Project>{de3af0fc-a840-41d3-ba93-6dcbf70949b4}</Project>
-      <Name>FluentMethods.Reflection.net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\build\net45\Web\FluentMethods.Web.net45.csproj">
-      <Project>{956732ce-ec86-4d01-8091-1d3f1d1d0f91}</Project>
-      <Name>FluentMethods.Web.net45</Name>
+      <Name>FluentMethods.net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
