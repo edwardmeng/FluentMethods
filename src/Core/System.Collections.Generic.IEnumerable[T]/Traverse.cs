@@ -36,7 +36,11 @@ public static partial class Extensions
         foreach (var v in source)
         {
             action(v);
-            Traverse(childrenFactory(v), childrenFactory, action);
+            var children = childrenFactory(v);
+            if (children != null)
+            {
+                Traverse(children, childrenFactory, action);
+            }
         }
     }
 }

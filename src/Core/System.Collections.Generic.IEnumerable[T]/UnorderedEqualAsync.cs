@@ -133,7 +133,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepThrough]
+    //[DebuggerStepThrough]
     public static async Task<bool> UnorderedEqualAsync<TSource, TKey>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, CancellationToken, Task<TKey>> selector, CancellationToken token)
     {
         if (first == null)
@@ -168,6 +168,7 @@ public static partial class Extensions
             }
             if (index == -1) return false;
             list.RemoveAt(index);
+            keys.RemoveAt(index);
         }
         return list.Count == 0;
     }
@@ -193,7 +194,7 @@ public static partial class Extensions
     /// Multiple active operations on the same context instance are not supported. 
     /// Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context.
     /// </remarks>
-    [DebuggerStepThrough]
+    //[DebuggerStepThrough]
     public static Task<bool> UnorderedEqualAsync<TSource, TKey>(this IEnumerable<TSource> first, IEnumerable<TSource> second, Func<TSource, Task<TKey>> selector, CancellationToken token)
     {
         return first.UnorderedEqualAsync(second, async (x, t) => await selector(x), token);

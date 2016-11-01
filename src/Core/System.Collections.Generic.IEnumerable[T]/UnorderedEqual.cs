@@ -55,7 +55,7 @@ public static partial class Extensions
     [DebuggerStepThrough]
     public static bool UnorderedEqual<T>(this IEnumerable<T> first, IEnumerable<T> second)
     {
-        return first.UnorderedEqual(second, null);
+        return first.UnorderedEqual(second, (IEqualityComparer<T>)null);
     }
 
     /// <summary>
@@ -72,7 +72,7 @@ public static partial class Extensions
     /// <paramref name="first"/>, <paramref name="second"/> or <paramref name="predicate"/> is <see langword="null" />.
     /// </exception>
     [DebuggerStepThrough]
-    public static bool UnorderedEqual<T>(this ICollection<T> first, ICollection<T> second, Func<T, T, bool> predicate)
+    public static bool UnorderedEqual<T>(this IEnumerable<T> first, IEnumerable<T> second, Func<T, T, bool> predicate)
     {
         if (predicate == null)
         {
@@ -96,7 +96,7 @@ public static partial class Extensions
     /// <paramref name="first"/>, <paramref name="second"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
     [DebuggerStepThrough]
-    public static bool UnorderedEqual<T, TKey>(this ICollection<T> first, ICollection<T> second, Func<T, TKey> selector)
+    public static bool UnorderedEqual<T, TKey>(this IEnumerable<T> first, IEnumerable<T> second, Func<T, TKey> selector)
     {
         if (selector == null)
         {
