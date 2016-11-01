@@ -13,15 +13,6 @@ public static partial class Extensions
         return fileName;
     }
 
-    private static string ResolveContentType(string contentType)
-    {
-        if (string.IsNullOrEmpty(contentType))
-        {
-            contentType = "application/octet-stream;charset=utf-8";
-        }
-        return contentType;
-    }
-
     private static void SendFile(this HttpContextBase context, string fileName, string contentType, Action<HttpResponseBase> writer)
     {
         context.Response.Clear();

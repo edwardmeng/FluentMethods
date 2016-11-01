@@ -4,16 +4,6 @@ using System.Web;
 
 public static partial class Extensions
 {
-#if Net35
-    private static string EncodeFileName(this HttpContext context, string fileName)
-    {
-        if (context.Request.Browser.IsBrowser("InternetExplorer"))
-        {
-            fileName = HttpUtility.UrlEncode(fileName);
-        }
-        return fileName;
-    }
-
     private static string ResolveContentType(string contentType)
     {
         if (string.IsNullOrEmpty(contentType))
@@ -21,6 +11,17 @@ public static partial class Extensions
             contentType = "application/octet-stream;charset=utf-8";
         }
         return contentType;
+    }
+
+#if Net35
+
+    private static string EncodeFileName(this HttpContext context, string fileName)
+    {
+        if (context.Request.Browser.IsBrowser("InternetExplorer"))
+        {
+            fileName = HttpUtility.UrlEncode(fileName);
+        }
+        return fileName;
     }
 
     private static void SendFile(this HttpContext context, string fileName, string contentType, Action<HttpResponse> writer)

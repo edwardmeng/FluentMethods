@@ -185,7 +185,6 @@
     <Compile Include="System.String\ToInt.cs" />
     <Compile Include="System.String\ToInt64.cs" />
     <Compile Include="System.String\Br2Nl.cs" />
-    <Compile Include="System.String\FormatWith.cs" />
     <Compile Include="System.String\IfNullOrEmpty.cs" />
     <Compile Include="System.String\IsBool.cs" />
     <Compile Include="System.String\IsDateTime.cs" />
