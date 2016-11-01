@@ -72,6 +72,10 @@
     <Compile Include="System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs" />
     <Compile Include="System.Collections.Generic.IDictionary[TKey,TValue]\AsReadOnly.cs" />
     <Compile Include="System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\AggregateAsync.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\AllAsync.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\AnyAsync.cs" />
+    <Compile Include="System.Collections.Generic.IEnumerable[T]\AverageAsync.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\ContainsAll.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\ContainsAny.cs" />
     <Compile Include="System.Collections.Generic.IEnumerable[T]\Flatten.cs" />
@@ -119,6 +123,7 @@
     <Compile Include="System.Enum\RemoveFlag.cs" />
     <Compile Include="System.Guid\IsEmpty.cs" />
     <Compile Include="System.Guid\IsNotEmpty.cs" />
+    <Compile Include="System.Linq.IQueryable[T]\OrderBy.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
     <Compile Include="System.Linq.IQueryable[T]\WhereIf.cs" />

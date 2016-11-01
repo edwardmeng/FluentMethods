@@ -44,20 +44,13 @@ public static partial class Extensions
 
     private static Func<ITypeDescriptorContext, object, object> GetConverter(Type sourceType, Type destinationType)
     {
-        var key = new Pair<Type,Type>(sourceType,destinationType);
-        if (!_convertersCache.ContainsKey(key))
+        lock (_convertersCache)
         {
-            lock (_convertersCache)
-            {
-                if (!_convertersCache.ContainsKey(key))
-                {
-                    _convertersCache.Add(key, CreateConverterFromDestination(sourceType, destinationType) ??
-                   CreateConverterFromSource(sourceType, destinationType) ??
-                   CreateConverterFromReflection(sourceType, destinationType));
-                }
-            }
+            return _convertersCache.GetOrAdd(new Pair<Type, Type>(sourceType, destinationType),
+                key => CreateConverterFromDestination(sourceType, destinationType) ??
+                       CreateConverterFromSource(sourceType, destinationType) ??
+                       CreateConverterFromReflection(sourceType, destinationType));
         }
-        return _convertersCache[key];
     }
 #else
     private static readonly System.Collections.Concurrent.ConcurrentDictionary<Tuple<Type, Type>, Func<ITypeDescriptorContext, object, object>> _convertersCache = new System.Collections.Concurrent.ConcurrentDictionary<Tuple<Type, Type>, Func<ITypeDescriptorContext, object, object>>();
@@ -113,7 +106,7 @@ public static partial class Extensions
         }
         var converter = GetConverter(sourceType, destinationType);
         if (converter != null) return converter(context, value);
-        if (underlyingType!=null) destinationType = underlyingType;
+        if (underlyingType != null) destinationType = underlyingType;
         object enumValue;
 #if NetCore
         if (destinationType.GetTypeInfo().IsEnum && TryConvertToEnum(value, destinationType, out enumValue))

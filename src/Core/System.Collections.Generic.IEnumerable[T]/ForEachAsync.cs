@@ -28,22 +28,9 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="action"/> is <see langword="null" />.
     /// </exception>
     [DebuggerStepThrough]
-    public static async Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, CancellationToken, Task> action, CancellationToken token)
+    public static Task ForEachAsync<T>(this IEnumerable<T> source, Func<T, CancellationToken, Task> action, CancellationToken token)
     {
-        token.ThrowIfCancellationRequested();
-        if (source == null)
-        {
-            throw new ArgumentNullException(nameof(source));
-        }
-        if (action == null)
-        {
-            throw new ArgumentNullException(nameof(action));
-        }
-        foreach (var value in source)
-        {
-            await action(value, token);
-            token.ThrowIfCancellationRequested();
-        }
+        return source.ForEachAsync((x, i, t) => action(x, t), token);
     }
 
     /// <summary>

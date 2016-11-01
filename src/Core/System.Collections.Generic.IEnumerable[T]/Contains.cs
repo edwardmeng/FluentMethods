@@ -17,8 +17,7 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="predicate"/> is <see langword="null" />.
     /// </exception>
     [DebuggerStepThrough]
-    public static bool Contains<TSource>(this IEnumerable<TSource> source, TSource value,
-        Func<TSource, TSource, bool> predicate)
+    public static bool Contains<TSource>(this IEnumerable<TSource> source, TSource value, Func<TSource, TSource, bool> predicate)
     {
         if (source == null)
         {
@@ -45,8 +44,7 @@ public static partial class Extensions
     /// <paramref name="source"/> or <paramref name="selector"/> is <see langword="null" />.
     /// </exception>
     [DebuggerStepThrough]
-    public static bool Contains<TSource, TKey>(this IEnumerable<TSource> source, TSource value,
-        Func<TSource, TKey> selector)
+    public static bool Contains<TSource, TKey>(this IEnumerable<TSource> source, TSource value, Func<TSource, TKey> selector)
     {
         if (source == null)
         {

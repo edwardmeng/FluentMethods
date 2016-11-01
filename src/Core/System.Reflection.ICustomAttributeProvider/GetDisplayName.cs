@@ -32,11 +32,7 @@ public static partial class Extensions
     {
         lock (_lockObj)
         {
-            if (!_namePropertiesCache.ContainsKey(typeof(T)))
-            {
-                _namePropertiesCache.Add(typeof(T),CreateNameFactory(typeof(T)));
-            }
-            return (Func<T, string>)_namePropertiesCache[typeof(T)];
+            return (Func<T, string>)_namePropertiesCache.GetOrAdd(typeof(T), CreateNameFactory);
         }
     }
 #else

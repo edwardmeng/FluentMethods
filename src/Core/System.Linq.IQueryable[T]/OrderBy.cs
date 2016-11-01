@@ -5,6 +5,25 @@ using System.Reflection;
 
 public static partial class Extensions
 {
+#if Net35
+    private static readonly System.Collections.Generic.Dictionary<Pair<Type, string>, Expression> _orderMemberCache = new System.Collections.Generic.Dictionary<Pair<Type, string>, Expression>();
+    private static readonly object _orderMemberCacheLock = new object();
+    private static Expression GetPropertyOrFieldExpression(Type elementType, string name)
+    {
+        lock (_orderMemberCacheLock)
+        {
+            return _orderMemberCache.GetOrAdd(new Pair<Type, string>(elementType, name), key => CreatePropertyOrFieldExpression(key.First, key.Second));
+        }
+    }
+#else
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<Tuple<Type,string>, Expression> _orderMemberCache = new System.Collections.Concurrent.ConcurrentDictionary<Tuple<Type, string>, Expression>();
+
+    private static Expression GetPropertyOrFieldExpression(Type elementType, string name)
+    {
+        return _orderMemberCache.GetOrAdd(Tuple.Create(elementType, name), key => CreatePropertyOrFieldExpression(key.Item1, key.Item2));
+    }
+#endif
+
     /// <summary>
     /// Sorts the elements of a sequence according with a specified expression.
     /// </summary>
@@ -41,22 +60,21 @@ public static partial class Extensions
             {
                 throw new ArgumentException(string.Format(FluentMethods.Strings.InvalidOrderSyntax, ordering), nameof(ordering));
             }
-            Type fieldType;
-            var orderExpression = GetPropertyOrFieldExpression(typeof(T), fieldName, out fieldType);
+            var orderExpression = GetPropertyOrFieldExpression(typeof(T), fieldName);
             if (orderExpression == null)
             {
                 throw new InvalidOperationException(string.Format(FluentMethods.Strings.CannotFindTypeMember, fieldName, source.ElementType));
             }
-            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] { source.ElementType, fieldType }, expression, orderExpression);
+            
+            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] { source.ElementType, orderExpression.Type.GetGenericArguments()[0].GetGenericArguments()[1] }, expression, orderExpression);
             ascendingMethod = "ThenBy";
             descendingMethod = "ThenByDescending";
         }
         return (IOrderedQueryable<T>)source.Provider.CreateQuery(expression);
     }
 
-    private static Expression GetPropertyOrFieldExpression(Type elementType, string name, out Type memberType)
+    private static Expression CreatePropertyOrFieldExpression(Type elementType, string name)
     {
-        memberType = null;
 #if NetCore
         var properties = elementType.GetTypeInfo().GetProperties(BindingFlags.Public|BindingFlags.Instance);
         var fields = elementType.GetTypeInfo().GetFields(BindingFlags.Public | BindingFlags.Instance);
@@ -68,25 +86,21 @@ public static partial class Extensions
         var property = properties.SingleOrDefault(p => p.Name == name);
         if (property != null)
         {
-            memberType = property.PropertyType;
             return Expression.Quote(Expression.Lambda(Expression.Property(parameter, property), parameter));
         }
         var field = fields.SingleOrDefault(f => f.Name == name);
         if (field != null)
         {
-            memberType = field.FieldType;
             return Expression.Quote(Expression.Lambda(Expression.Field(parameter, field), parameter));
         }
         property = properties.SingleOrDefault(p => string.Equals(p.Name, name, StringComparison.CurrentCultureIgnoreCase));
         if (property != null)
         {
-            memberType = property.PropertyType;
             return Expression.Quote(Expression.Lambda(Expression.Property(parameter, property), parameter));
         }
         field = fields.SingleOrDefault(f => string.Equals(f.Name, name, StringComparison.CurrentCultureIgnoreCase));
         if (field != null)
         {
-            memberType = field.FieldType;
             return Expression.Quote(Expression.Lambda(Expression.Field(parameter, field), parameter));
         }
         return null;

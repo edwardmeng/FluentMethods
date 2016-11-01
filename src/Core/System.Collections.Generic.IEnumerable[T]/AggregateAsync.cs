@@ -243,15 +243,9 @@ public static partial class Extensions
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, Func<TAccumulate, TResult> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
-        if (source == null) throw new ArgumentNullException(nameof(source));
-        if (func == null) throw new ArgumentNullException(nameof(func));
         if (resultSelector == null) throw new ArgumentNullException(nameof(resultSelector));
-        var result = seed;
-        await source.ForEachAsync(async element =>
-        {
-            result = await func(result, element, token);
-            token.ThrowIfCancellationRequested();
-        }, token);
+        var result = await source.AggregateAsync(seed, func,token);
+        token.ThrowIfCancellationRequested();
         return resultSelector(result);
     }
 
@@ -333,8 +327,6 @@ public static partial class Extensions
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, CancellationToken, Task<TResult>> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
-        if (source == null) throw new ArgumentNullException(nameof(source));
-        if (func == null) throw new ArgumentNullException(nameof(func));
         if (resultSelector == null) throw new ArgumentNullException(nameof(resultSelector));
         var result = source.Aggregate(seed, func);
         token.ThrowIfCancellationRequested();
@@ -473,15 +465,9 @@ public static partial class Extensions
     public static async Task<TResult> AggregateAsync<TSource, TAccumulate, TResult>(this IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, CancellationToken, Task<TAccumulate>> func, Func<TAccumulate, CancellationToken, Task<TResult>> resultSelector, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
-        if (source == null) throw new ArgumentNullException(nameof(source));
-        if (func == null) throw new ArgumentNullException(nameof(func));
         if (resultSelector == null) throw new ArgumentNullException(nameof(resultSelector));
-        var result = seed;
-        await source.ForEachAsync(async element =>
-        {
-            result = await func(result, element, token);
-            token.ThrowIfCancellationRequested();
-        });
+        var result = await source.AggregateAsync(seed, func, token);
+        token.ThrowIfCancellationRequested();
         return await resultSelector(result, token);
     }
 }
