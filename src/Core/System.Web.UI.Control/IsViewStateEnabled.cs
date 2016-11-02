@@ -15,7 +15,7 @@ public static partial class Extensions
             if (!control.EnableViewState) return false;
 #if !Net35
             var viewStateMode = control.ViewStateMode;
-            if (viewStateMode != ViewStateMode.Inherit) return (viewStateMode == ViewStateMode.Enabled);
+            if (viewStateMode != ViewStateMode.Inherit) return viewStateMode == ViewStateMode.Enabled;
 #endif
             control = control.Parent;
         }

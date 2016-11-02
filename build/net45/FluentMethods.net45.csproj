@@ -990,8 +990,8 @@
     <Compile Include="..\..\src\Core\System.Web.UI.Control\AddCssClass.cs">
       <Link>System.Web.UI.Control\AddCssClass.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Web.UI.Control\FindChildren.cs">
-      <Link>System.Web.UI.Control\FindChildren.cs</Link>
+    <Compile Include="..\..\src\Core\System.Web.UI.Control\FindDescendents.cs">
+      <Link>System.Web.UI.Control\FindDescendents.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Web.UI.Control\FindControl.cs">
       <Link>System.Web.UI.Control\FindControl.cs</Link>
@@ -999,8 +999,8 @@
     <Compile Include="..\..\src\Core\System.Web.UI.Control\GetDataItem.cs">
       <Link>System.Web.UI.Control\GetDataItem.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Web.UI.Control\GetParent.cs">
-      <Link>System.Web.UI.Control\GetParent.cs</Link>
+    <Compile Include="..\..\src\Core\System.Web.UI.Control\GetAscendant.cs">
+      <Link>System.Web.UI.Control\GetAscendant.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Web.UI.Control\HasCssClass.cs">
       <Link>System.Web.UI.Control\HasCssClass.cs</Link>

@@ -5,6 +5,26 @@ using System.Web.UI.WebControls;
 
 public static partial class Extensions
 {
+    private static string[] SplitCssClasses(string cssClassString)
+    {
+        return (cssClassString ?? string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    private static void ModifyCssClass(Control control, Func<string[], string[]> modifier)
+    {
+        if (control == null) throw new ArgumentNullException(nameof(control));
+        var webControl = control as WebControl;
+        if (webControl != null)
+        {
+            webControl.CssClass = string.Join(" ", modifier(SplitCssClasses(webControl.CssClass)));
+        }
+        var htmlControl = control as HtmlControl;
+        if (htmlControl != null)
+        {
+            htmlControl.Attributes["class"] = string.Join(" ", modifier(SplitCssClasses(htmlControl.Attributes["class"])));
+        }
+    }
+
     /// <summary>
     /// Adds CSS class to a <see cref="Control"/> if the css class is not already part of the <see cref="Control"/>.
     /// </summary>
@@ -12,20 +32,7 @@ public static partial class Extensions
     /// <param name="className">The name of the CSS class to add.</param>
     public static void AddCssClass(this Control control, string className)
     {
-        if (control == null) throw new ArgumentNullException(nameof(control));
         if (string.IsNullOrEmpty(className)) return;
-        Func<string, string, string> mergeCssClasses = (cssClass1, cssClass2) => 
-            string.Join(" ",(cssClass1 ?? string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-            .Union((cssClass2 ?? string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)));
-        var webControl = control as WebControl;
-        if (webControl != null)
-        {
-            webControl.CssClass = mergeCssClasses(webControl.CssClass, className);
-        }
-        var htmlControl = control as HtmlControl;
-        if (htmlControl != null)
-        {
-            htmlControl.Attributes["class"] = mergeCssClasses(htmlControl.Attributes["class"], className);
-        }
+        ModifyCssClass(control, originClassNames => originClassNames.Union(SplitCssClasses(className)));
     }
 }
