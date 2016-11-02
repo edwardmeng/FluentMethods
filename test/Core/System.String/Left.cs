@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FluentMethods.UnitTests
+﻿namespace FluentMethods.UnitTests
 {
     public partial class StringFixture
     {

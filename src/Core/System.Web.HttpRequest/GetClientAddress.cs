@@ -18,7 +18,7 @@ public static partial class Extensions
         var ipAddress = ParseClientAddress(request);
 
         if (ipAddress != null &&
-            ipAddress.IsIn(IPAddress.Any, IPAddress.None, IPAddress.Loopback, IPAddress.Broadcast, IPAddress.IPv6Any, IPAddress.IPv6Loopback, IPAddress.IPv6None))
+            ipAddress.IsIn(IPAddress.Any, IPAddress.None, IPAddress.Broadcast, IPAddress.IPv6Any, IPAddress.IPv6None))
         {
             return null;
         }

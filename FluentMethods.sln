@@ -26,7 +26,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.net40", "buil
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{5F9ED392-A817-4C20-8C21-E6BB1A3893B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net45", "test\FluentMethods.UnitTests.net45.csproj", "{A73E2108-AB73-426D-8729-0279866C8416}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net45", "test\Core\FluentMethods.UnitTests.net45.csproj", "{A73E2108-AB73-426D-8729-0279866C8416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.WebApp.net45", "test\Web\FluentMethods.WebApp.net45.csproj", "{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{A73E2108-AB73-426D-8729-0279866C8416}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A73E2108-AB73-426D-8729-0279866C8416}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A73E2108-AB73-426D-8729-0279866C8416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +75,6 @@ Global
 		{0D4FD2C5-DA94-44E0-944D-D568913691AA} = {81FA3C48-61A9-4F7D-B80F-24ECC71A70F7}
 		{8617F4EA-672B-44C1-AF4F-4505588E2016} = {81FA3C48-61A9-4F7D-B80F-24ECC71A70F7}
 		{A73E2108-AB73-426D-8729-0279866C8416} = {5F9ED392-A817-4C20-8C21-E6BB1A3893B8}
+		{33A7EFA9-C4D1-4002-88C1-B565342DF4E7} = {5F9ED392-A817-4C20-8C21-E6BB1A3893B8}
 	EndGlobalSection
 EndGlobal

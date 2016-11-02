@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public static partial class Extensions
@@ -17,11 +16,12 @@ public static partial class Extensions
         if (webControl != null)
         {
             webControl.CssClass = string.Join(" ", modifier(SplitCssClasses(webControl.CssClass)));
+            return;
         }
-        var htmlControl = control as HtmlControl;
-        if (htmlControl != null)
+        var attributeAccessor = control as IAttributeAccessor;
+        if (attributeAccessor != null)
         {
-            htmlControl.Attributes["class"] = string.Join(" ", modifier(SplitCssClasses(htmlControl.Attributes["class"])));
+            attributeAccessor.SetAttribute("class", string.Join(" ", modifier(SplitCssClasses(attributeAccessor.GetAttribute("class")))));
         }
     }
 
