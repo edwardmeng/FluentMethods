@@ -26,7 +26,7 @@ namespace FluentMethods.UnitTests
             {
                 Title = "Fizz"
             };
-            component.BindValues(new Dictionary<string, object>
+            component.Bind(new Dictionary<string, object>
             {
                 {"Description","Buzz" },
                 {"Price",20 }
@@ -46,7 +46,7 @@ namespace FluentMethods.UnitTests
             {
                 Title = "Fizz"
             };
-            component.BindValues(new
+            component.Bind(new
             {
                 Description="Buzz",
                 Price =20

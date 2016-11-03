@@ -39,7 +39,7 @@ public static partial class Extensions
         {
             return (T)(object)paraValue.ToString();
         }
-        return (T)(paraValue.ConvertTo(typeof(T)) ?? defaultValue);
+        return (T)(paraValue.To(typeof(T)) ?? defaultValue);
     }
 
     /// <summary>

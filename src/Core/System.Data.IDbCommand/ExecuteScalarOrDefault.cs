@@ -21,7 +21,7 @@ public static partial class Extensions
         {
             return defaultValueFactory(command);
         }
-        return value.ConvertTo<T>();
+        return value.To<T>();
     }
 
     /// <summary>

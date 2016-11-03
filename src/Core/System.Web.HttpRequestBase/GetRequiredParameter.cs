@@ -21,6 +21,6 @@ public static partial class Extensions
     /// <returns></returns>
     public static T GetRequiredParameter<T>(this HttpRequestBase request, string paraName)
     {
-        return request.GetRequiredParameter(paraName).ConvertTo<T>();
+        return request.GetRequiredParameter(paraName).To<T>();
     }
 }

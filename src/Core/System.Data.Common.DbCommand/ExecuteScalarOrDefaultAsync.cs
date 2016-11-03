@@ -33,7 +33,7 @@ public static partial class Extensions
         }
         var value = await command.ExecuteScalarAsync(token);
         if (value == null) return await defaultValueFactory(command, token);
-        return value.ConvertTo<T>();
+        return value.To<T>();
     }
 
     /// <summary>

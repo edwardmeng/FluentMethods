@@ -20,7 +20,7 @@ public static partial class Extensions
         if (component == null) throw new ArgumentNullException(nameof(component));
         IOrderedDictionary fieldValues = new OrderedDictionary();
         control.ExtractValues(fieldValues);
-        component.BindValues(fieldValues);
+        component.Bind(fieldValues);
     }
 
     /// <summary>

@@ -64,7 +64,7 @@ public static partial class Extensions
     }
 #endif
 
-    internal static object ConvertTo(this object value, Type type, ITypeDescriptorContext context)
+    internal static object To(this object value, Type type, ITypeDescriptorContext context)
     {
         if (type == null)
         {
@@ -136,9 +136,9 @@ public static partial class Extensions
     /// <param name="value">The value to be converted.</param>
     /// <param name="type">The type to convert to.</param>
     /// <returns>The converted value of the target type.</returns>
-    public static object ConvertTo(this object value, Type type)
+    public static object To(this object value, Type type)
     {
-        return value.ConvertTo(type, null);
+        return value.To(type, null);
     }
 
     /// <summary>
@@ -147,9 +147,9 @@ public static partial class Extensions
     /// <typeparam name="T">The type to convert to.</typeparam>
     /// <param name="value">The value to be converted.</param>
     /// <returns>The converted value of the target type.</returns>
-    public static T ConvertTo<T>(this object value)
+    public static T To<T>(this object value)
     {
-        return (T)value.ConvertTo(typeof(T));
+        return (T)value.To(typeof(T));
     }
 
     private static Exception CreateCannotConvertException(object value, Type sourceType, Type destinationType, ITypeDescriptorContext context)
@@ -194,7 +194,7 @@ public static partial class Extensions
         }
         var elementType = destinationType.GetElementType();
         var destinationArray = Array.CreateInstance(elementType, lengths, lowerBounds);
-        sourceArray.Traverse((element, indices) => destinationArray.SetValue(element.ConvertTo(elementType), indices));
+        sourceArray.Traverse((element, indices) => destinationArray.SetValue(element.To(elementType), indices));
         return destinationArray;
     }
 

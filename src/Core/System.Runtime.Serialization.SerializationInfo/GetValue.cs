@@ -55,7 +55,7 @@ public static partial class Extensions
         }
         catch (InvalidCastException)
         {
-            return info.GetValue(name, typeof(object)).ConvertTo<T>();
+            return info.GetValue(name, typeof(object)).To<T>();
         }
     }
 

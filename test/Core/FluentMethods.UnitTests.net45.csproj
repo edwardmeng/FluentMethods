@@ -157,8 +157,8 @@
     <Compile Include="System.Linq.IQueryable[T]\Paginate.cs" />
     <Compile Include="System.Linq.IQueryable[T]\Range.cs" />
     <Compile Include="System.Linq.IQueryable[T]\WhereIf.cs" />
-    <Compile Include="System.Object\BindValues.cs" />
-    <Compile Include="System.Object\ConvertTo.cs" />
+    <Compile Include="System.Object\Bind.cs" />
+    <Compile Include="System.Object\To.cs" />
     <Compile Include="System.Object\IsBetween.cs" />
     <Compile Include="System.Object\IsDefault.cs" />
     <Compile Include="System.Object\IsIn.cs" />

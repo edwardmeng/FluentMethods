@@ -40,7 +40,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="component">The component to bind property values.</param>
     /// <param name="values">The property values to bind to the specified comonent.</param>
-    public static void BindValues(this object component, IDictionary values)
+    public static void Bind(this object component, IDictionary values)
     {
         if (values == null) return;
         if (component == null)
@@ -71,7 +71,7 @@ public static partial class Extensions
                         return;
                     }
                 }
-                property.SetValue(component, propertyValue.ConvertTo(property.PropertyType, new TypeDescriptorContext(property, component)));
+                property.SetValue(component, propertyValue.To(property.PropertyType, new TypeDescriptorContext(property, component)));
             }
         }
     }
@@ -81,7 +81,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="component">The component to bind property values.</param>
     /// <param name="values">The property values to bind to the specified comonent. It can be anonymous object.</param>
-    public static void BindValues(this object component, object values)
+    public static void Bind(this object component, object values)
     {
         if (values == null) return;
         if (component == null)
@@ -91,10 +91,10 @@ public static partial class Extensions
         var dictionary = values as IDictionary;
         if (dictionary != null)
         {
-            component.BindValues(dictionary);
+            component.Bind(dictionary);
             return;
         }
-        component.BindValues(
+        component.Bind(
             TypeDescriptor.GetProperties(values)
                 .Cast<PropertyDescriptor>()
                 .ToDictionary(property => property.Name, property => property.GetValue(values)));
