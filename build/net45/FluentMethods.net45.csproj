@@ -1035,77 +1035,122 @@
     <Compile Include="..\..\src\Core\System.Web.UI.WebControls.GridViewRow\ExtractValues.cs">
       <Link>System.Web.UI.WebControls.GridViewRow\ExtractValues.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Add.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Add.cs">
       <Link>System.Linq.Expressions.Expression\Add.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\And.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\And.cs">
       <Link>System.Linq.Expressions.Expression\And.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Call.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Call.cs">
       <Link>System.Linq.Expressions.Expression\Call.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Compose.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Compose.cs">
       <Link>System.Linq.Expressions.Expression\Compose.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Divide.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Divide.cs">
       <Link>System.Linq.Expressions.Expression\Divide.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Field.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Field.cs">
       <Link>System.Linq.Expressions.Expression\Field.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\GreaterThan.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\GreaterThan.cs">
       <Link>System.Linq.Expressions.Expression\GreaterThan.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\GreaterThanOrEqual.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\GreaterThanOrEqual.cs">
       <Link>System.Linq.Expressions.Expression\GreaterThanOrEqual.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LessThan.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LessThan.cs">
       <Link>System.Linq.Expressions.Expression\LessThan.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LessThanOrEqual.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LessThanOrEqual.cs">
       <Link>System.Linq.Expressions.Expression\LessThanOrEqual.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Modulo.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Modulo.cs">
       <Link>System.Linq.Expressions.Expression\Modulo.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Multiply.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Multiply.cs">
       <Link>System.Linq.Expressions.Expression\Multiply</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Negate.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Negate.cs">
       <Link>System.Linq.Expressions.Expression\Negate.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Not.cs" >
-      <Link>System.Linq.Expressions.Expression\Not.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Or.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Or.cs">
       <Link>System.Linq.Expressions.Expression\Or.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Power.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Power.cs">
       <Link>System.Linq.Expressions.Expression\Power.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Property.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Property.cs">
       <Link>System.Linq.Expressions.Expression\Property.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PropertyOrField.cs">
-      <Link>System.Linq.Expressions.Expression\PropertyOrField.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Quote.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Quote.cs">
       <Link>System.Linq.Expressions.Expression\Quote.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Subtract.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Subtract.cs">
       <Link>System.Linq.Expressions.Expression\Subtract.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\To.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\To.cs">
       <Link>System.Linq.Expressions.Expression\To.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ToLambda.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ToLambda.cs">
       <Link>System.Linq.Expressions.Expression\ToLambda.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Reflection.MethodInfo\Call.cs" >
+    <Compile Include="..\..\src\Core\System.Reflection.MethodInfo\Call.cs">
       <Link>System.Reflection.MethodInfo\Call.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Type\Call.cs" >
+    <Compile Include="..\..\src\Core\System.Type\Call.cs">
       <Link>System.Type\Call.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseAnd.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseAnd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseNot.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseNot.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseOr.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseOr.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseXor.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseXor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BindTo.cs" >
+      <Link>System.Linq.Expressions.Expression\BindTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Block.cs">
+      <Link>System.Linq.Expressions.Expression\Block.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Coalesce.cs">
+      <Link>System.Linq.Expressions.Expression\Coalesce.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Equal.cs">
+      <Link>System.Linq.Expressions.Expression\Equal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Is.cs">
+      <Link>System.Linq.Expressions.Expression\Is.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\IsFalse.cs">
+      <Link>System.Linq.Expressions.Expression\IsFalse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\IsTrue.cs">
+      <Link>System.Linq.Expressions.Expression\IsTrue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LeftShift.cs">
+      <Link>System.Linq.Expressions.Expression\LeftShift.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Member.cs">
+      <Link>System.Linq.Expressions.Expression\Member.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\NotEqual.cs">
+      <Link>System.Linq.Expressions.Expression\NotEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\RightShift.cs">
+      <Link>System.Linq.Expressions.Expression\RightShift.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.ConstructorInfo\New.cs" >
+      <Link>System.Reflection.ConstructorInfo\New.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs" >
+      <Link>System.Reflection.MemberInfo\Bind.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
