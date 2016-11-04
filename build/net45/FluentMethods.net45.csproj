@@ -1113,7 +1113,7 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseXor.cs">
       <Link>System.Linq.Expressions.Expression\BitwiseXor.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BindTo.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BindTo.cs">
       <Link>System.Linq.Expressions.Expression\BindTo.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Block.cs">
@@ -1146,11 +1146,104 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\RightShift.cs">
       <Link>System.Linq.Expressions.Expression\RightShift.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Reflection.ConstructorInfo\New.cs" >
+    <Compile Include="..\..\src\Core\System.Reflection.ConstructorInfo\New.cs">
       <Link>System.Reflection.ConstructorInfo\New.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs" >
+    <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs">
       <Link>System.Reflection.MemberInfo\Bind.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssign.cs" >
+      <Link>System.Linq.Expressions.Expression\AddAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssignChecked.cs" >
+      <Link>System.Linq.Expressions.Expression\AddAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddChecked.cs" >
+      <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayAccess.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayIndex.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayLength.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayLength.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Assign.cs">
+      <Link>System.Linq.Expressions.Expression\Assign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AssignTo.cs">
+      <Link>System.Linq.Expressions.Expression\AssignTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseAndAssign.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseAndAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseOrAssign.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseOrAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseXorAssign.cs">
+      <Link>System.Linq.Expressions.Expression\BitwiseXorAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Decrement.cs">
+      <Link>System.Linq.Expressions.Expression\Decrement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\DivideAssign.cs">
+      <Link>System.Linq.Expressions.Expression\DivideAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Increment.cs">
+      <Link>System.Linq.Expressions.Expression\Increment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\LeftShiftAssign.cs">
+      <Link>System.Linq.Expressions.Expression\LeftShiftAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MultiplyAssign.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MultiplyAssignChecked.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MultiplyChecked.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\NegateChecked.cs">
+      <Link>System.Linq.Expressions.Expression\NegateChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\OnesComplement.cs">
+      <Link>System.Linq.Expressions.Expression\OnesComplement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PostDecrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PostDecrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PostIncrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PostIncrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PreDecrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PreDecrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PreIncrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PreIncrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ReferenceEqual.cs">
+      <Link>System.Linq.Expressions.Expression\ReferenceEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ReferenceNotEqual.cs">
+      <Link>System.Linq.Expressions.Expression\ReferenceNotEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\RightShiftAssign.cs">
+      <Link>System.Linq.Expressions.Expression\RightShiftAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\SubtractAssign.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\SubtractAssignChecked.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\SubtractChecked.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Throw.cs">
+      <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

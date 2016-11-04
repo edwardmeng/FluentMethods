@@ -1006,6 +1006,24 @@
     <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs">
       <Link>System.Reflection.MemberInfo\Bind.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddChecked.cs">
+      <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayIndex.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayLength.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayLength.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MultiplyChecked.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\NegateChecked.cs">
+      <Link>System.Linq.Expressions.Expression\NegateChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\SubtractChecked.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractChecked.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
