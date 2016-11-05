@@ -1239,7 +1239,9 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Throw.cs">
       <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
     </Compile>
-    <Compile Include="System.Linq.Expressions.Expression\ModuloAssign.cs" />
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ModuloAssign.cs" >
+      <Link>System.Linq.Expressions.Expression\ModuloAssign.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
