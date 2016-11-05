@@ -928,19 +928,13 @@
     <Compile Include="..\..\src\Core\System.Type\Call.cs">
       <Link>System.Type\Call.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseAnd.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseAnd.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Not.cs">
+      <Link>System.Linq.Expressions.Expression\Not.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseNot.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseNot.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Xor.cs">
+      <Link>System.Linq.Expressions.Expression\Xor.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseOr.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseOr.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseXor.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseXor.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BindTo.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BindTo.cs">
       <Link>System.Linq.Expressions.Expression\BindTo.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Block.cs">
@@ -973,19 +967,19 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\RightShift.cs">
       <Link>System.Linq.Expressions.Expression\RightShift.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Reflection.ConstructorInfo\New.cs" >
+    <Compile Include="..\..\src\Core\System.Reflection.ConstructorInfo\New.cs">
       <Link>System.Reflection.ConstructorInfo\New.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs" >
+    <Compile Include="..\..\src\Core\System.Reflection.MemberInfo\Bind.cs">
       <Link>System.Reflection.MemberInfo\Bind.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssign.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssign.cs">
       <Link>System.Linq.Expressions.Expression\AddAssign.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssignChecked.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddAssignChecked.cs">
       <Link>System.Linq.Expressions.Expression\AddAssignChecked.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddChecked.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddChecked.cs">
       <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayAccess.cs">
@@ -1003,14 +997,14 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AssignTo.cs">
       <Link>System.Linq.Expressions.Expression\AssignTo.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseAndAssign.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseAndAssign.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AndAssign.cs">
+      <Link>System.Linq.Expressions.Expression\AndAssign.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseOrAssign.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseOrAssign.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\OrAssign.cs">
+      <Link>System.Linq.Expressions.Expression\OrAssign.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\BitwiseXorAssign.cs">
-      <Link>System.Linq.Expressions.Expression\BitwiseXorAssign.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\XorAssign.cs">
+      <Link>System.Linq.Expressions.Expression\XorAssign.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Decrement.cs">
       <Link>System.Linq.Expressions.Expression\Decrement.cs</Link>

@@ -32,6 +32,6 @@ public static partial class Extensions
     /// <exception cref="System.InvalidOperationException">The conditional <c>OR</c> operator is not defined for the type of <paramref name="left"/> and <paramref name="right"/>.</exception>
     public static BinaryExpression Or(this Expression left, Expression right)
     {
-        return Expression.OrElse(left, right);
+        return Expression.Or(left, right);
     }
 }
