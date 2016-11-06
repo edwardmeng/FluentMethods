@@ -17,7 +17,7 @@ public static partial class Extensions
     /// -or-
     /// The type of one or more elements of indexes does not represent the <see cref="int"/> type.
     /// </exception>
-    public static IndexExpression ArrayAccess(this Expression array, IEnumerable<Expression> indexes)
+    public static IndexExpression ArrayAccessElement(this Expression array, IEnumerable<Expression> indexes)
     {
         return Expression.ArrayAccess(array, indexes);
     }
@@ -35,7 +35,7 @@ public static partial class Extensions
     /// -or-
     /// The type of one or more elements of indexes does not represent the <see cref="int"/> type.
     /// </exception>
-    public static IndexExpression ArrayAccess(this Expression array, params Expression[] indexes)
+    public static IndexExpression ArrayAccessElement(this Expression array, params Expression[] indexes)
     {
         return Expression.ArrayAccess(array, indexes);
     }

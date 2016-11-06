@@ -1155,11 +1155,11 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\AddChecked.cs">
       <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayAccess.cs">
-      <Link>System.Linq.Expressions.Expression\ArrayAccess.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayAccessElement.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayAccessElement.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayIndex.cs">
-      <Link>System.Linq.Expressions.Expression\ArrayIndex.cs</Link>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayIndexElement.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayIndexElement.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ArrayLength.cs">
       <Link>System.Linq.Expressions.Expression\ArrayLength.cs</Link>
@@ -1239,8 +1239,14 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Throw.cs">
       <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ModuloAssign.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ModuloAssign.cs">
       <Link>System.Linq.Expressions.Expression\ModuloAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ListInit.cs" >
+      <Link>System.Linq.Expressions.Expression\ListInit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs" >
+      <Link>System.Linq.Expressions.Expression\MemberInit.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

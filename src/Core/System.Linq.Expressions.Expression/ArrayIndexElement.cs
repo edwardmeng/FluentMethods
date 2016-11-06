@@ -17,7 +17,7 @@ public static partial class Extensions
     /// -or-
     /// The type of one or more elements of indexes does not represent the <see cref="int"/> type.
     /// </exception>
-    public static MethodCallExpression ArrayIndex(this Expression array, IEnumerable<Expression> indexes)
+    public static MethodCallExpression ArrayIndexElement(this Expression array, IEnumerable<Expression> indexes)
     {
         return Expression.ArrayIndex(array, indexes);
     }
@@ -36,7 +36,7 @@ public static partial class Extensions
     /// -or-
     /// The type of one or more elements of indexes does not represent the <see cref="int"/> type.
     /// </exception>
-    public static MethodCallExpression ArrayIndex(this Expression array, params Expression[] indexes)
+    public static MethodCallExpression ArrayIndexElement(this Expression array, params Expression[] indexes)
     {
         return Expression.ArrayIndex(array, indexes);
     }
@@ -55,7 +55,7 @@ public static partial class Extensions
     /// -or-
     /// The <paramref name="index"/> does not represent the <see cref="int"/> type.
     /// </exception>
-    public static BinaryExpression ArrayIndex(this Expression array, Expression index)
+    public static BinaryExpression ArrayIndexElement(this Expression array, Expression index)
     {
         return Expression.ArrayIndex(array, index);
     }

@@ -159,8 +159,12 @@
     <Compile Include="System.Linq.Expressions.Expression\AddChecked.cs" />
     <Compile Include="System.Linq.Expressions.Expression\And.cs" />
     <Compile Include="System.Linq.Expressions.Expression\AndAssign.cs" />
+    <Compile Include="System.Linq.Expressions.Expression\ArrayAccessElement.cs" />
+    <Compile Include="System.Linq.Expressions.Expression\ArrayIndexElement.cs" />
+    <Compile Include="System.Linq.Expressions.Expression\ArrayLength.cs" />
     <Compile Include="System.Linq.Expressions.Expression\Assign.cs" />
     <Compile Include="System.Linq.Expressions.Expression\AssignTo.cs" />
+    <Compile Include="System.Linq.Expressions.Expression\BindTo.cs" />
     <Compile Include="System.Linq.Expressions.Expression\Not.cs" />
     <Compile Include="System.Linq.Expressions.Expression\Or.cs" />
     <Compile Include="System.Linq.Expressions.Expression\OrAssign.cs" />
