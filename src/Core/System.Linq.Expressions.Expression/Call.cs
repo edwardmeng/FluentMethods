@@ -79,6 +79,52 @@ public static partial class Extensions
     }
 
     /// <summary>
+    /// Creates a <see cref="MethodCallExpression"/> that represents a call to a non-generic instance method by calling the appropriate factory method.
+    /// </summary>
+    /// <param name="instance">An <see cref="Expression"/> that specifies the instance for a non-generic instance method call.</param>
+    /// <param name="methodName">The name of the method.</param>
+    /// <returns>A <see cref="MethodCallExpression"/> that represents a call to a non-generic instance method by calling the appropriate factory method.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="instance"/> or <paramref name="methodName"/> is null.</exception>
+    /// <exception cref="InvalidOperationException">
+    /// No non-generic instance method whose name is <paramref name="methodName"/> is found in the type of <paramref name="instance"/> or its base types.
+    /// -or-
+    /// More than one non-generic instance method whose name is <paramref name="methodName"/> is found in the type of <paramref name="instance"/> or its base types.
+    /// </exception>
+    public static MethodCallExpression Call(this Expression instance, string methodName)
+    {
+        if (instance == null)
+        {
+            throw new ArgumentNullException(nameof(instance));
+        }
+        return Expression.Call(instance, methodName, null);
+    }
+
+    /// <summary>
+    /// Creates a <see cref="MethodCallExpression"/> that represents a call to a generic method by calling the appropriate factory method.
+    /// </summary>
+    /// <param name="instance">An <see cref="Expression"/> that specifies the instance for an instance method call.</param>
+    /// <param name="methodName">The name of the method.</param>
+    /// <param name="typeArguments">
+    /// An array of <see cref="Type"/> objects that specify the type parameters of the generic method. 
+    /// This argument should be null when methodName specifies a non-generic method.
+    /// </param>
+    /// <returns>A <see cref="MethodCallExpression"/> that represents a call to a method by calling the appropriate factory method.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="instance"/> or <paramref name="methodName"/> is null.</exception>
+    /// <exception cref="InvalidOperationException">
+    /// No method whose name is <paramref name="methodName"/> and whose type parameters match <paramref name="typeArguments"/> is found in the type of <paramref name="instance"/> or its base types.
+    /// -or-
+    /// More than one method whose name is <paramref name="methodName"/> and whose type parameters match <paramref name="typeArguments"/> is found in the type of <paramref name="instance"/> or its base types.
+    /// </exception>
+    public static MethodCallExpression Call(this Expression instance, string methodName, params Type[] typeArguments)
+    {
+        if (instance == null)
+        {
+            throw new ArgumentNullException(nameof(instance));
+        }
+        return Expression.Call(instance, methodName, typeArguments);
+    }
+
+    /// <summary>
     /// Creates a <see cref="MethodCallExpression"/> that represents a call to a method by calling the appropriate factory method.
     /// </summary>
     /// <param name="instance">An <see cref="Expression"/> that specifies the instance for an instance method call.</param>

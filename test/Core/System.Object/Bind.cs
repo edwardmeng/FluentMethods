@@ -13,6 +13,13 @@ namespace FluentMethods.UnitTests
             public int Price { get; set; }
 
             public string Warehouse { get; set; }
+
+            public string Category;
+
+            public T GetPrice<T>()
+            {
+                return Price.To<T>();
+            }
         }
 
 #if NetCore
