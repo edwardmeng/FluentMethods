@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A4979E5-2166-4417-AAF8-6F5D552E136E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMethods.UnitTests</RootNamespace>
+    <AssemblyName>FluentMethods.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Net35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;Net35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\HtmlAgilityPack.1.4.9.5\lib\Net20\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NUnit.3.5.0\lib\net35\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Core.1.0.103\lib\net20\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Core\Assert.cs">
+      <Link>Assert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\DataFixture.cs">
+      <Link>DataFixture.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Add.cs">
+      <Link>System.Array\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Insert.cs">
+      <Link>System.Array\Insert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Remove.cs">
+      <Link>System.Array\Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\RemoveAt.cs">
+      <Link>System.Array\RemoveAt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Slice.cs">
+      <Link>System.Array\Slice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Traverse.cs">
+      <Link>System.Array\Traverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AddIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AddIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AddRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AddRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AddRangeIfNotContains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\AsReadOnly.cs">
+      <Link>System.Collections.Generic.ICollection[T]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\RemoveAll.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\RemoveIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\RemoveRange.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRange.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs">
+      <Link>System.Collections.Generic.ICollection[T]\RemoveRangeIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs">
+      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Contains.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Contains.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\ContainsAll.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\ContainsAny.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ContainsAny.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Distinct.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Distinct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Except.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Except.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Flatten.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Flatten.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\ForEach.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\ForEach.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IgnoreNulls.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Intersect.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Intersect.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNotNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\IsNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\SequenceEqual.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\SequenceEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Traverse.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Traverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\Union.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\Union.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\UnorderedEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IEnumerable[T]\WhereIf.cs">
+      <Link>System.Collections.Generic.IEnumerable[T]\WhereIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Collections.Generic.IList[T]\AsReadOnly.cs">
+      <Link>System.Collections.Generic.IList[T]\AsReadOnly.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDataParameter\GetValue.cs">
+      <Link>System.Data.IDataParameter\GetValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDataParameter\IsDBNull.cs">
+      <Link>System.Data.IDataParameter\IsDBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDataRecord\GetValue.cs">
+      <Link>System.Data.IDataRecord\GetValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDataRecord\IsDBNull.cs">
+      <Link>System.Data.IDataRecord\IsDBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDbCommand\ExecuteScalar.cs">
+      <Link>System.Data.IDbCommand\ExecuteScalar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDbCommand\ExecuteScalarOrDefault.cs">
+      <Link>System.Data.IDbCommand\ExecuteScalarOrDefault.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Data.IDbConnection\EnsureOpen.cs">
+      <Link>System.Data.IDbConnection\EnsureOpen.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsAfternoon.cs">
+      <Link>System.DateTime\IsAfternoon.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\Clear.cs">
+      <Link>System.Array\Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Array\WithinIndex.cs">
+      <Link>System.Array\WithinIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Boolean\IfFalse.cs">
+      <Link>System.Boolean\IfFalse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Boolean\IfTrue.cs">
+      <Link>System.Boolean\IfTrue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Boolean\ToString.cs">
+      <Link>System.Boolean\ToString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\Age.cs">
+      <Link>System.DateTime\Age.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\EndOfDay.cs">
+      <Link>System.DateTime\EndOfDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\EndOfMonth.cs">
+      <Link>System.DateTime\EndOfMonth.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\EndOfWeek.cs">
+      <Link>System.DateTime\EndOfWeek.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\EndOfYear.cs">
+      <Link>System.DateTime\EndOfYear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsFuture.cs">
+      <Link>System.DateTime\IsFuture.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsMorning.cs">
+      <Link>System.DateTime\IsMorning.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsPast.cs">
+      <Link>System.DateTime\IsPast.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsToday.cs">
+      <Link>System.DateTime\IsToday.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsWeekDay.cs">
+      <Link>System.DateTime\IsWeekDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\IsWeekend.cs">
+      <Link>System.DateTime\IsWeekend.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\StartOfDay.cs">
+      <Link>System.DateTime\StartOfDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\StartOfMonth.cs">
+      <Link>System.DateTime\StartOfMonth.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\StartOfWeek.cs">
+      <Link>System.DateTime\StartOfWeek.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\StartOfYear.cs">
+      <Link>System.DateTime\StartOfYear.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\Tomorrow.cs">
+      <Link>System.DateTime\Tomorrow.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.DateTime\Yesterday.cs">
+      <Link>System.DateTime\Yesterday.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Enum\AddFlag.cs">
+      <Link>System.Enum\AddFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Enum\GetEnumMembers.cs">
+      <Link>System.Enum\GetEnumMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Enum\HasFlag.cs">
+      <Link>System.Enum\HasFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Enum\RemoveFlag.cs">
+      <Link>System.Enum\RemoveFlag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Guid\IsEmpty.cs">
+      <Link>System.Guid\IsEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Guid\IsNotEmpty.cs">
+      <Link>System.Guid\IsNotEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Add.cs">
+      <Link>System.Linq.Expressions.Expression\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddAssign.cs">
+      <Link>System.Linq.Expressions.Expression\AddAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddAssignChecked.cs">
+      <Link>System.Linq.Expressions.Expression\AddAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddChecked.cs">
+      <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\And.cs">
+      <Link>System.Linq.Expressions.Expression\And.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AndAssign.cs">
+      <Link>System.Linq.Expressions.Expression\AndAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayAccessElement.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayAccessElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayIndexElement.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayIndexElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayLength.cs">
+      <Link>System.Linq.Expressions.Expression\ArrayLength.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Assign.cs">
+      <Link>System.Linq.Expressions.Expression\Assign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AssignTo.cs">
+      <Link>System.Linq.Expressions.Expression\AssignTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\BindTo.cs">
+      <Link>System.Linq.Expressions.Expression\BindTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Block.cs">
+      <Link>System.Linq.Expressions.Expression\Block.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Call.cs">
+      <Link>System.Linq.Expressions.Expression\Call.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Coalesce.cs">
+      <Link>System.Linq.Expressions.Expression\Coalesce.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Compose.cs">
+      <Link>System.Linq.Expressions.Expression\Compose.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Decrement.cs">
+      <Link>System.Linq.Expressions.Expression\Decrement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Equal.cs">
+      <Link>System.Linq.Expressions.Expression\Equal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Field.cs">
+      <Link>System.Linq.Expressions.Expression\Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\GreaterThan.cs">
+      <Link>System.Linq.Expressions.Expression\GreaterThan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\GreaterThanOrEqual.cs">
+      <Link>System.Linq.Expressions.Expression\GreaterThanOrEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Increment.cs">
+      <Link>System.Linq.Expressions.Expression\Increment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Is.cs">
+      <Link>System.Linq.Expressions.Expression\Is.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\IsFalse.cs">
+      <Link>System.Linq.Expressions.Expression\IsFalse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\IsTrue.cs">
+      <Link>System.Linq.Expressions.Expression\IsTrue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LessThan.cs">
+      <Link>System.Linq.Expressions.Expression\LessThan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LessThanOrEqual.cs">
+      <Link>System.Linq.Expressions.Expression\LessThanOrEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ListInit.cs">
+      <Link>System.Linq.Expressions.Expression\ListInit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Member.cs">
+      <Link>System.Linq.Expressions.Expression\Member.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MemberInit.cs">
+      <Link>System.Linq.Expressions.Expression\MemberInit.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Negate.cs">
+      <Link>System.Linq.Expressions.Expression\Negate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\NegateChecked.cs">
+      <Link>System.Linq.Expressions.Expression\NegateChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Not.cs">
+      <Link>System.Linq.Expressions.Expression\Not.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\NotEqual.cs">
+      <Link>System.Linq.Expressions.Expression\NotEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Or.cs">
+      <Link>System.Linq.Expressions.Expression\Or.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\OrAssign.cs">
+      <Link>System.Linq.Expressions.Expression\OrAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PostDecrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PostDecrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PostIncrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PostIncrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Power.cs">
+      <Link>System.Linq.Expressions.Expression\Power.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PreDecrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PreDecrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PreIncrementAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PreIncrementAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Property.cs">
+      <Link>System.Linq.Expressions.Expression\Property.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ReferenceEqual.cs">
+      <Link>System.Linq.Expressions.Expression\ReferenceEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ReferenceNotEqual.cs">
+      <Link>System.Linq.Expressions.Expression\ReferenceNotEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Throw.cs">
+      <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\To.cs">
+      <Link>System.Linq.Expressions.Expression\To.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Xor.cs">
+      <Link>System.Linq.Expressions.Expression\Xor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\XorAssign.cs">
+      <Link>System.Linq.Expressions.Expression\XorAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Divide.cs">
+      <Link>System.Linq.Expressions.Expression\Divide.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\DivideAssign.cs">
+      <Link>System.Linq.Expressions.Expression\DivideAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LeftShift.cs">
+      <Link>System.Linq.Expressions.Expression\LeftShift.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LeftShiftAssign.cs">
+      <Link>System.Linq.Expressions.Expression\LeftShiftAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Modulo.cs">
+      <Link>System.Linq.Expressions.Expression\Modulo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ModuloAssign.cs">
+      <Link>System.Linq.Expressions.Expression\ModuloAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Multiply.cs">
+      <Link>System.Linq.Expressions.Expression\Multiply.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyAssign.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyAssignChecked.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyChecked.cs">
+      <Link>System.Linq.Expressions.Expression\MultiplyChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\RightShift.cs">
+      <Link>System.Linq.Expressions.Expression\RightShift.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\RightShiftAssign.cs">
+      <Link>System.Linq.Expressions.Expression\RightShiftAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Subtract.cs">
+      <Link>System.Linq.Expressions.Expression\Subtract.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractAssign.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractAssign.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractAssignChecked.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractAssignChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractChecked.cs">
+      <Link>System.Linq.Expressions.Expression\SubtractChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.IQueryable[T]\OrderBy.cs">
+      <Link>System.Linq.IQueryable[T]\OrderBy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.IQueryable[T]\Paginate.cs">
+      <Link>System.Linq.IQueryable[T]\Paginate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.IQueryable[T]\Range.cs">
+      <Link>System.Linq.IQueryable[T]\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Linq.IQueryable[T]\WhereIf.cs">
+      <Link>System.Linq.IQueryable[T]\WhereIf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\Bind.cs">
+      <Link>System.Object\Bind.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\To.cs">
+      <Link>System.Object\To.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsBetween.cs">
+      <Link>System.Object\IsBetween.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsDefault.cs">
+      <Link>System.Object\IsDefault.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsIn.cs">
+      <Link>System.Object\IsIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsInstanceOf.cs">
+      <Link>System.Object\IsInstanceOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsNotIn.cs">
+      <Link>System.Object\IsNotIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsNotNull.cs">
+      <Link>System.Object\IsNotNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\IsNull.cs">
+      <Link>System.Object\IsNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Object\ReferenceEquals.cs">
+      <Link>System.Object\ReferenceEquals.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\DescriptionClass.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\DescriptionClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\DisplayNameClass.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\DisplayNameClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetCustomAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetCustomAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\GetDescription.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs">
+      <Link>System.Reflection.ICustomAttributeProvider\GetDisplayName.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.MethodInfo\IsAsync.cs">
+      <Link>System.Reflection.MethodInfo\IsAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.TypeInfo\IsNullable.cs">
+      <Link>System.Reflection.TypeInfo\IsNullable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Type\IsNullable.cs">
+      <Link>System.Type\IsNullable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Runtime.Serialization.SerializationInfo\GetValue.cs">
+      <Link>System.Runtime.Serialization.SerializationInfo\GetValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Runtime.Serialization\SerializeBinary.cs">
+      <Link>System.Runtime.Serialization\SerializeBinary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Nbsp2Ws.cs">
+      <Link>System.String\Nbsp2Ws.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToBoolean.cs">
+      <Link>System.String\ToBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToDateTime.cs">
+      <Link>System.String\ToDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToDecimal.cs">
+      <Link>System.String\ToDecimal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToFloat.cs">
+      <Link>System.String\ToFloat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToGuid.cs">
+      <Link>System.String\ToGuid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToInt16.cs">
+      <Link>System.String\ToInt16.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToInt.cs">
+      <Link>System.String\ToInt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToInt64.cs">
+      <Link>System.String\ToInt64.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Br2Nl.cs">
+      <Link>System.String\Br2Nl.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IfNullOrEmpty.cs">
+      <Link>System.String\IfNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsBool.cs">
+      <Link>System.String\IsBool.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsDateTime.cs">
+      <Link>System.String\IsDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsGuid.cs">
+      <Link>System.String\IsGuid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsNumber.cs">
+      <Link>System.String\IsNumber.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsInteger.cs">
+      <Link>System.String\IsInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsNotNullOrEmpty.cs">
+      <Link>System.String\IsNotNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsNotNullOrWhiteSpace.cs">
+      <Link>System.String\IsNotNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsNullOrEmpty.cs">
+      <Link>System.String\IsNullOrEmpty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\IsNullOrWhiteSpace.cs">
+      <Link>System.String\IsNullOrWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Left.cs">
+      <Link>System.String\Left.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Nl2Br.cs">
+      <Link>System.String\Nl2Br.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Reverse.cs">
+      <Link>System.String\Reverse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Right.cs">
+      <Link>System.String\Right.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToPlural.cs">
+      <Link>System.String\ToPlural.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\ToTitle.cs">
+      <Link>System.String\ToTitle.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Truncate.cs">
+      <Link>System.String\Truncate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\Ws2Nbsp.cs">
+      <Link>System.String\Ws2Nbsp.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\XmlDecode.cs">
+      <Link>System.String\XmlDecode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.String\XmlEncode.cs">
+      <Link>System.String\XmlEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Web.HttpRequest\GetParameter.cs">
+      <Link>System.Web.HttpRequest\GetParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Web.HttpRequest\GetRequiredParameter.cs">
+      <Link>System.Web.HttpRequest\GetRequiredParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Web.UI.Control\AddCssClass.cs">
+      <Link>System.Web.UI.Control\AddCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Web.UI.Control\RemoveCssClass.cs">
+      <Link>System.Web.UI.Control\RemoveCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Web.UI.Control\ToggleCssClass.cs">
+      <Link>System.Web.UI.Control\ToggleCssClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\Add.cs">
+      <Link>TArray\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\Insert.cs">
+      <Link>TArray\Insert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\Remove.cs">
+      <Link>TArray\Remove.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\RemoveAll.cs">
+      <Link>TArray\RemoveAll.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\RemoveAt.cs">
+      <Link>TArray\RemoveAt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\Slice.cs">
+      <Link>TArray\Slice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\TArray\Union.cs">
+      <Link>TArray\Union.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\WebHelper.cs">
+      <Link>WebHelper.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\build\net35\FluentMethods.net35.csproj">
+      <Project>{59dd64ec-172a-454a-a304-ffd93af6c4c5}</Project>
+      <Name>FluentMethods.net35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net20\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net20\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net20\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net20\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
