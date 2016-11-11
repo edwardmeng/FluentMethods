@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\FluentMethods.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -918,25 +919,25 @@
     <Compile Include="..\..\src\Core\System.Type\IsNullable.cs">
       <Link>System.Type\IsNullable.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.Serialization\FromXml.cs">
+    <Compile Include="..\..\src\Core\System.Xml.Serialization\FromXml.cs">
       <Link>System.Xml.Serialization\FromXml.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.Serialization\ToXml.cs">
+    <Compile Include="..\..\src\Core\System.Xml.Serialization\ToXml.cs">
       <Link>System.Xml.Serialization\ToXml.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.XmlNode\AppendCData.cs">
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\AppendCData.cs">
       <Link>System.Xml.XmlNode\AppendCData.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.XmlNode\AppendElement.cs">
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\AppendElement.cs">
       <Link>System.Xml.XmlNode\AppendElement.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.XmlNode\GetAttribute.cs">
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\GetAttribute.cs">
       <Link>System.Xml.XmlNode\GetAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.XmlNode\RemoveAttribute.cs">
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\RemoveAttribute.cs">
       <Link>System.Xml.XmlNode\RemoveAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Xml\System.Xml.XmlNode\SetAttribute.cs">
+    <Compile Include="..\..\src\Core\System.Xml.XmlNode\SetAttribute.cs">
       <Link>System.Xml.XmlNode\SetAttribute.cs</Link>
     </Compile>
     <Compile Include="..\..\src\Core\ParameterMissedException.cs">
@@ -1242,13 +1243,13 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\Throw.cs">
       <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ModuloAssign.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ModuloAssign.cs">
       <Link>System.Linq.Expressions.Expression\ModuloAssign.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ListInit.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ListInit.cs">
       <Link>System.Linq.Expressions.Expression\ListInit.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs">
       <Link>System.Linq.Expressions.Expression\MemberInit.cs</Link>
     </Compile>
   </ItemGroup>

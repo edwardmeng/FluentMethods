@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Reflection;
 
 public static partial class Extensions
 {
@@ -22,12 +23,22 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(type));
         }
 #if !Net35
-        if ((expression.Type.IsInterface || expression.Type == typeof(object)) && type.IsValueType && !type.IsGenericTypeDefinition && !type.ContainsGenericParameters)
+#if NetCore
+        var reflectingExpressionType = expression.Type.GetTypeInfo();
+#else
+        var reflectingExpressionType = expression.Type;
+#endif
+        if ((reflectingExpressionType.IsInterface || expression.Type == typeof(object)) && reflectingExpressionType.IsValueType && !reflectingExpressionType.IsGenericTypeDefinition && !reflectingExpressionType.ContainsGenericParameters)
         {
             return Expression.Unbox(expression, type);
         }
 #endif
-        if ((!type.IsValueType || type.IsNullable()) && !type.IsGenericTypeDefinition && !type.ContainsGenericParameters)
+#if NetCore
+        var reflectingType = type.GetTypeInfo();
+#else
+        var reflectingType = type;
+#endif
+        if ((!reflectingType.IsValueType || reflectingType.IsNullable()) && !reflectingType.IsGenericTypeDefinition && !reflectingType.ContainsGenericParameters)
         {
             return Expression.TypeAs(expression, type);
         }

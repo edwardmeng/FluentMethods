@@ -30,6 +30,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.WebApp.net45", "test\Web\FluentMethods.WebApp.net45.csproj", "{33A7EFA9-C4D1-4002-88C1-B565342DF4E7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{DEF0A197-FD38-48A1-B115-17556D11B3D9}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\build.cmd = nuget\build.cmd
+		nuget\FluentMethods.nuspec = nuget\FluentMethods.nuspec
+		nuget\nuget.config = nuget\nuget.config
+		nuget\nuget.exe = nuget\nuget.exe
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

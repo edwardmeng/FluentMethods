@@ -29,6 +29,7 @@
     <DefineConstants>TRACE;Net35</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\FluentMethods.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -1018,10 +1019,10 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\SubtractChecked.cs">
       <Link>System.Linq.Expressions.Expression\SubtractChecked.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ListInit.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\ListInit.cs">
       <Link>System.Linq.Expressions.Expression\ListInit.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs">
       <Link>System.Linq.Expressions.Expression\MemberInit.cs</Link>
     </Compile>
   </ItemGroup>

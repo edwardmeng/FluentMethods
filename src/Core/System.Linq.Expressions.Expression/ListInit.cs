@@ -12,10 +12,10 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="newExpression"/> or <paramref name="initializers"/> is null.
     /// -or-
-    /// One or more elements of <see cref="initializers"/> are null.
+    /// One or more elements of <paramref name="initializers"/> are null.
     /// </exception>
     /// <exception cref="System.ArgumentException">
-    /// The type that <see cref="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
+    /// The type that <paramref name="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
     /// </exception>
     public static ListInitExpression ListInit(this NewExpression newExpression, IEnumerable<ElementInit> initializers)
     {
@@ -31,10 +31,10 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="newExpression"/> or <paramref name="initializers"/> is null.
     /// -or-
-    /// One or more elements of <see cref="initializers"/> are null.
+    /// One or more elements of <paramref name="initializers"/> are null.
     /// </exception>
     /// <exception cref="System.ArgumentException">
-    /// The type that <see cref="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
+    /// The type that <paramref name="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
     /// </exception>
     /// <exception cref="System.InvalidOperationException">
     /// There is no instance method named "Add" (case insensitive) declared in <paramref name="newExpression"/>.Type or its base type.
@@ -45,7 +45,7 @@ public static partial class Extensions
     /// -or-
     /// More than one argument-compatible method named "Add" (case-insensitive) exists on <paramref name="newExpression"/>.Type and/or its base type.
     /// </exception>
-    public static ListInitExpression ListInit(NewExpression newExpression, IEnumerable<Expression> initializers)
+    public static ListInitExpression ListInit(this NewExpression newExpression, IEnumerable<Expression> initializers)
     {
         return Expression.ListInit(newExpression, initializers);
     }
@@ -59,12 +59,12 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="newExpression"/> or <paramref name="initializers"/> is null.
     /// -or-
-    /// One or more elements of <see cref="initializers"/> are null.
+    /// One or more elements of <paramref name="initializers"/> are null.
     /// </exception>
     /// <exception cref="System.ArgumentException">
-    /// The type that <see cref="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
+    /// The type that <paramref name="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
     /// </exception>
-    public static ListInitExpression ListInit(NewExpression newExpression, params ElementInit[] initializers)
+    public static ListInitExpression ListInit(this NewExpression newExpression, params ElementInit[] initializers)
     {
         return Expression.ListInit(newExpression, initializers);
     }
@@ -78,10 +78,10 @@ public static partial class Extensions
     /// <exception cref="System.ArgumentNullException">
     /// <paramref name="newExpression"/> or <paramref name="initializers"/> is null.
     /// -or-
-    /// One or more elements of <see cref="initializers"/> are null.
+    /// One or more elements of <paramref name="initializers"/> are null.
     /// </exception>
     /// <exception cref="System.ArgumentException">
-    /// The type that <see cref="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
+    /// The type that <paramref name="newExpression"/> represents does not implement <see cref="System.Collections.IEnumerable"/>.
     /// </exception>
     /// <exception cref="System.InvalidOperationException">
     /// There is no instance method named "Add" (case insensitive) declared in <paramref name="newExpression"/>.Type or its base type.
@@ -92,7 +92,7 @@ public static partial class Extensions
     /// -or-
     /// More than one argument-compatible method named "Add" (case-insensitive) exists on <paramref name="newExpression"/>.Type and/or its base type.
     /// </exception>
-    public static ListInitExpression ListInit(NewExpression newExpression, params Expression[] initializers)
+    public static ListInitExpression ListInit(this NewExpression newExpression, params Expression[] initializers)
     {
         return Expression.ListInit(newExpression, initializers);
     }

@@ -65,8 +65,12 @@ public static partial class Extensions
             {
                 throw new InvalidOperationException(string.Format(FluentMethods.Strings.CannotFindTypeMember, fieldName, source.ElementType));
             }
-            
-            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] { source.ElementType, orderExpression.Type.GetGenericArguments()[0].GetGenericArguments()[1] }, expression, orderExpression);
+#if NetCore
+            var memberType = orderExpression.Type.GetTypeInfo().GetGenericArguments()[0].GetTypeInfo().GetGenericArguments()[1];
+#else
+            var memberType = orderExpression.Type.GetGenericArguments()[0].GetGenericArguments()[1];
+#endif
+            expression = Expression.Call(typeof(Queryable), ascending ? ascendingMethod : descendingMethod, new[] { source.ElementType, memberType }, expression, orderExpression);
             ascendingMethod = "ThenBy";
             descendingMethod = "ThenByDescending";
         }
