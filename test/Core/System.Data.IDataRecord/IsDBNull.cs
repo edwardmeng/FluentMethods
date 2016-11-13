@@ -16,7 +16,7 @@ namespace FluentMethods.UnitTests
                 connection.EnsureOpen();
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandText = "CREATE TABLE IF NOT EXISTS INTEGER_TABLE(VALUE INTEGER)";
+                    command.CommandText = "CREATE TABLE IF NOT EXISTS INTEGER_TABLE(VALUE INTEGER NULL)";
                     command.ExecuteNonQuery();
 
                     command.CommandText = "DELETE FROM INTEGER_TABLE";

@@ -276,23 +276,11 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Add.cs">
       <Link>System.Linq.Expressions.Expression\Add.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddAssign.cs">
-      <Link>System.Linq.Expressions.Expression\AddAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddAssignChecked.cs">
-      <Link>System.Linq.Expressions.Expression\AddAssignChecked.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AddChecked.cs">
       <Link>System.Linq.Expressions.Expression\AddChecked.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\And.cs">
       <Link>System.Linq.Expressions.Expression\And.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AndAssign.cs">
-      <Link>System.Linq.Expressions.Expression\AndAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayAccessElement.cs">
-      <Link>System.Linq.Expressions.Expression\ArrayAccessElement.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayIndexElement.cs">
       <Link>System.Linq.Expressions.Expression\ArrayIndexElement.cs</Link>
@@ -300,29 +288,14 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ArrayLength.cs">
       <Link>System.Linq.Expressions.Expression\ArrayLength.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Assign.cs">
-      <Link>System.Linq.Expressions.Expression\Assign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\AssignTo.cs">
-      <Link>System.Linq.Expressions.Expression\AssignTo.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\BindTo.cs">
       <Link>System.Linq.Expressions.Expression\BindTo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Block.cs">
-      <Link>System.Linq.Expressions.Expression\Block.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Call.cs">
       <Link>System.Linq.Expressions.Expression\Call.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Coalesce.cs">
       <Link>System.Linq.Expressions.Expression\Coalesce.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Compose.cs">
-      <Link>System.Linq.Expressions.Expression\Compose.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Decrement.cs">
-      <Link>System.Linq.Expressions.Expression\Decrement.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Equal.cs">
       <Link>System.Linq.Expressions.Expression\Equal.cs</Link>
@@ -336,17 +309,8 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\GreaterThanOrEqual.cs">
       <Link>System.Linq.Expressions.Expression\GreaterThanOrEqual.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Increment.cs">
-      <Link>System.Linq.Expressions.Expression\Increment.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Is.cs">
       <Link>System.Linq.Expressions.Expression\Is.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\IsFalse.cs">
-      <Link>System.Linq.Expressions.Expression\IsFalse.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\IsTrue.cs">
-      <Link>System.Linq.Expressions.Expression\IsTrue.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LessThan.cs">
       <Link>System.Linq.Expressions.Expression\LessThan.cs</Link>
@@ -378,35 +342,11 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Or.cs">
       <Link>System.Linq.Expressions.Expression\Or.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\OrAssign.cs">
-      <Link>System.Linq.Expressions.Expression\OrAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PostDecrementAssign.cs">
-      <Link>System.Linq.Expressions.Expression\PostDecrementAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PostIncrementAssign.cs">
-      <Link>System.Linq.Expressions.Expression\PostIncrementAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Power.cs">
       <Link>System.Linq.Expressions.Expression\Power.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PreDecrementAssign.cs">
-      <Link>System.Linq.Expressions.Expression\PreDecrementAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PreIncrementAssign.cs">
-      <Link>System.Linq.Expressions.Expression\PreIncrementAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Property.cs">
       <Link>System.Linq.Expressions.Expression\Property.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ReferenceEqual.cs">
-      <Link>System.Linq.Expressions.Expression\ReferenceEqual.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ReferenceNotEqual.cs">
-      <Link>System.Linq.Expressions.Expression\ReferenceNotEqual.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Throw.cs">
-      <Link>System.Linq.Expressions.Expression\Throw.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\To.cs">
       <Link>System.Linq.Expressions.Expression\To.cs</Link>
@@ -414,35 +354,17 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Xor.cs">
       <Link>System.Linq.Expressions.Expression\Xor.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\XorAssign.cs">
-      <Link>System.Linq.Expressions.Expression\XorAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Divide.cs">
       <Link>System.Linq.Expressions.Expression\Divide.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\DivideAssign.cs">
-      <Link>System.Linq.Expressions.Expression\DivideAssign.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LeftShift.cs">
       <Link>System.Linq.Expressions.Expression\LeftShift.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\LeftShiftAssign.cs">
-      <Link>System.Linq.Expressions.Expression\LeftShiftAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Modulo.cs">
       <Link>System.Linq.Expressions.Expression\Modulo.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\ModuloAssign.cs">
-      <Link>System.Linq.Expressions.Expression\ModuloAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Multiply.cs">
       <Link>System.Linq.Expressions.Expression\Multiply.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyAssign.cs">
-      <Link>System.Linq.Expressions.Expression\MultiplyAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyAssignChecked.cs">
-      <Link>System.Linq.Expressions.Expression\MultiplyAssignChecked.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\MultiplyChecked.cs">
       <Link>System.Linq.Expressions.Expression\MultiplyChecked.cs</Link>
@@ -450,17 +372,8 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\RightShift.cs">
       <Link>System.Linq.Expressions.Expression\RightShift.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\RightShiftAssign.cs">
-      <Link>System.Linq.Expressions.Expression\RightShiftAssign.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\Subtract.cs">
       <Link>System.Linq.Expressions.Expression\Subtract.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractAssign.cs">
-      <Link>System.Linq.Expressions.Expression\SubtractAssign.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractAssignChecked.cs">
-      <Link>System.Linq.Expressions.Expression\SubtractAssignChecked.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\SubtractChecked.cs">
       <Link>System.Linq.Expressions.Expression\SubtractChecked.cs</Link>
@@ -525,12 +438,6 @@
     <Compile Include="..\..\Core\System.Reflection.ICustomAttributeProvider\GetDisplayName.cs">
       <Link>System.Reflection.ICustomAttributeProvider\GetDisplayName.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Reflection.MethodInfo\IsAsync.cs">
-      <Link>System.Reflection.MethodInfo\IsAsync.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Reflection.TypeInfo\IsNullable.cs">
-      <Link>System.Reflection.TypeInfo\IsNullable.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Type\IsNullable.cs">
       <Link>System.Type\IsNullable.cs</Link>
     </Compile>
@@ -591,14 +498,8 @@
     <Compile Include="..\..\Core\System.String\IsNotNullOrEmpty.cs">
       <Link>System.String\IsNotNullOrEmpty.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.String\IsNotNullOrWhiteSpace.cs">
-      <Link>System.String\IsNotNullOrWhiteSpace.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.String\IsNullOrEmpty.cs">
       <Link>System.String\IsNullOrEmpty.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.String\IsNullOrWhiteSpace.cs">
-      <Link>System.String\IsNullOrWhiteSpace.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.String\Left.cs">
       <Link>System.String\Left.cs</Link>
@@ -611,9 +512,6 @@
     </Compile>
     <Compile Include="..\..\Core\System.String\Right.cs">
       <Link>System.String\Right.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.String\ToPlural.cs">
-      <Link>System.String\ToPlural.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.String\ToTitle.cs">
       <Link>System.String\ToTitle.cs</Link>

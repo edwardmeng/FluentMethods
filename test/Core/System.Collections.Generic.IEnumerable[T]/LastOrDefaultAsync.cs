@@ -20,8 +20,8 @@ namespace FluentMethods.UnitTests
                 new Version("1.2.0"),
             };
 
-            Assert.Equal(new Version("1.2.0"), await collection.LastOrDefaultAsync(x => Task.FromResult(x.Major == 1)));
-            Assert.Null(await collection.LastOrDefaultAsync(x => Task.FromResult(x.Major == 3)));
+            Assert.Equal(new Version("1.2.0"), await collection.LastOrDefaultAsync(x => Task.Factory.StartNew(() => x.Major == 1)));
+            Assert.Null(await collection.LastOrDefaultAsync(x => Task.Factory.StartNew(() => x.Major == 3)));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace FluentMethods.UnitTests
 {
@@ -13,7 +14,11 @@ namespace FluentMethods.UnitTests
 #endif
         public void ListInitElementInit()
         {
+#if NetCore
+            var addMethod = typeof(List<int>).GetTypeInfo().GetMethod("Add");
+#else
             var addMethod = typeof(List<int>).GetMethod("Add");
+#endif
             var lambda = Expression.New(typeof(List<int>)).ListInit(
                     Expression.ElementInit(addMethod, Expression.Constant(2)),
                     Expression.ElementInit(addMethod, Expression.Constant(4)))

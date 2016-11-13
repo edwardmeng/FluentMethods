@@ -13,7 +13,7 @@ namespace FluentMethods.UnitTests
         public async Task AggregateAsync()
         {
             var collection = (IEnumerable<string>)new[] { "A", "B", "C", "D" };
-            Assert.Equal("0xabcd", await collection.AggregateAsync("0x", (s, x) => Task.FromResult(s + x.ToLower())));
+            Assert.Equal("0xabcd", await collection.AggregateAsync("0x", (s, x) => Task.Factory.StartNew(()=> s + x.ToLower())));
         }
     }
 }

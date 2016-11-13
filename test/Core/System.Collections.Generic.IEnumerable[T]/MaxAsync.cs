@@ -19,7 +19,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(3, await collection.MaxAsync(x => Task.FromResult(x.Major)));
+            Assert.Equal(3, await collection.MaxAsync(x => Task.Factory.StartNew(() => x.Major)));
         }
 
 #if NetCore
@@ -35,7 +35,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(3, await collection.MaxAsync(x => Task.FromResult((long)x.Major)));
+            Assert.Equal((long)3, await collection.MaxAsync(x => Task.Factory.StartNew(() => (long)x.Major)));
         }
 
 #if NetCore
@@ -51,7 +51,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(3, await collection.MaxAsync(x => Task.FromResult((double)x.Major)));
+            Assert.Equal((double)3, await collection.MaxAsync(x => Task.Factory.StartNew(() => (double)x.Major)));
         }
 
 #if NetCore
@@ -67,7 +67,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(3, await collection.MaxAsync(x => Task.FromResult((float)x.Major)));
+            Assert.Equal((float)3, await collection.MaxAsync(x => Task.Factory.StartNew(() => (float)x.Major)));
         }
 
 #if NetCore
@@ -83,7 +83,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(3, await collection.MaxAsync(x => Task.FromResult((decimal)x.Major)));
+            Assert.Equal((decimal)3, await collection.MaxAsync(x => Task.Factory.StartNew(() => (decimal)x.Major)));
         }
 
 #if NetCore
@@ -99,7 +99,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(new Version("3.0.0"), await collection.MaxAsync(x => Task.FromResult(x)));
+            Assert.Equal(new Version("3.0.0"), await collection.MaxAsync(x => Task.Factory.StartNew(() => x)));
         }
     }
 }

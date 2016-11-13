@@ -19,7 +19,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(2,await collection.CountAsync(x => Task.FromResult(x.Major == 1)));
+            Assert.Equal(2,await collection.CountAsync(x => Task.Factory.StartNew(() => x.Major == 1)));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace FluentMethods.UnitTests
 {
@@ -12,7 +13,12 @@ namespace FluentMethods.UnitTests
 #endif
         public void MemberInit()
         {
-            var lambda = Expression.New(typeof(ObjectFixture.Product)).MemberInit(Expression.Bind(typeof(ObjectFixture.Product).GetProperty("Title"), Expression.Constant("Fizz")))
+#if NetCore
+            var property = typeof(ObjectFixture.Product).GetTypeInfo().GetProperty("Title");
+#else
+            var property = typeof(ObjectFixture.Product).GetProperty("Title");
+#endif
+            var lambda = Expression.New(typeof(ObjectFixture.Product)).MemberInit(Expression.Bind(property, Expression.Constant("Fizz")))
                 .ToLambda<Func<ObjectFixture.Product>>().Compile();
             var product = lambda();
             Assert.NotNull(product);

@@ -55,6 +55,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Core.1.0.103\lib\net40\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -132,9 +136,6 @@
     </Compile>
     <Compile Include="..\..\Core\System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs">
       <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AddOrUpdate.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Collections.Generic.IDictionary[TKey,TValue]\AsReadOnly.cs">
-      <Link>System.Collections.Generic.IDictionary[TKey,TValue]\AsReadOnly.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs">
       <Link>System.Collections.Generic.IDictionary[TKey,TValue]\GetOrAdd.cs</Link>
@@ -249,15 +250,6 @@
     </Compile>
     <Compile Include="..\..\Core\System.Collections.Generic.IList[T]\AsReadOnly.cs">
       <Link>System.Collections.Generic.IList[T]\AsReadOnly.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Data.Common.DbCommand\ExecuteScalarAsync.cs">
-      <Link>System.Data.Common.DbCommand\ExecuteScalarAsync.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Data.Common.DbCommand\ExecuteScalarOrDefaultAsync.cs">
-      <Link>System.Data.Common.DbCommand\ExecuteScalarOrDefaultAsync.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Core\System.Data.Common.DbConnection\EnsureOpenAsync.cs">
-      <Link>System.Data.Common.DbConnection\EnsureOpenAsync.cs</Link>
     </Compile>
     <Compile Include="..\..\Core\System.Data.IDataParameter\GetValue.cs">
       <Link>System.Data.IDataParameter\GetValue.cs</Link>
@@ -625,9 +617,6 @@
     <Compile Include="..\..\Core\System.Reflection.MethodInfo\IsAsync.cs">
       <Link>System.Reflection.MethodInfo\IsAsync.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Reflection.TypeInfo\IsNullable.cs">
-      <Link>System.Reflection.TypeInfo\IsNullable.cs</Link>
-    </Compile>
     <Compile Include="..\..\Core\System.Type\IsNullable.cs">
       <Link>System.Type\IsNullable.cs</Link>
     </Compile>
@@ -766,16 +755,19 @@
     <Compile Include="..\..\Core\WebHelper.cs">
       <Link>WebHelper.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\build\net45\FluentMethods.net45.csproj">
-      <Project>{64d46c48-56f1-4039-904a-870d9a3fb6b8}</Project>
-      <Name>FluentMethods.net45</Name>
-    </ProjectReference>
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
+      <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\build\net40\FluentMethods.net40.csproj">
+      <Project>{8617f4ea-672b-44c1-af4f-4505588e2016}</Project>
+      <Name>FluentMethods.net40</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" />
@@ -785,8 +777,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets'))" />
     <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net40\System.Data.SQLite.Core.targets'))" />
   </Target>
   <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\packages\System.Data.SQLite.Core.1.0.103\build\net40\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

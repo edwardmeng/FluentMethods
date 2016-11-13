@@ -68,7 +68,7 @@ namespace FluentMethods.UnitTests
         {
             var parameter = Expression.Parameter(typeof(int), "x");
             var lambda = parameter.To<decimal>().ToLambda<Func<int, decimal>>(parameter).Compile();
-            Assert.Equal(35, lambda(35));
+            Assert.Equal((decimal)35, lambda(35));
         }
     }
 }

@@ -29,7 +29,7 @@
                         if (reader.Read())
                         {
                             Assert.Equal(20, reader.GetValue<int>("INTVALUE"));
-                            Assert.Equal(20, reader.GetValue<long>("INTVALUE"));
+                            Assert.Equal((long)20, reader.GetValue<long>("INTVALUE"));
                             Assert.Equal("Fizz", reader.GetValue<string>("TEXTVALUE"));
                         }
                     }

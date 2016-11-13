@@ -1,3 +1,3 @@
 {
-  "projects": [ "build/netcore" ]
+  "projects": [ "netcore" ]
 }

@@ -38,16 +38,12 @@ namespace FluentMethods.UnitTests
 #endif
         public void CallInstanceGenericNoArguments()
         {
-            var product = new ObjectFixture.Product() {Price = 20};
+            var product = new ObjectFixture.Product() { Price = 20 };
             var parameter = Expression.Parameter(typeof(ObjectFixture.Product), "x");
-            Assert.Equal((decimal) 20, parameter.Call("GetPrice", typeof(decimal)).ToLambda<Func<ObjectFixture.Product, decimal>>(parameter).Compile()(product));
+            Assert.Equal((decimal)20, parameter.Call("GetPrice", typeof(decimal)).ToLambda<Func<ObjectFixture.Product, decimal>>(parameter).Compile()(product));
         }
-
-#if NetCore
-        [Xunit.Fact]
-#else
+#if !Net35 && !NetCore
         [NUnit.Framework.Test]
-#endif
         public void CallInstanceGeneric()
         {
             var parameter = Expression.Parameter(typeof(DbDataReader), "reader");
@@ -60,5 +56,6 @@ namespace FluentMethods.UnitTests
             reader.Read();
             Assert.Equal(20, parameter.Call("GetFieldValue", new[] { typeof(int) }, Expression.Constant(0)).ToLambda<Func<DbDataReader, int>>(parameter).Compile()(reader));
         }
+#endif
     }
 }

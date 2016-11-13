@@ -13,7 +13,7 @@ namespace FluentMethods.UnitTests
             DescriptionEvent?.Invoke(this, EventArgs.Empty);
         }
 
-        [Description("FizzProperty"), Required]
+        [Description("FizzProperty"), Required, RegularExpression("^\\w+$")]
         public string DescriptionProperty { get; set; }
 
         [Description("FizzEvent")]

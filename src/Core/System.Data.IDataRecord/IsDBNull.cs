@@ -16,7 +16,15 @@ public static partial class Extensions
         {
             throw new ArgumentNullException(nameof(reader));
         }
-        var ordinal = reader.GetOrdinal(fieldName);
+        int ordinal;
+        try
+        {
+            ordinal = reader.GetOrdinal(fieldName);
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            ordinal = -1;
+        }
         if (ordinal == -1)
         {
             throw new ArgumentException(string.Format(FluentMethods.Strings.FieldCannotBeFound, fieldName), nameof(fieldName));

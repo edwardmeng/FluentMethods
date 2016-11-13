@@ -13,7 +13,7 @@ namespace FluentMethods.UnitTests
         public void Power()
         {
             var expression = Expression.Constant((double)2).Power(Expression.Constant((double)3));
-            Assert.Equal(8, expression.ToLambda<Func<double>>().Compile()());
+            Assert.Equal((double)8, expression.ToLambda<Func<double>>().Compile()());
         }
     }
 }

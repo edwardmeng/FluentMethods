@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.net35", "buil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.net45", "build\net45\FluentMethods.net45.csproj", "{64D46C48-56F1-4039-904A-870D9A3FB6B8}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMethods.netcore", "build\netcore\FluentMethods.netcore.xproj", "{0D4FD2C5-DA94-44E0-944D-D568913691AA}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMethods.netcore", "netcore\FluentMethods\FluentMethods.netcore.xproj", "{0D4FD2C5-DA94-44E0-944D-D568913691AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.net40", "build\net40\FluentMethods.net40.csproj", "{8617F4EA-672B-44C1-AF4F-4505588E2016}"
 EndProject
@@ -42,7 +42,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMethods.UnitTests.net40", "test\build\net40\FluentMethods.UnitTests.net40.csproj", "{3326BDEB-5227-41FF-8F33-AF46B1E40896}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMethods.UnitTests.netcore", "test\build\netcore\FluentMethods.UnitTests.netcore.xproj", "{F9D281A1-B851-4F5F-9BAB-0E3A417EC413}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMethods.UnitTests.netcore", "netcore\FluentMethods.UnitTests\FluentMethods.UnitTests.netcore.xproj", "{F9D281A1-B851-4F5F-9BAB-0E3A417EC413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

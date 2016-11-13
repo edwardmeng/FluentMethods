@@ -13,8 +13,8 @@ namespace FluentMethods.UnitTests
         public async Task AllAsync()
         {
             var collection = (IEnumerable<char>)new[] { 'A', 'B', 'C', 'D' };
-            Assert.True(await collection.AllAsync(x => Task.FromResult(x < 'E')));
-            Assert.False(await collection.AllAsync(x => Task.FromResult(x < 'B')));
+            Assert.True(await collection.AllAsync(x => Task.Factory.StartNew(() => x < 'E')));
+            Assert.False(await collection.AllAsync(x => Task.Factory.StartNew(() => x < 'B')));
         }
     }
 }

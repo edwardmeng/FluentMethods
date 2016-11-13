@@ -14,7 +14,7 @@ namespace FluentMethods.UnitTests
         {
             Expression<Func<double>> left = () => 2;
             Expression<Func<double>> right = () => 3;
-            Assert.Equal(8, left.Compose(right, Expression.Power).Compile()());
+            Assert.Equal((double)8, left.Compose(right, Expression.Power).Compile()());
         }
     }
 }

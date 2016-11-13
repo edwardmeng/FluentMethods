@@ -20,8 +20,8 @@ namespace FluentMethods.UnitTests
                 new Version("1.2.0"),
             };
 
-            Assert.Equal(new Version("1.2.0"), await collection.LastAsync(x => Task.FromResult(x.Major == 1)));
-            await Assert.ThrowsAsync<InvalidOperationException>(() => collection.LastAsync(x => Task.FromResult(x.Major == 3)));
+            Assert.Equal(new Version("1.2.0"), await collection.LastAsync(x => Task.Factory.StartNew(() => x.Major == 1)));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => collection.LastAsync(x => Task.Factory.StartNew(() => x.Major == 3)));
         }
     }
 }

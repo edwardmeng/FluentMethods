@@ -19,7 +19,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(6, await collection.SumAsync(x => Task.FromResult(x.Major)));
+            Assert.Equal(6, await collection.SumAsync(x => Task.Factory.StartNew(() => x.Major)));
         }
 
 #if NetCore
@@ -35,7 +35,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(6, await collection.SumAsync(x => Task.FromResult((long)x.Major)));
+            Assert.Equal((long)6, await collection.SumAsync(x => Task.Factory.StartNew(() => (long)x.Major)));
         }
 
 #if NetCore
@@ -51,7 +51,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(6, await collection.SumAsync(x => Task.FromResult((double)x.Major)));
+            Assert.Equal((double)6, await collection.SumAsync(x => Task.Factory.StartNew(() => (double)x.Major)));
         }
 
 #if NetCore
@@ -67,7 +67,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(6, await collection.SumAsync(x => Task.FromResult((float)x.Major)));
+            Assert.Equal((float)6, await collection.SumAsync(x => Task.Factory.StartNew(() => (float)x.Major)));
         }
 
 #if NetCore
@@ -83,7 +83,7 @@ namespace FluentMethods.UnitTests
                 new Version("2.1.0"),
                 new Version("1.2.0"),
             }; ;
-            Assert.Equal(6, await collection.SumAsync(x => Task.FromResult((decimal)x.Major)));
+            Assert.Equal((decimal)6, await collection.SumAsync(x => Task.Factory.StartNew(() => (decimal)x.Major)));
         }
     }
 }
