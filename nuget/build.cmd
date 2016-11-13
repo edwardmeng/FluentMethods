@@ -23,7 +23,13 @@ call :ExecuteCmd nuget.exe restore ..\FluentMethods.sln -NonInteractive -ConfigF
 IF %ERRORLEVEL% NEQ 0 goto error
 
 echo Building solution...
-call :ExecuteCmd %msbuild% "..\FluentMethods.sln" /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
+call :ExecuteCmd %msbuild% "..\build\net35\FluentMethods.net35.csproj" /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
+IF %ERRORLEVEL% NEQ 0 goto error
+call :ExecuteCmd %msbuild% "..\build\net40\FluentMethods.net40.csproj" /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
+IF %ERRORLEVEL% NEQ 0 goto error
+call :ExecuteCmd %msbuild% "..\build\net45\FluentMethods.net45.csproj" /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
+IF %ERRORLEVEL% NEQ 0 goto error
+call :ExecuteCmd %msbuild% "..\netcore\FluentMethods\FluentMethods.netcore.xproj" /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
 IF %ERRORLEVEL% NEQ 0 goto error
 
 echo Packaging...
@@ -45,9 +51,9 @@ copy ..\build\net45\bin\%config%\FluentMethods.dll %libtmp%\net45 /Y
 copy ..\build\net45\bin\%config%\FluentMethods.xml %libtmp%\net45 /Y
 
 if not exist %libtmp%\netstandard1.5 mkdir %libtmp%\netstandard1.5
-copy ..\build\netcore\bin\%config%\netstandard1.5\FluentMethods.dll %libtmp%\netstandard1.5 /Y
-copy ..\build\netcore\bin\%config%\netstandard1.5\FluentMethods.xml %libtmp%\netstandard1.5 /Y
-copy ..\build\netcore\bin\%config%\netstandard1.5\FluentMethods.deps.json %libtmp%\netstandard1.5 /Y
+copy ..\netcore\FluentMethods\bin\%config%\netstandard1.5\FluentMethods.dll %libtmp%\netstandard1.5 /Y
+copy ..\netcore\FluentMethods\bin\%config%\netstandard1.5\FluentMethods.xml %libtmp%\netstandard1.5 /Y
+copy ..\netcore\FluentMethods\bin\%config%\netstandard1.5\FluentMethods.deps.json %libtmp%\netstandard1.5 /Y
 
 
 call :ExecuteCmd nuget.exe pack "%cd%\FluentMethods.nuspec" -OutputDirectory %packagestmp% %version%
