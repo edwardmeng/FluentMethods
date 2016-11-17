@@ -4,15 +4,15 @@ using System.Reflection.Emit;
 public static partial class Extensions
 {
     /// <summary>
-    /// Pushes a supplied value of type int64 onto the evaluation stack as an int64.
+    /// Pushes a null reference (type O) onto the evaluation stack.
     /// </summary>
-    public static ILGenerator Ldc_I8(this ILGenerator il, long value)
+    public static ILGenerator LoadNull(this ILGenerator il)
     {
         if (il == null)
         {
             throw new ArgumentNullException(nameof(il));
         }
-        il.Emit(OpCodes.Ldc_I8, value);
+        il.Emit(OpCodes.Ldnull);
         return il;
     }
 }

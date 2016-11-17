@@ -745,9 +745,10 @@
     <Compile Include="..\..\Core\WebHelper.cs">
       <Link>WebHelper.cs</Link>
     </Compile>
-    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PowerAssign.cs" >
+    <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
       <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
     </Compile>
+    <Compile Include="System.Reflection.Emit.ILGenerator\Box.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\build\net45\FluentMethods.net45.csproj">

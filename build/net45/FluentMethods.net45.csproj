@@ -1255,17 +1255,19 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Box.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Call.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Callvirt.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\CheckedConvertTo.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\ConvertTo.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\FromUnsignedTo.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Ldarg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Ldarga.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_I4.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_I8.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_R4.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_R8.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadConst.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Ldloc.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Ldloca.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldnull.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadNull.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadString.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\New.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Stloc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\StoreLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Unbox.cs" />
   </ItemGroup>
   <ItemGroup>

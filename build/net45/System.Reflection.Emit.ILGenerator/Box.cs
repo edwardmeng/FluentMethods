@@ -6,7 +6,9 @@ public static partial class Extensions
     /// <summary>
     /// Converts a value type to an object reference (type O).
     /// </summary>
-    public static ILGenerator Box(this ILGenerator il, Type type)
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="type">The type of the top evaluation stack.</param>
+    public static ILGenerator BoxFrom(this ILGenerator il, Type type)
     {
         if (il == null)
         {
@@ -18,5 +20,13 @@ public static partial class Extensions
         }
         il.Emit(type.IsValueType ? OpCodes.Box : OpCodes.Castclass, type);
         return il;
+    }
+
+    /// <summary>
+    /// Converts a value type to an object reference (type O).
+    /// </summary>
+    public static ILGenerator BoxFrom<T>(this ILGenerator il)
+    {
+        return il.BoxFrom(typeof(T));
     }
 }
