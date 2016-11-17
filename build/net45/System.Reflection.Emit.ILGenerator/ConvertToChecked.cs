@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    public static ILGenerator CheckedConvertTo(this ILGenerator il, Type type)
+    public static ILGenerator ConvertToChecked(this ILGenerator il, Type type)
     {
         if (il == null)
         {
@@ -55,13 +55,13 @@ public static partial class Extensions
         }
         else
         {
-            throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "CheckedConvertTo"));
+            throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "ConvertToChecked"));
         }
         return il;
     }
 
-    public static ILGenerator CheckedConvertTo<T>(this ILGenerator il)
+    public static ILGenerator ConvertToChecked<T>(this ILGenerator il)
     {
-        return il.CheckedConvertTo(typeof(T));
+        return il.ConvertToChecked(typeof(T));
     }
 }
