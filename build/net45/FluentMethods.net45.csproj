@@ -1249,9 +1249,24 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\MemberInit.cs">
       <Link>System.Linq.Expressions.Expression\MemberInit.cs</Link>
     </Compile>
-    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PowerAssign.cs" >
+    <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
       <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
     </Compile>
+    <Compile Include="System.Reflection.Emit.ILGenerator\Box.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Call.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Callvirt.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldarg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldarga.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_I4.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_I8.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_R4.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc_R8.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldloc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldloca.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldnull.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Stloc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Unbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
@@ -1265,6 +1280,7 @@
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
