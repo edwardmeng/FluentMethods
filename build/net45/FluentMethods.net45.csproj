@@ -1254,6 +1254,7 @@
     </Compile>
     <Compile Include="System.Reflection.Emit.ILGenerator\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\AddChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\And.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ArrayLength.cs" />
@@ -1262,6 +1263,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Call.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Callvirt.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ConvertToChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\GetProperty.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadElementAddressReadonly.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadField.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadFieldAddress.cs" />
@@ -1278,8 +1280,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadArgAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadArgList.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadConst.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldloc.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Ldloca.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocal.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocalAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadElement.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadElementAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadNull.cs" />
@@ -1293,7 +1295,9 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Or.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Remainder.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\RemainderUnsigned.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\RemoveFromEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\SetProperty.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftLeft.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftRight.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftRightUnsigned.cs" />
