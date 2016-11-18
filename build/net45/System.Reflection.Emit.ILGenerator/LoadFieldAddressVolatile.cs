@@ -6,26 +6,24 @@ using System.Reflection.Emit;
 public static partial class Extensions
 {
     /// <summary>
-    /// Pops a reference from the evaluation stack and pushes the address of the given field for that object, with volatile semantics
+    ///     Pops a reference from the evaluation stack and pushes the address of the given field for that object, with volatile
+    ///     semantics
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="field">The field to load</param>
     public static ILGenerator LoadFieldAddressVolatile(this ILGenerator il, FieldInfo field)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         if (field == null)
-        {
             throw new ArgumentNullException(nameof(field));
-        }
         il.Emit(OpCodes.Volatile);
         return il.LoadFieldAddress(field);
     }
 
     /// <summary>
-    /// Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given type) for that object, with volatile semantics
+    ///     Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given
+    ///     type) for that object, with volatile semantics
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type the field is on</param>
@@ -34,7 +32,8 @@ public static partial class Extensions
         => il.LoadFieldAddressVolatile(GetFieldInfo(type, fieldName));
 
     /// <summary>
-    /// Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given type) for that object, with volatile semantics
+    ///     Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given
+    ///     type) for that object, with volatile semantics
     /// </summary>
     /// <typeparam name="T">The type the field is on</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
@@ -43,7 +42,7 @@ public static partial class Extensions
         => il.LoadFieldAddressVolatile(typeof(T), fieldName);
 
     /// <summary>
-    /// Pushes the address of the static field represented by the given expression, with volatile semantics
+    ///     Pushes the address of the static field represented by the given expression, with volatile semantics
     /// </summary>
     /// <typeparam name="TField">The type of the field</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
@@ -52,7 +51,8 @@ public static partial class Extensions
         => il.LoadFieldAddressVolatile(GetFieldInfo(fieldExpression));
 
     /// <summary>
-    /// Pops a reference from the evaluation stack and pushes the address of the field represented by the given expression for that object, with volatile semantics
+    ///     Pops a reference from the evaluation stack and pushes the address of the field represented by the given expression
+    ///     for that object, with volatile semantics
     /// </summary>
     /// <typeparam name="T">The type the field is on</typeparam>
     /// <typeparam name="TField">The type of the field</typeparam>

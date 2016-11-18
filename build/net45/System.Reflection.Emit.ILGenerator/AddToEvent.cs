@@ -7,15 +7,15 @@ public static partial class Extensions
     /// <summary>
     ///     Pops a reference to a delegate instance off the evaluation stack and calls the adder of the given event with it
     /// </summary>
-    /// <param name="generator"></param>
+    /// <param name="il"></param>
     /// <param name="event">The event to add the delegate instance to</param>
-    public static ILGenerator AddToEvent(this ILGenerator generator, EventInfo @event)
+    public static ILGenerator AddToEvent(this ILGenerator il, EventInfo @event)
     {
-        if (generator == null)
-            throw new ArgumentNullException(nameof(generator));
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
         if (@event == null)
             throw new ArgumentNullException(nameof(@event));
-        return generator.Call(@event.AddMethod);
+        return il.Call(@event.AddMethod);
     }
 
     /// <summary>
@@ -23,11 +23,11 @@ public static partial class Extensions
     ///     name on the given type
     /// </summary>
     /// <remarks>Will only consider public events, static or instance</remarks>
-    /// <param name="generator"></param>
+    /// <param name="il"></param>
     /// <param name="type">The type the event is on</param>
     /// <param name="eventName">The name of the event</param>
-    public static ILGenerator AddToEvent(this ILGenerator generator, Type type, string eventName)
-        => generator.AddToEvent(GetEventInfo(type, eventName));
+    public static ILGenerator AddToEvent(this ILGenerator il, Type type, string eventName)
+        => il.AddToEvent(GetEventInfo(type, eventName));
 
     /// <summary>
     ///     Pops a reference to a delegate instance off the evaluation stack and call the adder of the event with the given
@@ -35,10 +35,10 @@ public static partial class Extensions
     /// </summary>
     /// <remarks>Will only consider public events, static or instance</remarks>
     /// <typeparam name="T">The type the event is on</typeparam>
-    /// <param name="generator"></param>
+    /// <param name="il"></param>
     /// <param name="eventName">The name of the event</param>
-    public static ILGenerator AddToEvent<T>(this ILGenerator generator, string eventName)
-        => generator.AddToEvent(typeof(T), eventName);
+    public static ILGenerator AddToEvent<T>(this ILGenerator il, string eventName)
+        => il.AddToEvent(typeof(T), eventName);
 
     private static EventInfo GetEventInfo(Type type, string eventName)
     {

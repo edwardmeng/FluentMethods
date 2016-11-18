@@ -4,16 +4,14 @@ using System.Reflection.Emit;
 public static partial class Extensions
 {
     /// <summary>
-    /// Pushes a supplied value of type Int32 onto the evaluation stack as an int32.
+    ///     Pushes a supplied value of type Int32 onto the evaluation stack as an int32.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, int value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         switch (value)
         {
             case -1:
@@ -48,28 +46,22 @@ public static partial class Extensions
                 return il;
         }
 
-        if (value >= -128 && value < 128)
-        {
-            il.Emit(OpCodes.Ldc_I4_S, (sbyte)value);
-        }
+        if ((value >= -128) && (value < 128))
+            il.Emit(OpCodes.Ldc_I4_S, (sbyte) value);
         else
-        {
             il.Emit(OpCodes.Ldc_I4, value);
-        }
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type UInt32 onto the evaluation stack as an int32.
+    ///     Pushes a supplied value of type UInt32 onto the evaluation stack as an int32.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, uint value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         switch (value)
         {
             case 0:
@@ -102,88 +94,72 @@ public static partial class Extensions
         }
 
         if (value < 128)
-        {
-            il.Emit(OpCodes.Ldc_I4_S, (sbyte)value);
-        }
+            il.Emit(OpCodes.Ldc_I4_S, (sbyte) value);
         else
-        {
             il.Emit(OpCodes.Ldc_I4, value);
-        }
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type Int64 onto the evaluation stack as an int64.
+    ///     Pushes a supplied value of type Int64 onto the evaluation stack as an int64.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, long value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
-        if (value <= int.MaxValue && value >= int.MinValue)
-            il.LoadConst((int)value).ConvertTo<long>();
+        if ((value <= int.MaxValue) && (value >= int.MinValue))
+            il.LoadConst((int) value).ConvertTo<long>();
         else
             il.Emit(OpCodes.Ldc_I8, value);
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type UInt64 onto the evaluation stack as an int64.
+    ///     Pushes a supplied value of type UInt64 onto the evaluation stack as an int64.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, ulong value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         if (value <= uint.MaxValue)
-        {
-            il.LoadConst((uint)value).ConvertTo<ulong>();
-        }
+            il.LoadConst((uint) value).ConvertTo<ulong>();
         else
-        {
             il.Emit(OpCodes.Ldc_I8, value);
-        }
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type float onto the evaluation stack as type F (float).
+    ///     Pushes a supplied value of type float onto the evaluation stack as type F (float).
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, float value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         il.Emit(OpCodes.Ldc_R4, value);
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type double onto the evaluation stack as type F (float).
+    ///     Pushes a supplied value of type double onto the evaluation stack as type F (float).
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, double value)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         il.Emit(OpCodes.Ldc_R8, value);
         return il;
     }
 
     /// <summary>
-    /// Pushes a supplied value of type boolean onto the evaluation stack.
+    ///     Pushes a supplied value of type boolean onto the evaluation stack.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
@@ -193,12 +169,12 @@ public static partial class Extensions
     }
 
     /// <summary>
-    /// Pushes a supplied value of type char onto the evaluation stack.
+    ///     Pushes a supplied value of type char onto the evaluation stack.
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, char value)
     {
-        return il.LoadConst((int)value);
+        return il.LoadConst((int) value);
     }
 }

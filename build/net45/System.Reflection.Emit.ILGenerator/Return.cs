@@ -4,15 +4,13 @@ using System.Reflection.Emit;
 public static partial class Extensions
 {
     /// <summary>
-    /// Returns from the current method, pushing a return value (if present) from the callee's
-    /// evaluation stack onto the caller's evaluation stack.
+    ///     Pops a value from the evaluation stack and returns it to the calling method
     /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     public static ILGenerator Return(this ILGenerator il)
     {
         if (il == null)
-        {
             throw new ArgumentNullException(nameof(il));
-        }
         il.Emit(OpCodes.Ret);
         return il;
     }

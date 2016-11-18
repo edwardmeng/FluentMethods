@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 public static partial class Extensions
 {
     /// <summary>
-    /// Pops a value from the evaluation stack and stores it in the given local
+    ///     Pops a value from the evaluation stack and stores it in the given local
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="local">The local to store the evaluation stack value in</param>
