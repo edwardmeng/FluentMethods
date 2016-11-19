@@ -1321,6 +1321,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\ConstrainedCall.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ConstrainedTailCall.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ConvertToChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Default.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Duplicate.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FieldOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\GetProperty.cs" />

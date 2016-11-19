@@ -22,7 +22,29 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to divide the evaluation stack value by</param>
-    public static ILGenerator RemainderUnsigned(this ILGenerator il, int value)
+    public static ILGenerator RemainderUnsigned(this ILGenerator il, char value)
+    {
+        return il.LoadConst(value).RemainderUnsigned();
+    }
+
+    /// <summary>
+    ///     Pops a value from the top of the evaluation stack, and with the given value finds the remainder when the first is
+    ///     divided by the second without regard for sign
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to divide the evaluation stack value by</param>
+    public static ILGenerator RemainderUnsigned(this ILGenerator il, byte value)
+    {
+        return il.LoadConst(value).RemainderUnsigned();
+    }
+
+    /// <summary>
+    ///     Pops a value from the top of the evaluation stack, and with the given value finds the remainder when the first is
+    ///     divided by the second without regard for sign
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to divide the evaluation stack value by</param>
+    public static ILGenerator RemainderUnsigned(this ILGenerator il, ushort value)
     {
         return il.LoadConst(value).RemainderUnsigned();
     }
@@ -44,40 +66,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to divide the evaluation stack value by</param>
-    public static ILGenerator RemainderUnsigned(this ILGenerator il, long value)
-    {
-        return il.LoadConst(value).RemainderUnsigned();
-    }
-
-    /// <summary>
-    ///     Pops a value from the top of the evaluation stack, and with the given value finds the remainder when the first is
-    ///     divided by the second without regard for sign
-    /// </summary>
-    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="value">The value to divide the evaluation stack value by</param>
     public static ILGenerator RemainderUnsigned(this ILGenerator il, ulong value)
-    {
-        return il.LoadConst(value).RemainderUnsigned();
-    }
-
-    /// <summary>
-    ///     Pops a value from the top of the evaluation stack, and with the given value finds the remainder when the first is
-    ///     divided by the second without regard for sign
-    /// </summary>
-    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="value">The value to divide the evaluation stack value by</param>
-    public static ILGenerator RemainderUnsigned(this ILGenerator il, float value)
-    {
-        return il.LoadConst(value).RemainderUnsigned();
-    }
-
-    /// <summary>
-    ///     Pops a value from the top of the evaluation stack, and with the given value finds the remainder when the first is
-    ///     divided by the second without regard for sign
-    /// </summary>
-    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="value">The value to divide the evaluation stack value by</param>
-    public static ILGenerator RemainderUnsigned(this ILGenerator il, double value)
     {
         return il.LoadConst(value).RemainderUnsigned();
     }

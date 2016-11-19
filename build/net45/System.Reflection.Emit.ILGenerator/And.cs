@@ -20,6 +20,56 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to bitwise and the evaluation stack value with</param>
+    public static ILGenerator And(this ILGenerator il, bool value)
+    {
+        return il.LoadConst(value).And();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise and operation with the given value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise and the evaluation stack value with</param>
+    public static ILGenerator And(this ILGenerator il, byte value)
+    {
+        return il.LoadConst(value).And();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise and operation with the given value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise and the evaluation stack value with</param>
+    public static ILGenerator And(this ILGenerator il, sbyte value)
+    {
+        return il.LoadConst(value).And();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise and operation with the given value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise and the evaluation stack value with</param>
+    public static ILGenerator And(this ILGenerator il, short value)
+    {
+        return il.LoadConst(value).And();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise and operation with the given value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise and the evaluation stack value with</param>
+    public static ILGenerator And(this ILGenerator il, ushort value)
+    {
+        return il.LoadConst(value).And();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise and operation with the given value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise and the evaluation stack value with</param>
     public static ILGenerator And(this ILGenerator il, int value)
     {
         return il.LoadConst(value).And();

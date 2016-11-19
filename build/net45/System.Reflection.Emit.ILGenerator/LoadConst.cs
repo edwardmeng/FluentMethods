@@ -175,6 +175,36 @@ public static partial class Extensions
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, char value)
     {
-        return il.LoadConst((int) value);
+        return il.LoadConst((int) value).ConvertTo<char>();
+    }
+
+    /// <summary>
+    ///     Pushes a supplied value of type byte onto the evaluation stack.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to push onto the evaluation stack</param>
+    public static ILGenerator LoadConst(this ILGenerator il, byte value)
+    {
+        return il.LoadConst((int)value).ConvertTo<byte>();
+    }
+
+    /// <summary>
+    ///     Pushes a supplied value of type sbyte onto the evaluation stack.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to push onto the evaluation stack</param>
+    public static ILGenerator LoadConst(this ILGenerator il, sbyte value)
+    {
+        return il.LoadConst((int)value).ConvertTo<sbyte>();
+    }
+
+    /// <summary>
+    ///     Pushes a supplied value of type string onto the evaluation stack.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to push onto the evaluation stack</param>
+    public static ILGenerator LoadConst(this ILGenerator il, string value)
+    {
+        return il.LoadString(value);
     }
 }

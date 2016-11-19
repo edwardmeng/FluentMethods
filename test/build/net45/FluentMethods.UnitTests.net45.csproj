@@ -748,7 +748,21 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
       <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
     </Compile>
+    <Compile Include="System.Reflection.Emit.ILGenerator\Add.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\AddChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\AddUnsignedChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\And.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Box.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Divide.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\DivideUnsigned.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Multiply.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\MultiplyChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\MultiplyUnsignedChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Remainder.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\RemainderUnsigned.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Subtract.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\SubtractChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\SubtractUnsignedChecked.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\build\net45\FluentMethods.net45.csproj">
