@@ -1307,7 +1307,6 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Break.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Call.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\CallVirtual.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\CastClassTo.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\CompareEqual.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\CompareEqualTo.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\CompareGreater.cs" />

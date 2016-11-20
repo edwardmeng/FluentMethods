@@ -2,25 +2,27 @@
 
 namespace FluentMethods.UnitTests
 {
+    public class Product
+    {
+        public static string State;
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public int Price { get; set; }
+
+        public string Warehouse { get; set; }
+
+        public string Category;
+
+        public T GetPrice<T>()
+        {
+            return Price.To<T>();
+        }
+    }
     public partial class ObjectFixture
     {
-        public class Product
-        {
-            public string Title { get; set; }
-
-            public string Description { get; set; }
-
-            public int Price { get; set; }
-
-            public string Warehouse { get; set; }
-
-            public string Category;
-
-            public T GetPrice<T>()
-            {
-                return Price.To<T>();
-            }
-        }
 
 #if NetCore
         [Xunit.Fact]

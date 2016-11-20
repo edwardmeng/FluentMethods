@@ -14,12 +14,12 @@ namespace FluentMethods.UnitTests
         public void MemberInit()
         {
 #if NetCore
-            var property = typeof(ObjectFixture.Product).GetTypeInfo().GetProperty("Title");
+            var property = typeof(Product).GetTypeInfo().GetProperty("Title");
 #else
-            var property = typeof(ObjectFixture.Product).GetProperty("Title");
+            var property = typeof(Product).GetProperty("Title");
 #endif
-            var lambda = Expression.New(typeof(ObjectFixture.Product)).MemberInit(Expression.Bind(property, Expression.Constant("Fizz")))
-                .ToLambda<Func<ObjectFixture.Product>>().Compile();
+            var lambda = Expression.New(typeof(Product)).MemberInit(Expression.Bind(property, Expression.Constant("Fizz")))
+                .ToLambda<Func<Product>>().Compile();
             var product = lambda();
             Assert.NotNull(product);
             Assert.Equal("Fizz", product.Title);

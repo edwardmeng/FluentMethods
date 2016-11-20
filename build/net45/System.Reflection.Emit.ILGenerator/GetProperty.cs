@@ -70,23 +70,11 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(type));
         var property = type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
         if (property == null)
-            throw new InvalidOperationException("There is no property called `" + propertyName + "` on the type " + type.Name);
+            throw new InvalidOperationException("There is no property named with `" + propertyName + "` on the type " + type.Name);
         return property;
     }
 
-    private static PropertyInfo GetPropertyInfo<TProp>(Expression<Func<TProp>> expression)
-    {
-        if (expression == null)
-            throw new ArgumentNullException(nameof(expression));
-        var property = (expression.Body as MemberExpression)?.Member as PropertyInfo;
-
-        if (property == null)
-            throw new InvalidOperationException("Expression does not represent a property");
-
-        return property;
-    }
-
-    private static PropertyInfo GetPropertyInfo<T, TProp>(Expression<Func<T, TProp>> expression)
+    private static PropertyInfo GetPropertyInfo(LambdaExpression expression)
     {
         if (expression == null)
             throw new ArgumentNullException(nameof(expression));

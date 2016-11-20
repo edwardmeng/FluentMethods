@@ -16,7 +16,7 @@ public static partial class Extensions
         else if (type == typeof(byte))
             il.Emit(OpCodes.Conv_U1);
         // Converts the signed value on the top of the evaluation stack to an unsigned short (16 bit integer) with no overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(ushort)|| type == typeof(char))
+        else if (type == typeof(ushort) || type == typeof(char))
             il.Emit(OpCodes.Conv_U2);
         // Converts the signed value on the top of the evaluation stack to a signed short (16 bit integer) with no overflow check. Pushes an int32 value onto the evaluation stack.
         else if (type == typeof(short))
@@ -41,6 +41,9 @@ public static partial class Extensions
             il.Emit(OpCodes.Conv_R8);
         else if (!type.IsValueType)
             il.Emit(OpCodes.Castclass, type);
+        else
+            throw new InvalidOperationException("Cannot convert to a value type.");
+
         return il;
     }
 

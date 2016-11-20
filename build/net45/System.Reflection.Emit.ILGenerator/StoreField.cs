@@ -16,6 +16,8 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(il));
         if (field == null)
             throw new ArgumentNullException(nameof(field));
+        if(field.IsInitOnly || field.IsLiteral)
+            throw new InvalidOperationException("Cannot write to this field.");
         il.Emit(field.IsStatic ? OpCodes.Stsfld : OpCodes.Stfld, field);
         return il;
     }
@@ -328,8 +330,7 @@ public static partial class Extensions
         if (field.FieldType != typeof(short))
             throw new InvalidOperationException("Type mismatch - field is of type " + field.FieldType);
 
-        return il.LoadConst(value)
-            .StoreField(field);
+        return il.LoadConst(value).StoreField(field);
     }
 
     /// <summary>
@@ -815,5 +816,68 @@ public static partial class Extensions
     /// <param name="fieldExpression">An expression representing the field to load</param>
     /// <param name="value">The value to overwrite the field with</param>
     public static ILGenerator StoreField<T>(this ILGenerator il, Expression<Func<T, double>> fieldExpression, double value)
+        => il.StoreField(GetFieldInfo(fieldExpression), value);
+
+    /// <summary>
+    ///     Pops a reference from the evaluation stack and stores the given value in the given field for that object
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="field">The field to store the value in</param>
+    /// <param name="value">The value to overwrite the field with</param>
+    /// <exception cref="InvalidOperationException">Thrown if the field is not of type <see cref="Double" /></exception>
+    public static ILGenerator StoreField(this ILGenerator il, FieldInfo field, string value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (field == null)
+            throw new ArgumentNullException(nameof(field));
+        if (field.FieldType != typeof(string))
+            throw new InvalidOperationException("Type mismatch - field is of type " + field.FieldType);
+
+        return il.LoadConst(value).StoreField(field);
+    }
+
+    /// <summary>
+    ///     Pops a reference from the evaluation stack and stores the given value in the field (with the given name on the
+    ///     given type) for that object
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="type">The type the field is on</param>
+    /// <param name="fieldName">The name of the field</param>
+    /// <param name="value">The value to overwrite the field with</param>
+    /// <exception cref="InvalidOperationException">Thrown if the field is not of type <see cref="Double" /></exception>
+    public static ILGenerator StoreField(this ILGenerator il, Type type, string fieldName, string value)
+        => il.StoreField(GetFieldInfo(type, fieldName), value);
+
+    /// <summary>
+    ///     Pops a reference from the evaluation stack and stores the given value in the field (with the given name on the
+    ///     given type) for that object
+    /// </summary>
+    /// <typeparam name="T">The type the field is on</typeparam>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="fieldName">The name of the field</param>
+    /// <param name="value">The value to overwrite the field with</param>
+    /// <exception cref="InvalidOperationException">Thrown if the field is not of type <see cref="Double" /></exception>
+    public static ILGenerator StoreField<T>(this ILGenerator il, string fieldName, string value)
+        => il.StoreField(typeof(T), fieldName, value);
+
+    /// <summary>
+    ///     Stores the given value in the static field represented by the given expression
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="fieldExpression">An expression representing the field to load</param>
+    /// <param name="value">The value to overwrite the field with</param>
+    public static ILGenerator StoreField(this ILGenerator il, Expression<Func<string>> fieldExpression, string value)
+        => il.StoreField(GetFieldInfo(fieldExpression), value);
+
+    /// <summary>
+    ///     Pops a reference from the evaluation stack and stores the given value in the field represented by the given
+    ///     expression for that object
+    /// </summary>
+    /// <typeparam name="T">The type the field is on</typeparam>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="fieldExpression">An expression representing the field to load</param>
+    /// <param name="value">The value to overwrite the field with</param>
+    public static ILGenerator StoreField<T>(this ILGenerator il, Expression<Func<T, string>> fieldExpression, string value)
         => il.StoreField(GetFieldInfo(fieldExpression), value);
 }

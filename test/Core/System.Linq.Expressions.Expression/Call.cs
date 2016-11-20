@@ -38,9 +38,9 @@ namespace FluentMethods.UnitTests
 #endif
         public void CallInstanceGenericNoArguments()
         {
-            var product = new ObjectFixture.Product() { Price = 20 };
-            var parameter = Expression.Parameter(typeof(ObjectFixture.Product), "x");
-            Assert.Equal((decimal)20, parameter.Call("GetPrice", typeof(decimal)).ToLambda<Func<ObjectFixture.Product, decimal>>(parameter).Compile()(product));
+            var product = new Product() { Price = 20 };
+            var parameter = Expression.Parameter(typeof(Product), "x");
+            Assert.Equal((decimal)20, parameter.Call("GetPrice", typeof(decimal)).ToLambda<Func<Product, decimal>>(parameter).Compile()(product));
         }
 #if !Net35 && !NetCore
         [NUnit.Framework.Test]

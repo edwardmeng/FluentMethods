@@ -12,10 +12,10 @@ namespace FluentMethods.UnitTests
 #endif
         public void Field()
         {
-            var parameter = Expression.Parameter(typeof(ObjectFixture.Product), "x");
+            var parameter = Expression.Parameter(typeof(Product), "x");
             var expression = parameter.Field("Category");
-            var lambda = expression.ToLambda<Func<ObjectFixture.Product, string>>(parameter).Compile();
-            Assert.Equal("Fizz", lambda(new ObjectFixture.Product { Category = "Fizz" }));
+            var lambda = expression.ToLambda<Func<Product, string>>(parameter).Compile();
+            Assert.Equal("Fizz", lambda(new Product { Category = "Fizz" }));
         }
     }
 }

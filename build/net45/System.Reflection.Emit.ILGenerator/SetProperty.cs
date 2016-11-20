@@ -651,4 +651,184 @@ public static partial class Extensions
     /// <param name="value">The value to set the property to</param>
     public static ILGenerator SetProperty<T, TProp>(this ILGenerator il, Expression<Func<T, TProp>> expression, ulong value)
         => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object with the given
+    ///     value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="property">The property to set</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, PropertyInfo property, float value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (property == null)
+            throw new ArgumentNullException(nameof(property));
+        if (property.PropertyType != typeof(ulong))
+            throw new InvalidOperationException("Property is not of type UInt64");
+        return il.LoadConst(value).SetProperty(property);
+    }
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="type">The type the property belongs to</param>
+    /// <param name="propertyName">The name of the property on the given <paramref name="type" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Type type, string propertyName, float value)
+        => il.SetProperty(GetPropertyInfo(type, propertyName), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <typeparam name="T">The type the property belongs to</typeparam>
+    /// <param name="il"></param>
+    /// <param name="propertyName">The name of the property on <typeparamref name="T" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T>(this ILGenerator il, string propertyName, float value)
+        => il.SetProperty(typeof(T), propertyName, value);
+
+    /// <summary>
+    ///     Calls the setter of the static property represented by the given expression with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Expression<Func<ulong>> expression, float value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object
+    /// </summary>
+    /// <typeparam name="T">The type the property is on</typeparam>
+    /// <typeparam name="TProp">The type of the property</typeparam>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T, TProp>(this ILGenerator il, Expression<Func<T, TProp>> expression, float value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object with the given
+    ///     value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="property">The property to set</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, PropertyInfo property, double value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (property == null)
+            throw new ArgumentNullException(nameof(property));
+        if (property.PropertyType != typeof(ulong))
+            throw new InvalidOperationException("Property is not of type UInt64");
+        return il.LoadConst(value).SetProperty(property);
+    }
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="type">The type the property belongs to</param>
+    /// <param name="propertyName">The name of the property on the given <paramref name="type" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Type type, string propertyName, double value)
+        => il.SetProperty(GetPropertyInfo(type, propertyName), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <typeparam name="T">The type the property belongs to</typeparam>
+    /// <param name="il"></param>
+    /// <param name="propertyName">The name of the property on <typeparamref name="T" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T>(this ILGenerator il, string propertyName, double value)
+        => il.SetProperty(typeof(T), propertyName, value);
+
+    /// <summary>
+    ///     Calls the setter of the static property represented by the given expression with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Expression<Func<ulong>> expression, double value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object
+    /// </summary>
+    /// <typeparam name="T">The type the property is on</typeparam>
+    /// <typeparam name="TProp">The type of the property</typeparam>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T, TProp>(this ILGenerator il, Expression<Func<T, TProp>> expression, double value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object with the given
+    ///     value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="property">The property to set</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, PropertyInfo property, string value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (property == null)
+            throw new ArgumentNullException(nameof(property));
+        if (property.PropertyType != typeof(ulong))
+            throw new InvalidOperationException("Property is not of type UInt64");
+        return il.LoadConst(value).SetProperty(property);
+    }
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="type">The type the property belongs to</param>
+    /// <param name="propertyName">The name of the property on the given <paramref name="type" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Type type, string propertyName, string value)
+        => il.SetProperty(GetPropertyInfo(type, propertyName), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property (looked up by name on the
+    ///     given type) on the object with the given value
+    /// </summary>
+    /// <typeparam name="T">The type the property belongs to</typeparam>
+    /// <param name="il"></param>
+    /// <param name="propertyName">The name of the property on <typeparamref name="T" /></param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T>(this ILGenerator il, string propertyName, string value)
+        => il.SetProperty(typeof(T), propertyName, value);
+
+    /// <summary>
+    ///     Calls the setter of the static property represented by the given expression with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty(this ILGenerator il, Expression<Func<ulong>> expression, string value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
+
+    /// <summary>
+    ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object
+    /// </summary>
+    /// <typeparam name="T">The type the property is on</typeparam>
+    /// <typeparam name="TProp">The type of the property</typeparam>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T, TProp>(this ILGenerator il, Expression<Func<T, TProp>> expression, string value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
 }

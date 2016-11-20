@@ -16,6 +16,8 @@ public static partial class Extensions
     {
         if (il == null)
             throw new ArgumentNullException(nameof(il));
+        if(method == null)
+            throw new ArgumentNullException(nameof(method));
         if (method is DynamicMethod)
             throw new InvalidOperationException();
         if (method.MemberType == MemberTypes.Constructor)

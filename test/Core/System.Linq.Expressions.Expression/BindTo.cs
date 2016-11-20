@@ -14,12 +14,12 @@ namespace FluentMethods.UnitTests
         public void BindTo()
         {
 #if NetCore
-            var property = typeof(ObjectFixture.Product).GetTypeInfo().GetProperty("Title");
+            var property = typeof(Product).GetTypeInfo().GetProperty("Title");
 #else
-            var property = typeof(ObjectFixture.Product).GetProperty("Title");
+            var property = typeof(Product).GetProperty("Title");
 #endif
-            var expression = Expression.MemberInit(Expression.New(typeof(ObjectFixture.Product)), Expression.Constant("Fizz").BindTo(property));
-            var product = expression.ToLambda<Func<ObjectFixture.Product>>().Compile()();
+            var expression = Expression.MemberInit(Expression.New(typeof(Product)), Expression.Constant("Fizz").BindTo(property));
+            var product = expression.ToLambda<Func<Product>>().Compile()();
             Assert.Equal("Fizz", product.Title);
         }
     }

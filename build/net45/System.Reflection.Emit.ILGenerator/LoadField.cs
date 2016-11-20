@@ -5,19 +5,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static FieldInfo GetFieldInfo<T, TField>(Expression<Func<T, TField>> expression)
-    {
-        if (expression == null)
-            throw new ArgumentNullException(nameof(expression));
-        var field = (expression.Body as MemberExpression)?.Member as FieldInfo;
-
-        if (field == null)
-            throw new ArgumentException("Expression does not represent a field", nameof(expression));
-
-        return field;
-    }
-
-    private static FieldInfo GetFieldInfo<TField>(Expression<Func<TField>> expression)
+    private static FieldInfo GetFieldInfo(LambdaExpression expression)
     {
         if (expression == null)
             throw new ArgumentNullException(nameof(expression));

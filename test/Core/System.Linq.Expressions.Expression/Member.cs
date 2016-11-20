@@ -12,10 +12,10 @@ namespace FluentMethods.UnitTests
 #endif
         public void MemberProperty()
         {
-            var parameter = Expression.Parameter(typeof(ObjectFixture.Product), "x");
+            var parameter = Expression.Parameter(typeof(Product), "x");
             var expression = parameter.Member("Title");
-            var lambda = expression.ToLambda<Func<ObjectFixture.Product, string>>(parameter).Compile();
-            Assert.Equal("Fizz", lambda(new ObjectFixture.Product { Title = "Fizz" }));
+            var lambda = expression.ToLambda<Func<Product, string>>(parameter).Compile();
+            Assert.Equal("Fizz", lambda(new Product { Title = "Fizz" }));
         }
 
 #if NetCore
@@ -25,10 +25,10 @@ namespace FluentMethods.UnitTests
 #endif
         public void MemberField()
         {
-            var parameter = Expression.Parameter(typeof(ObjectFixture.Product), "x");
+            var parameter = Expression.Parameter(typeof(Product), "x");
             var expression = parameter.Member("Category");
-            var lambda = expression.ToLambda<Func<ObjectFixture.Product, string>>(parameter).Compile();
-            Assert.Equal("Fizz", lambda(new ObjectFixture.Product { Category = "Fizz" }));
+            var lambda = expression.ToLambda<Func<Product, string>>(parameter).Compile();
+            Assert.Equal("Fizz", lambda(new Product { Category = "Fizz" }));
         }
     }
 }
