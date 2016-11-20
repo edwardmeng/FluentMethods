@@ -21,7 +21,29 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
-    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, int value)
+    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, char value)
+    {
+        return il.LoadConst(value).ShiftRightUnsigned();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise shiftrightunsigned operation by the given
+    ///     value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
+    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, byte value)
+    {
+        return il.LoadConst(value).ShiftRightUnsigned();
+    }
+
+    /// <summary>
+    ///     Pop an integer value from the evaluation stack and perform a bitwise shiftrightunsigned operation by the given
+    ///     value
+    /// </summary>
+    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
+    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, ushort value)
     {
         return il.LoadConst(value).ShiftRightUnsigned();
     }
@@ -33,28 +55,6 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
     public static ILGenerator ShiftRightUnsigned(this ILGenerator il, uint value)
-    {
-        return il.LoadConst(value).ShiftRightUnsigned();
-    }
-
-    /// <summary>
-    ///     Pop an integer value from the evaluation stack and perform a bitwise shiftrightunsigned operation by the given
-    ///     value
-    /// </summary>
-    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
-    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, long value)
-    {
-        return il.LoadConst(value).ShiftRightUnsigned();
-    }
-
-    /// <summary>
-    ///     Pop an integer value from the evaluation stack and perform a bitwise shiftrightunsigned operation by the given
-    ///     value
-    /// </summary>
-    /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="value">The value to bitwise shiftrightunsigned the evaluation stack value by</param>
-    public static ILGenerator ShiftRightUnsigned(this ILGenerator il, ulong value)
     {
         return il.LoadConst(value).ShiftRightUnsigned();
     }

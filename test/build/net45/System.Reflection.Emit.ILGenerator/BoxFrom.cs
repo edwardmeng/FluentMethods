@@ -10,7 +10,7 @@ namespace FluentMethods.UnitTests
 #else
         [NUnit.Framework.Test]
 #endif
-        public void BoxStruct()
+        public void BoxFromStruct()
         {
             var method = new DynamicMethod("x",typeof(object),new[] {typeof(int)});
             var il = method.GetILGenerator();
@@ -27,7 +27,7 @@ namespace FluentMethods.UnitTests
 #else
         [NUnit.Framework.Test]
 #endif
-        public void BoxClass()
+        public void BoxFromClass()
         {
             var method = new DynamicMethod("x", typeof(object), new[] { typeof(Version) });
             var il = method.GetILGenerator();
