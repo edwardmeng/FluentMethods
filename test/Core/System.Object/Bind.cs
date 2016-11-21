@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FluentMethods.UnitTests
 {
@@ -6,7 +7,18 @@ namespace FluentMethods.UnitTests
     {
         public static string State;
 
-        public string Title { get; set; }
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                if (_title != value)
+                {
+                    _title = value;
+                    TitleChanged?.Invoke(this, value);
+                }
+            }
+        }
 
         public string Description { get; set; }
 
@@ -15,11 +27,14 @@ namespace FluentMethods.UnitTests
         public string Warehouse { get; set; }
 
         public string Category;
+        private string _title;
 
         public T GetPrice<T>()
         {
             return Price.To<T>();
         }
+
+        public event EventHandler<string> TitleChanged;
     }
     public partial class ObjectFixture
     {
@@ -57,8 +72,8 @@ namespace FluentMethods.UnitTests
             };
             component.Bind(new
             {
-                Description="Buzz",
-                Price =20
+                Description = "Buzz",
+                Price = 20
             });
             Assert.Equal("Buzz", component.Description);
             Assert.Equal(component.Price, 20);

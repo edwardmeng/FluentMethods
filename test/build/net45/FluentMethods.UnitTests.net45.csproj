@@ -750,6 +750,7 @@
     </Compile>
     <Compile Include="System.Reflection.Emit.ILGenerator\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\AddChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\And.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ArrayLength.cs" />
@@ -764,6 +765,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Default.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Divide.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\DivideUnsigned.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Duplicate.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FieldOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\IsInstanceOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadField.cs" />
@@ -778,6 +780,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Or.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Remainder.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\RemainderUnsigned.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\RemoveFromEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftLeft.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftRight.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ShiftRightUnsigned.cs" />
