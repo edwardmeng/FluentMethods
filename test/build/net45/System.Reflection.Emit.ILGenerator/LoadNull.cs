@@ -10,15 +10,15 @@ namespace FluentMethods.UnitTests
 #else
         [NUnit.Framework.Test]
 #endif
-        public void NewObject()
+        public void LoadNull()
         {
-            var method = new DynamicMethod("x", typeof(Version), new Type[0]);
+            var method = new DynamicMethod("xm", typeof(string), new Type[0]);
             var il = method.GetILGenerator();
-            il.NewObject<Version>();
+            il.LoadNull();
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<Version>)method.CreateDelegate(typeof(Func<Version>));
-            Assert.Equal(new Version(), func());
+            var func = (Func<string>)method.CreateDelegate(typeof(Func<string>));
+            Assert.Null(func());
         }
     }
 }

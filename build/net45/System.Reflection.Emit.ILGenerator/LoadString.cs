@@ -13,8 +13,9 @@ public static partial class Extensions
         if (il == null)
             throw new ArgumentNullException(nameof(il));
         if (value == null)
-            throw new ArgumentNullException(nameof(value));
-        il.Emit(OpCodes.Ldstr, value);
+            il.Emit(OpCodes.Ldnull);
+        else
+            il.Emit(OpCodes.Ldstr, value);
         return il;
     }
 }

@@ -46,6 +46,6 @@ public static partial class Extensions
         if (constructor == null)
             throw new InvalidOperationException("Exception type " + typeof(T).Name + " does not have a public constructor taking only a string");
 
-        return il.LoadString(message).NewObject(constructor).Throw();
+        return il.LoadString(message).New(constructor).Throw();
     }
 }

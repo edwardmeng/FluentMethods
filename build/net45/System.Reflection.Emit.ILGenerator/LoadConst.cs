@@ -94,10 +94,13 @@ public static partial class Extensions
     {
         if (il == null)
             throw new ArgumentNullException(nameof(il));
-        if (value <= uint.MaxValue)
-            il.LoadConst((uint) value).ConvertTo<ulong>();
+        if (value <= long.MaxValue)
+            il.LoadConst((long) value).ConvertTo<ulong>();
         else
-            il.Emit(OpCodes.Ldc_I8, value);
+        {
+            il.Emit(OpCodes.Ldc_I8, (long) value);
+            il.ConvertTo<ulong>();
+        }
         return il;
     }
 
@@ -154,7 +157,7 @@ public static partial class Extensions
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, byte value)
     {
-        return il.LoadConst((int)value).ConvertTo<byte>();
+        return il.LoadConst((int) value).ConvertTo<byte>();
     }
 
     /// <summary>
@@ -164,7 +167,7 @@ public static partial class Extensions
     /// <param name="value">The value to push onto the evaluation stack</param>
     public static ILGenerator LoadConst(this ILGenerator il, sbyte value)
     {
-        return il.LoadConst((int)value).ConvertTo<sbyte>();
+        return il.LoadConst((int) value).ConvertTo<sbyte>();
     }
 
     /// <summary>
@@ -175,5 +178,31 @@ public static partial class Extensions
     public static ILGenerator LoadConst(this ILGenerator il, string value)
     {
         return il.LoadString(value);
+    }
+
+    /// <summary>
+    ///     Pushes a supplied value of type decimal onto the evaluation stack.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="value">The value to push onto the evaluation stack</param>
+    public static ILGenerator LoadConst(this ILGenerator il, decimal value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (decimal.Truncate(value) == value)
+        {
+            if ((int.MinValue <= value) && (value <= int.MaxValue))
+                return il.LoadConst(decimal.ToInt32(value)).New(typeof(decimal).GetConstructor(new[] {typeof(int)}));
+            if ((long.MinValue <= value) && (value <= long.MaxValue))
+                return il.LoadConst(decimal.ToInt64(value)).New(typeof(decimal).GetConstructor(new[] {typeof(long)}));
+        }
+        var bits = decimal.GetBits(value);
+        return il
+            .LoadConst(bits[0])
+            .LoadConst(bits[1])
+            .LoadConst(bits[2])
+            .LoadConst((bits[3] & 0x80000000L) > 0L)
+            .LoadConst((byte) (bits[3] >> 0x10))
+            .New(typeof(decimal).GetConstructor(new[] {typeof(int), typeof(int), typeof(int), typeof(bool), typeof(byte)}));
     }
 }
