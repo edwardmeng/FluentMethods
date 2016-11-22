@@ -1320,6 +1320,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\ConstrainedCall.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ConstrainedTailCall.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\ConvertToChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\DeclareLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Default.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Duplicate.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FieldOf.cs" />
@@ -1337,6 +1338,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadFieldAddressVolatile.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadFieldVolatile.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\MethodOf.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\New.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\NewArray.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\NewObject.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\NoOperation.cs" />
