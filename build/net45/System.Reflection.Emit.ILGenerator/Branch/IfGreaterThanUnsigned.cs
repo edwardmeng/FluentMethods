@@ -7,7 +7,7 @@ public static partial class Extensions
     {
         if (il == null) throw new ArgumentNullException(nameof(il));
         il.IL.LoadConst(value);
-        return il.IfGreaterUnsigned(il.Label);
+        return il.IfGreaterUnsigned();
     }
 
     /// <summary>
