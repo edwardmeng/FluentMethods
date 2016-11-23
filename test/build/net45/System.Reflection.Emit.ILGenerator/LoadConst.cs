@@ -341,5 +341,30 @@ namespace FluentMethods.UnitTests
             var func = (Func<decimal>)method.CreateDelegate(typeof(Func<decimal>));
             Assert.Equal(value, func());
         }
+
+#if NetCore
+        [Xunit.Fact]
+#else
+        [NUnit.Framework.Test]
+#endif
+        public void LoadConstDateTime()
+        {
+            LoadConstDateTime(DateTime.Now);
+            LoadConstDateTime(DateTime.UtcNow);
+            LoadConstDateTime(DateTime.MaxValue);
+            LoadConstDateTime(DateTime.MinValue);
+            LoadConstDateTime(DateTime.Today);
+        }
+
+        private void LoadConstDateTime(DateTime value)
+        {
+            var method = new DynamicMethod("xm", typeof(DateTime), new Type[0]);
+            var il = method.GetILGenerator();
+            il.LoadConst(value);
+            il.Emit(OpCodes.Ret);
+
+            var func = (Func<DateTime>)method.CreateDelegate(typeof(Func<DateTime>));
+            Assert.Equal(value, func());
+        }
     }
 }
