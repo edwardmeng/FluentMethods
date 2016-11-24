@@ -1288,7 +1288,6 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Branch\Unconditionally.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Break.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\Call.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Member\CallVirtual.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\CompareEqual.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\CompareEqualTo.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\CompareGreater.cs" />
@@ -1365,7 +1364,6 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Switch.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\TailCall.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Member\TailCallVirtual.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Throw.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Scope\Catch.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Scope\Finally.cs" />

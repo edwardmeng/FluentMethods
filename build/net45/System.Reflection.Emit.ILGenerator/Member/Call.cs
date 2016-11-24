@@ -17,7 +17,7 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(il));
         if (method == null)
             throw new ArgumentNullException(nameof(method));
-        il.Emit(OpCodes.Call, method);
+        il.Emit(!method.IsStatic && method.IsVirtual ? OpCodes.Callvirt : OpCodes.Call, method);
         return il;
     }
 

@@ -87,6 +87,7 @@ namespace FluentMethods.UnitTests
             NUnit.Framework.Assert.False(condition);
 #endif
         }
+
         public static void Throws<TException>(Action code)
             where TException : Exception
         {
@@ -94,6 +95,15 @@ namespace FluentMethods.UnitTests
             Xunit.Assert.Throws<TException>(code);
 #else
             NUnit.Framework.Assert.Throws<TException>(() => code());
+#endif
+        }
+
+        public static void IsInstanceOf<T>(object actual)
+        {
+#if NetCore
+            Xunit.Assert.IsType<T>(actual);
+#else
+            NUnit.Framework.Assert.IsInstanceOf<T>(actual);
 #endif
         }
 

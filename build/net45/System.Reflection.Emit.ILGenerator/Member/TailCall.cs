@@ -18,8 +18,7 @@ public static partial class Extensions
         if (method == null)
             throw new ArgumentNullException(nameof(method));
         il.Emit(OpCodes.Tailcall);
-        il.Emit(OpCodes.Call, method);
-        return il;
+        return il.Call(method);
     }
 
     /// <summary>

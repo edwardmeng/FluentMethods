@@ -18,8 +18,8 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(property));
         if (!property.CanRead)
             throw new InvalidOperationException("Cannot read from this property");
-
-        return il.Call(property.GetGetMethod());
+        var method = property.GetGetMethod();
+        return il.Call(method);
     }
 
     /// <summary>
