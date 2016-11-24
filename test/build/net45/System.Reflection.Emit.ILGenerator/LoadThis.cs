@@ -13,7 +13,7 @@ namespace FluentMethods.UnitTests
 #if NetCore
             _moduleBuilder = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("ILEmit"), AssemblyBuilderAccess.RunAndCollect).DefineDynamicModule("ILEmit");
 #else
-            _moduleBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("ILEmit"), AssemblyBuilderAccess.Run).DefineDynamicModule("ILEmit");
+            _moduleBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("ILEmit"), AssemblyBuilderAccess.Run).DefineDynamicModule("ILEmit", true);
 #endif
         }
 #if NetCore

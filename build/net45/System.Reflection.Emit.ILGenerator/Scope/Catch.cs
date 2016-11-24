@@ -14,35 +14,29 @@ public static partial class Extensions
         else
         {
             il.BeginExceptFilterBlock();
-            var exceptionLocal = il.DeclareLocal<object>();
-            il.ConvertTo<object>().StoreLocal(exceptionLocal);
             if (exceptionType == null)
             {
-                il.LoadLocal(exceptionLocal);
                 filter(il);
+                il.BeginCatchBlock(null);
             }
             else
             {
-                // emit filter block. Filter blocks are untyped so we need to do
-                // the type check ourselves.  
+                var exceptionLocal = il.DeclareLocal(exceptionType);
                 Label endFilter = il.DefineLabel(), rightType = il.DefineLabel();
-                var filterLocal = il.DeclareLocal<bool>();
-                // skip if it's not our exception type, but save
-                // the exception if it is so it's available to the
-                // filter
-                il.LoadLocal(exceptionLocal).IsInstanceOf(exceptionType)
+                il
+                    .IsInstanceOf(exceptionType)
+                    .Duplicate()
                     .BranchShortTo(rightType).IfTrue()
-                    .StoreLocal(filterLocal, false)
+                    .Pop().LoadConst(false)
                     .BranchTo(endFilter).Unconditionally();
                 il.MarkLabel(rightType);
+                il.StoreLocal(exceptionLocal);
                 il.LoadLocal(exceptionLocal);
                 filter(il);
-                il.StoreLocal(filterLocal);
                 il.MarkLabel(endFilter);
-                il.LoadLocal(filterLocal);
+                il.BeginCatchBlock(null);
+                il.Pop().LoadLocal(exceptionLocal);
             }
-            il.BeginCatchBlock(null);
-            il.LoadLocal(exceptionLocal);
         }
         return new ILGeneratorScope(il);
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Reflection.Emit;
 
 namespace FluentMethods.UnitTests
@@ -27,7 +28,7 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<bool>) method.CreateDelegate(typeof(Func<bool>));
+            var func = (Func<bool>)method.CreateDelegate(typeof(Func<bool>));
             Assert.True(func());
         }
 
@@ -50,7 +51,7 @@ namespace FluentMethods.UnitTests
             }
             il.Emit(OpCodes.Ret);
 
-            Assert.Throws<OverflowException>((Action) method.CreateDelegate(typeof(Action)));
+            Assert.Throws<OverflowException>((Action)method.CreateDelegate(typeof(Action)));
         }
 
 #if NetCore
@@ -83,7 +84,7 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<Exception>) method.CreateDelegate(typeof(Func<Exception>));
+            var func = (Func<Exception>)method.CreateDelegate(typeof(Func<Exception>));
             Assert.IsInstanceOf<OverflowException>(func());
         }
 
@@ -109,7 +110,7 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<Exception>) method.CreateDelegate(typeof(Func<Exception>));
+            var func = (Func<Exception>)method.CreateDelegate(typeof(Func<Exception>));
             Assert.IsInstanceOf<OverflowException>(func());
         }
 
@@ -121,9 +122,11 @@ namespace FluentMethods.UnitTests
 #endif
         public void TryAnonymousCatchFilterSuccess()
         {
-            // todo: If the current ILGenerator is associated with a DynamicMethod object, 
-            // emitting filtered exception blocks is not supported. DynamicILInfo can be used to construct a dynamic method that uses filtered exception blocks.
-            var method = new DynamicMethod("x", typeof(Exception), new Type[0]);
+            var typeBuilder = _moduleBuilder.DefineType("TryAnonymousCatchFilterSuccess",
+                TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
+            var method = typeBuilder.DefineMethod("x",
+                MethodAttributes.Public | MethodAttributes.Static | MethodAttributes.HideBySig, typeof(Exception),
+                new Type[0]);
             var il = method.GetILGenerator();
             var local = il.DeclareLocal<Exception>();
             using (il.Try())
@@ -132,7 +135,6 @@ namespace FluentMethods.UnitTests
                 il.LoadNull().StoreLocal(local);
                 using (il.Catch(() =>
                 {
-                    //il.LoadConst(true);
                     il.ConvertTo<ArgumentNullException>();
                     il.GetProperty<ArgumentNullException, string>(ex => ex.ParamName);
                     il.LoadString("value");
@@ -145,8 +147,50 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<Exception>)method.CreateDelegate(typeof(Func<Exception>));
+            var type = typeBuilder.CreateType();
+            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
             Assert.IsInstanceOf<ArgumentNullException>(func());
+        }
+
+#if NetCore
+        [Xunit.Fact]
+#else
+        [NUnit.Framework.Test]
+#endif
+        public void TryAnonymousCatchFilterFail()
+        {
+            var typeBuilder = _moduleBuilder.DefineType("TryAnonymousCatchFilterFail",
+                TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
+            var method = typeBuilder.DefineMethod("x",
+                MethodAttributes.Public | MethodAttributes.Static | MethodAttributes.HideBySig, typeof(Exception),
+                new Type[0]);
+            var il = method.GetILGenerator();
+            var local = il.DeclareLocal<Exception>();
+            il.LoadNull().StoreLocal(local);
+            using (il.Try())
+            {
+                il.Throw<ArgumentNullException>("value");
+                using (il.Catch(() =>
+                {
+                    il.ConvertTo<ArgumentNullException>();
+                    il.GetProperty<ArgumentNullException, string>(ex => ex.ParamName);
+                    il.LoadString("name");
+                    il.Call((string x, string y) => string.Equals(x, y));
+                }))
+                {
+                    il.ConvertTo<Exception>().StoreLocal(local);
+                }
+                using (il.Catch())
+                {
+                    il.LoadNull().StoreLocal(local);
+                }
+            }
+            il.LoadLocal(local);
+            il.Emit(OpCodes.Ret);
+
+            var type = typeBuilder.CreateType();
+            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
+            Assert.Null(func());
         }
 
 #if NetCore
@@ -156,9 +200,11 @@ namespace FluentMethods.UnitTests
 #endif
         public void TryCatchFilterSuccessExplicitlyType()
         {
-            // todo: If the current ILGenerator is associated with a DynamicMethod object, 
-            // emitting filtered exception blocks is not supported. DynamicILInfo can be used to construct a dynamic method that uses filtered exception blocks.
-            var method = new DynamicMethod("x", typeof(Exception), new Type[0]);
+            var typeBuilder = _moduleBuilder.DefineType("TryCatchFilterSuccessExplicitlyType",
+               TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
+            var method = typeBuilder.DefineMethod("x",
+                MethodAttributes.Public | MethodAttributes.Static | MethodAttributes.HideBySig, typeof(Exception),
+                new Type[0]);
             var il = method.GetILGenerator();
             var local = il.DeclareLocal<Exception>();
             using (il.Try())
@@ -167,20 +213,59 @@ namespace FluentMethods.UnitTests
                 il.LoadNull().StoreLocal(local);
                 using (il.Catch<ArgumentNullException>(() =>
                 {
-                    il.LoadConst(true);
-                    //il.GetProperty<ArgumentNullException, string>(ex => ex.ParamName);
-                    //il.LoadString("value");
-                    //il.Call((string x, string y) => string.Equals(x, y));
+                    il.GetProperty<ArgumentNullException, string>(ex => ex.ParamName);
+                    il.LoadString("value");
+                    il.Call((string x, string y) => string.Equals(x, y));
                 }))
                 {
-                    //il.ConvertTo<Exception>().StoreLocal(local);
+                    il.ConvertTo<Exception>().StoreLocal(local);
                 }
             }
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
-            var func = (Func<Exception>)method.CreateDelegate(typeof(Func<Exception>));
+            var type = typeBuilder.CreateType();
+            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
             Assert.IsInstanceOf<ArgumentNullException>(func());
+        }
+
+#if NetCore
+        [Xunit.Fact]
+#else
+        [NUnit.Framework.Test]
+#endif
+        public void TryCatchFilterFailExplicitlyType()
+        {
+            var typeBuilder = _moduleBuilder.DefineType("TryCatchFilterFailExplicitlyType",
+               TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
+            var method = typeBuilder.DefineMethod("x",
+                MethodAttributes.Public | MethodAttributes.Static | MethodAttributes.HideBySig, typeof(ArgumentNullException),
+                new Type[0]);
+            var il = method.GetILGenerator();
+            var local = il.DeclareLocal<ArgumentNullException>();
+            using (il.Try())
+            {
+                il.Throw<ArgumentNullException>("value");
+                using (il.Catch<ArgumentNullException>(() =>
+                {
+                    il.GetProperty<ArgumentNullException, string>(ex => ex.ParamName);
+                    il.LoadString("name");
+                    il.Call((string x, string y) => string.Equals(x, y));
+                }))
+                {
+                    il.StoreLocal(local);
+                }
+                using (il.Catch())
+                {
+                    il.LoadNull().StoreLocal(local);
+                }
+            }
+            il.LoadLocal(local);
+            il.Emit(OpCodes.Ret);
+
+            var type = typeBuilder.CreateType();
+            var func = (Func<ArgumentNullException>)Delegate.CreateDelegate(typeof(Func<ArgumentNullException>), type.GetMethod("x"));
+            Assert.Null(func());
         }
     }
 }
