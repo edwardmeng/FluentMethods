@@ -750,10 +750,11 @@
     </Compile>
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\InitializeBlock.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\And.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\ArrayLength.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\ArrayLength.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\BoxFrom.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Branch\IfEqual.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Branch\IfEqualTo.cs" />
@@ -812,7 +813,7 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\MultiplyUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Negate.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\New.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\NewArray.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\NewArray.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Not.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Or.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Remainder.cs" />
@@ -825,8 +826,12 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Subtract.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractUnsignedChecked.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Scope\TryCatch.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Throw.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Exception\TryCatch.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Exception\TryFault.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Exception\TryFinally.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Exception\Throw.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Pop.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\TypeOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs" />
   </ItemGroup>
