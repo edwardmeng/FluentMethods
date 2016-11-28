@@ -834,6 +834,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Exception\Throw.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Pop.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\StoreArg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\StoreLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\TypeOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs" />
   </ItemGroup>
