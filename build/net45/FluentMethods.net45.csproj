@@ -1311,7 +1311,6 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\LoadElementAddressReadonly.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\LoadField.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\LoadFieldAddress.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Member\LoadFieldVolatile.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\MethodOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\New.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\NewArray.cs" />
@@ -1347,7 +1346,6 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\StoreArg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\StoreElement.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\StoreField.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\Member\StoreFieldVolatile.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\StoreLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Subtract.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractChecked.cs" />
