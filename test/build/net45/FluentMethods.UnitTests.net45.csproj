@@ -751,6 +751,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\InitializeBlock.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocal.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocalAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\And.cs" />
