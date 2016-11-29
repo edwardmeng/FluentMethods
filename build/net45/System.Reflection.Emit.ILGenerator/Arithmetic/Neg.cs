@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System;
+using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -9,5 +10,5 @@ public static partial class Extensions
     /// <remarks>
     ///     If you need to check for overflow (as in the case of int.MinValue), you need to subtract the value from 0 instead.
     /// </remarks>
-    public static ILGenerator Negate(this ILGenerator il) => il.Neg();
+    public static ILGenerator Neg(this ILGenerator il) => il.FluentEmit(OpCodes.Neg);
 }

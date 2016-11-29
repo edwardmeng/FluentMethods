@@ -1254,6 +1254,26 @@
     </Compile>
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add_Ovf.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add_Ovf_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Div.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Div_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Mul.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Mul_Ovf.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Mul_Ovf_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Neg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Rem.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Rem_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Sub.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Sub_Ovf.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Sub_Ovf_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Ldelem.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Ldelema.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Ldelema_Readonly.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Ldlen.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Newarr.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Array\Stelem.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\FluentEmit.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\And.cs" />

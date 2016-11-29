@@ -9,7 +9,7 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type of elements in the array</param>
-    public static ILGenerator LoadElementAddressReadonly(this ILGenerator il, Type type) => il.Ldelema_Readonly(type);
+    public static ILGenerator Ldelema_Readonly(this ILGenerator il, Type type) => il.FluentEmit(OpCodes.Readonly).FluentEmit(OpCodes.Ldelema, type);
 
     /// <summary>
     ///     Pops an array reference (containing elements of the given type) and an index off the evaluation stack and pushes
@@ -18,7 +18,7 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type of elements in the array</param>
     /// <param name="index">The index of the element to load the address of</param>
-    public static ILGenerator LoadElementAddressReadonly(this ILGenerator il, Type type, uint index) => il.Ldelema_Readonly(type, index);
+    public static ILGenerator Ldelema_Readonly(this ILGenerator il, Type type, uint index) => il.LoadConst(index).Ldelema_Readonly(type);
 
     /// <summary>
     ///     Pops an array reference (containing elements of the given type) and an index off the evaluation stack and pushes
@@ -26,7 +26,7 @@ public static partial class Extensions
     /// </summary>
     /// <typeparam name="T">The type of elements in the array</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator LoadElementAddressReadonly<T>(this ILGenerator il) => il.Ldelema_Readonly<T>();
+    public static ILGenerator Ldelema_Readonly<T>(this ILGenerator il) => il.Ldelema_Readonly(typeof(T));
 
     /// <summary>
     ///     Pops an array reference (containing elements of the given type) and an index off the evaluation stack and pushes
@@ -35,5 +35,5 @@ public static partial class Extensions
     /// <typeparam name="T">The type of elements in the array</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="index">The index of the element to load the address of</param>
-    public static ILGenerator LoadElementAddressReadonly<T>(this ILGenerator il, uint index) => il.Ldelema_Readonly<T>(index);
+    public static ILGenerator Ldelema_Readonly<T>(this ILGenerator il, uint index) => il.Ldelema_Readonly(typeof(T), index);
 }

@@ -25,3 +25,4 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     public static ILGenerator Unbox<T>(this ILGenerator il) => il.UnboxTo(typeof(T));
 }
+
