@@ -1273,6 +1273,9 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\Ldlen.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\Newarr.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\Stelem.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shl.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shr.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shr_Un.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FluentEmit.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
