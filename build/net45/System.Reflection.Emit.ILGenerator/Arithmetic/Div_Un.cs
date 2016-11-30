@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Div_Un<T>(this ILGenerator il, T value) => il.LoadConst(value).Div_Un();
+    private static ILGenerator Div_Un<T>(this ILGenerator il, T value) => il.Ldc(value).Div_Un();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and divides the first by the second without regard for sign

@@ -58,6 +58,16 @@ public static partial class Extensions
         return il;
     }
 
+    private static ILGenerator FluentEmit(this ILGenerator il, OpCode opcode, string value)
+    {
+        if (il == null)
+            throw new ArgumentNullException(nameof(il));
+        if (value == null)
+            throw new ArgumentNullException(nameof(value));
+        il.Emit(opcode, value);
+        return il;
+    }
+
     private static ILGenerator FluentEmit(this ILGenerator il, OpCode opcode, FieldInfo field)
     {
         if (il == null)

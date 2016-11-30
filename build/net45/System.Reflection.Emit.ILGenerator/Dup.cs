@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System;
+using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -6,5 +7,5 @@ public static partial class Extensions
     ///     Duplicates the value on the top of the evaluation stack
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator Duplicate(this ILGenerator il) => il.Dup();
+    public static ILGenerator Dup(this ILGenerator il) => il.FluentEmit(OpCodes.Dup);
 }

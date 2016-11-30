@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Rem<T>(this ILGenerator il, T value) => il.LoadConst(value).Rem();
+    private static ILGenerator Rem<T>(this ILGenerator il, T value) => il.Ldc(value).Rem();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and finds the Rem when the first is divided by the

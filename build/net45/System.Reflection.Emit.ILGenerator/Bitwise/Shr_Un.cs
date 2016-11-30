@@ -1,9 +1,8 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Shr_Un<T>(this ILGenerator il, T value) => il.LoadConst(value).Shr_Un();
+    private static ILGenerator Shr_Un<T>(this ILGenerator il, T value) => il.Ldc(value).Shr_Un();
 
     /// <summary>
     ///     Pop two integer values from the evaluation stack and perform a bitwise Shr_Un operation on them

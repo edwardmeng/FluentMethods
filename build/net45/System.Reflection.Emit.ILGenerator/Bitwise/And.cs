@@ -1,9 +1,8 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator And<T>(this ILGenerator il, T value) => il.LoadConst(value).And();
+    private static ILGenerator And<T>(this ILGenerator il, T value) => il.Ldc(value).And();
 
     /// <summary>
     ///     Pop two integer values from the evaluation stack and perform a bitwise and operation on them

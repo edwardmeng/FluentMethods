@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Rem_Un<T>(this ILGenerator il, T value) => il.LoadConst(value).Rem_Un();
+    private static ILGenerator Rem_Un<T>(this ILGenerator il, T value) => il.Ldc(value).Rem_Un();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and finds the remainder when the first is divided by the

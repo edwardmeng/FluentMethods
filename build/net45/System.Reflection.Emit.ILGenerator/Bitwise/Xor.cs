@@ -2,7 +2,7 @@
 
 public static partial class Extensions
 {
-    private static ILGenerator Xor<T>(this ILGenerator il, T value) => il.LoadConst(value).Xor();
+    private static ILGenerator Xor<T>(this ILGenerator il, T value) => il.Ldc(value).Xor();
 
     /// <summary>
     ///     Pop two integer values from the evaluation stack and perform a bitwise xor operation on them

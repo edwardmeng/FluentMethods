@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -11,7 +10,7 @@ public static partial class Extensions
     public static ILGenerator Starg(this ILGenerator il, ushort index) 
         => index <= 255 ? il.FluentEmit(OpCodes.Starg_S, (byte)index) : il.FluentEmit(OpCodes.Starg, index);
 
-    private static ILGenerator Starg<T>(this ILGenerator il, ushort index, T value) => il.LoadConst(value).Starg(index);
+    private static ILGenerator Starg<T>(this ILGenerator il, ushort index, T value) => il.Ldc(value).Starg(index);
 
     /// <summary>
     ///     Overwrite the specified argument with the given value.

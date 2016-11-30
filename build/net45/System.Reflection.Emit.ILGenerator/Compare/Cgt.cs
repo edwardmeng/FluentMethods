@@ -2,7 +2,7 @@
 
 public static partial class Extensions
 {
-    private static ILGenerator Cgt<T>(this ILGenerator il, T value) => il.LoadConst(value).Cgt();
+    private static ILGenerator Cgt<T>(this ILGenerator il, T value) => il.Ldc(value).Cgt();
 
     /// <summary>
     ///     Pops two integer values from the evaluation stack and pushes the result of comparing whether the first is greater

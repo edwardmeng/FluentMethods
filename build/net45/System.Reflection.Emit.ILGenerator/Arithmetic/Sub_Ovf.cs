@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Sub_Ovf<T>(this ILGenerator il, T value) => il.LoadConst(value).Sub_Ovf();
+    private static ILGenerator Sub_Ovf<T>(this ILGenerator il, T value) => il.Ldc(value).Sub_Ovf();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and subtracts the second from the first with a check for

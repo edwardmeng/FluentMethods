@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Mul_Ovf_Un<T>(this ILGenerator il, T value) => il.LoadConst(value).Mul_Ovf_Un();
+    private static ILGenerator Mul_Ovf_Un<T>(this ILGenerator il, T value) => il.Ldc(value).Mul_Ovf_Un();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and multiples them together without regard for sign, and a

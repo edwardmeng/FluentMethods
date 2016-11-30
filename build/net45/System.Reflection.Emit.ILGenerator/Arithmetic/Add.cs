@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Add<T>(this ILGenerator il, T value) => il.LoadConst(value).Add();
+    private static ILGenerator Add<T>(this ILGenerator il, T value) => il.Ldc(value).Add();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and adds them together

@@ -2,7 +2,7 @@
 
 public static partial class Extensions
 {
-    private static ILGenerator Or<T>(this ILGenerator il, T value) => il.LoadConst(value).Or();
+    private static ILGenerator Or<T>(this ILGenerator il, T value) => il.Ldc(value).Or();
 
     /// <summary>
     ///     Pop two integer values from the evaluation stack and perform a bitwise or operation on them

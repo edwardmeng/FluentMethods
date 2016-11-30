@@ -2,7 +2,7 @@
 
 public static partial class Extensions
 {
-    private static ILGenerator Shr<T>(this ILGenerator il, T value) => il.LoadConst(value).Shr();
+    private static ILGenerator Shr<T>(this ILGenerator il, T value) => il.Ldc(value).Shr();
 
     /// <summary>
     ///     Pop two integer values from the evaluation stack and perform a bitwise Shr operation on them

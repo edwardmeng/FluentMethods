@@ -7,7 +7,7 @@ public static partial class Extensions
     ///     memory at the address with the value to that size
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator InitializeBlock(this ILGenerator il) => il.Initblk();
+    public static ILGenerator Initblk(this ILGenerator il) => il.FluentEmit(OpCodes.Initblk);
 
     /// <summary>
     ///     Pops an address off the evaluation stack and initializes the block of memory at the address with the given value to
@@ -16,5 +16,6 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="value">The initialization value</param>
     /// <param name="bytes">The number of bytes to initialize</param>
-    public static ILGenerator InitializeBlock(this ILGenerator il, byte value, uint bytes) => il.Initblk(value, bytes);
+    public static ILGenerator Initblk(this ILGenerator il, byte value, uint bytes) 
+        => il.Ldc(value).Ldc(bytes).Initblk();
 }

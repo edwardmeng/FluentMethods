@@ -53,7 +53,7 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type of elements in the array</param>
     /// <param name="index">The index of the element to load</param>
-    public static ILGenerator Ldelem(this ILGenerator il, Type type, uint index) => il.LoadConst(index).Ldelem(type);
+    public static ILGenerator Ldelem(this ILGenerator il, Type type, uint index) => il.Ldc(index).Ldelem(type);
 
     /// <summary>
     ///     Pops an array reference (containing elements of the given type) off the evaluation stack and pushes the element at

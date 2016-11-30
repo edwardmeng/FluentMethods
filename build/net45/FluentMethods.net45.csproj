@@ -1284,7 +1284,16 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Cgt_Un.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Clt.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Clt_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Dup.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FluentEmit.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Initblk.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Initobj.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Isinst.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\Ldloc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\Ldloca.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldnull.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ldstr.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\And.cs" />
@@ -1356,8 +1365,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Argument\LoadArg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Argument\LoadArgAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadConst.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocal.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocalAddress.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\LoadLocal.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\LoadLocalAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\LoadElement.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\LoadElementAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadNull.cs" />
@@ -1381,7 +1390,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Argument\StoreArg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\StoreElement.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\StoreField.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\StoreLocal.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\Stloc.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Local\StoreLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Subtract.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\SubtractUnsignedChecked.cs" />

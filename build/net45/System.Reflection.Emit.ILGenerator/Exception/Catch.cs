@@ -24,10 +24,9 @@ public static partial class Extensions
                 var exceptionLocal = il.DeclareLocal(exceptionType);
                 Label endFilter = il.DefineLabel(), rightType = il.DefineLabel();
                 il
-                    .IsInstanceOf(exceptionType)
-                    .Duplicate()
+                    .Isinst(exceptionType).Dup()
                     .BranchShortTo(rightType).IfTrue()
-                    .Pop().LoadConst(false)
+                    .Pop().Ldc(false)
                     .BranchTo(endFilter).Unconditionally();
                 il.MarkLabel(rightType);
                 il.StoreLocal(exceptionLocal);

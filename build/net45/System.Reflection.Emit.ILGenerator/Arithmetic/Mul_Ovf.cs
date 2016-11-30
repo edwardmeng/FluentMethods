@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Mul_Ovf<T>(this ILGenerator il, T value) => il.LoadConst(value).Mul_Ovf();
+    private static ILGenerator Mul_Ovf<T>(this ILGenerator il, T value) => il.Ldc(value).Mul_Ovf();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and multiples them together with a check for overflow

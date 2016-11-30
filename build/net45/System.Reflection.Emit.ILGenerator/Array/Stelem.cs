@@ -3,10 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Stelem<T>(this ILGenerator il, uint index, T value)
-    {
-        return il.LoadConst(index).LoadConst(value).Stelem<T>();
-    }
+    private static ILGenerator Stelem<T>(this ILGenerator il, uint index, T value) => il.Ldc(index).Ldc(value).Stelem<T>();
 
     /// <summary>
     ///     Pops an array reference (containing elements of the given type), and index and a value of the given type, and

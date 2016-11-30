@@ -21,7 +21,7 @@ namespace FluentMethods.UnitTests
         {
             var method = new DynamicMethod("xm", typeof(string), new Type[0]);
             var il = method.GetILGenerator();
-            il.LoadConst(value);
+            il.LoadString(value);
             il.Emit(OpCodes.Ret);
 
             var func = (Func<string>)method.CreateDelegate(typeof(Func<string>));

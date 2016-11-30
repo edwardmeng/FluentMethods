@@ -6,7 +6,7 @@ public static partial class Extensions
     private static ILGenerator IfGreaterThanOrEqualToUnsigned<T>(this BranchILGenerator il, T value)
     {
         if (il == null) throw new ArgumentNullException(nameof(il));
-        il.IL.LoadConst(value);
+        il.IL.Ldc(value);
         return il.IfGreaterOrEqualUnsigned();
     }
 

@@ -25,7 +25,7 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type of the array</param>
     /// <param name="length">The length of the array</param>
-    public static ILGenerator Newarr(this ILGenerator il, Type type, uint length) => il.LoadConst(length).Newarr(type);
+    public static ILGenerator Newarr(this ILGenerator il, Type type, uint length) => il.Ldc(length).Newarr(type);
 
     /// <summary>
     ///     Creates an array of the given type with the given length, pushing the reference onto the evaluation stack

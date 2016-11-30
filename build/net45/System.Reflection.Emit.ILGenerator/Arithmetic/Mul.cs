@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    private static ILGenerator Mul<T>(this ILGenerator il, T value) => il.LoadConst(value).Mul();
+    private static ILGenerator Mul<T>(this ILGenerator il, T value) => il.Ldc(value).Mul();
 
     /// <summary>
     ///     Pops two values from the top of the evaluation stack and multiples them together

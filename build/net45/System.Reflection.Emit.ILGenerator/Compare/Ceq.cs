@@ -2,7 +2,7 @@
 
 public static partial class Extensions
 {
-    private static ILGenerator Ceq<T>(this ILGenerator il, T value) => il.LoadConst(value).Ceq();
+    private static ILGenerator Ceq<T>(this ILGenerator il, T value) => il.Ldc(value).Ceq();
 
     /// <summary>
     ///     Pops two integer values from the evaluation stack and pushes the result of comparing whether the first is equal to
