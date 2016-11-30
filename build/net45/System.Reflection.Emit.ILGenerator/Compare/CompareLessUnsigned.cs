@@ -8,11 +8,5 @@ public static partial class Extensions
     ///     the second, without regard for sign
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator CompareLessUnsigned(this ILGenerator il)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        il.Emit(OpCodes.Clt_Un);
-        return il;
-    }
+    public static ILGenerator CompareLessUnsigned(this ILGenerator il) => il.Clt_Un();
 }

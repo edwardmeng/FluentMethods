@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -8,11 +7,5 @@ public static partial class Extensions
     ///     than the second, without regard for sign
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator CompareGreaterUnsigned(this ILGenerator il)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        il.Emit(OpCodes.Cgt_Un);
-        return il;
-    }
+    public static ILGenerator CompareGreaterUnsigned(this ILGenerator il) => il.Cgt_Un();
 }

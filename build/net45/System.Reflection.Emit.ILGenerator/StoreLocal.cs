@@ -17,19 +17,14 @@ public static partial class Extensions
         switch (local.LocalIndex)
         {
             case 0:
-                il.Emit(OpCodes.Stloc_0);
-                break;
+                return il.FluentEmit(OpCodes.Stloc_0);
             case 1:
-                il.Emit(OpCodes.Stloc_1);
-                break;
+                return il.FluentEmit(OpCodes.Stloc_1);
             case 2:
-                il.Emit(OpCodes.Stloc_2);
-                break;
+                return il.FluentEmit(OpCodes.Stloc_2);
             default:
-                il.Emit(local.LocalIndex <= 255 ? OpCodes.Stloc_S : OpCodes.Stloc, local);
-                break;
+                return il.FluentEmit(local.LocalIndex <= 255 ? OpCodes.Stloc_S : OpCodes.Stloc, local);
         }
-        return il;
     }
 
     private static ILGenerator StoreLocal<T>(this ILGenerator il, LocalBuilder local, T value)

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -7,11 +6,5 @@ public static partial class Extensions
     ///     Pops a value from the evaluation stack and returns it to the calling method
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator Return(this ILGenerator il)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        il.Emit(OpCodes.Ret);
-        return il;
-    }
+    public static ILGenerator Return(this ILGenerator il) => il.Ret();
 }

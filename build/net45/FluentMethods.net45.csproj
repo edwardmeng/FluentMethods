@@ -1252,6 +1252,9 @@
     <Compile Include="..\..\src\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
       <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
     </Compile>
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\Ldarg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\Ldarga.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\Starg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Add_Ovf.cs" />
@@ -1276,6 +1279,11 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shl.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shr.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\Shr_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Ceq.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Cgt.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Cgt_Un.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Clt.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Compare\Clt_Un.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FluentEmit.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" />
@@ -1332,8 +1340,11 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\InitializeValue.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\IsInstanceOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\LoadElementAddressReadonly.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Member\Ldfld.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Member\Ldflda.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\LoadField.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\LoadFieldAddress.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Member\Stfld.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\MethodOf.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\New.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\NewArray.cs" />
@@ -1342,8 +1353,8 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Divide.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\DivideUnsigned.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\FromUnsignedTo.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\LoadArg.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\LoadArgAddress.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\LoadArg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\LoadArgAddress.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadConst.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocal.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\LoadLocalAddress.cs" />
@@ -1361,12 +1372,13 @@
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\Remainder.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Arithmetic\RemainderUnsigned.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\RemoveFromEvent.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Ret.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Return.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\SetProperty.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\ShiftLeft.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\ShiftRight.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Bitwise\ShiftRightUnsigned.cs" />
-    <Compile Include="System.Reflection.Emit.ILGenerator\StoreArg.cs" />
+    <Compile Include="System.Reflection.Emit.ILGenerator\Argument\StoreArg.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Array\StoreElement.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\Member\StoreField.cs" />
     <Compile Include="System.Reflection.Emit.ILGenerator\StoreLocal.cs" />

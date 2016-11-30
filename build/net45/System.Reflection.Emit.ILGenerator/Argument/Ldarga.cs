@@ -8,14 +8,6 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
     /// <param name="index">The index of the argument to load.</param>
-    public static ILGenerator LoadArgAddress(this ILGenerator il, ushort index)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        if (index <= 255)
-            il.Emit(OpCodes.Ldarga_S, (byte) index);
-        else
-            il.Emit(OpCodes.Ldarga, index);
-        return il;
-    }
+    public static ILGenerator Ldarga(this ILGenerator il, ushort index) 
+        => index <= 255 ? il.FluentEmit(OpCodes.Ldarga_S, (byte)index) : il.FluentEmit(OpCodes.Ldarga, index);
 }

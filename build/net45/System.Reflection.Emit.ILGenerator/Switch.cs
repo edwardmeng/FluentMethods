@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 
 public static partial class Extensions
 {
@@ -9,11 +8,5 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="labels">The labels to form a jump table from</param>
-    public static ILGenerator Switch(this ILGenerator il, params Label[] labels)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        il.Emit(OpCodes.Switch, labels);
-        return il;
-    }
+    public static ILGenerator Switch(this ILGenerator il, params Label[] labels) => il.FluentEmit(OpCodes.Switch, labels);
 }

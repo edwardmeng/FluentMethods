@@ -10,7 +10,8 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="field">The field to load</param>
-    public static ILGenerator LoadFieldAddress(this ILGenerator il, FieldInfo field) => il.Ldflda(field);
+    public static ILGenerator Ldflda(this ILGenerator il, FieldInfo field) 
+        => il.FluentEmit(field.IsStatic ? OpCodes.Ldsflda : OpCodes.Ldflda, field);
 
     /// <summary>
     ///     Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given
@@ -19,8 +20,8 @@ public static partial class Extensions
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type the field is on</param>
     /// <param name="fieldName">The name of the field</param>
-    public static ILGenerator LoadFieldAddress(this ILGenerator il, Type type, string fieldName)
-        => il.Ldflda(type, fieldName);
+    public static ILGenerator Ldflda(this ILGenerator il, Type type, string fieldName)
+        => il.Ldflda(GetFieldInfo(type, fieldName));
 
     /// <summary>
     ///     Pops a reference from the evaluation stack and pushes the address of the field (with the given name on the given
@@ -29,8 +30,8 @@ public static partial class Extensions
     /// <typeparam name="T">The type the field is on</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="fieldName">The name of the field</param>
-    public static ILGenerator LoadFieldAddress<T>(this ILGenerator il, string fieldName)
-        => il.Ldflda<T>(fieldName);
+    public static ILGenerator Ldflda<T>(this ILGenerator il, string fieldName)
+        => il.Ldflda(typeof(T), fieldName);
 
     /// <summary>
     ///     Pushes the address of the static field represented by the given expression
@@ -38,8 +39,8 @@ public static partial class Extensions
     /// <typeparam name="TField">The type of the field</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="fieldExpression">An expression representing the field to load</param>
-    public static ILGenerator LoadFieldAddress<TField>(this ILGenerator il, Expression<Func<TField>> fieldExpression)
-        => il.Ldflda(fieldExpression);
+    public static ILGenerator Ldflda<TField>(this ILGenerator il, Expression<Func<TField>> fieldExpression)
+        => il.Ldflda(GetFieldInfo(fieldExpression));
 
     /// <summary>
     ///     Pops a reference from the evaluation stack and pushes the address of the field represented by the given expression
@@ -49,6 +50,6 @@ public static partial class Extensions
     /// <typeparam name="TField">The type of the field</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="fieldExpression">An expression representing the field to load</param>
-    public static ILGenerator LoadFieldAddress<T, TField>(this ILGenerator il, Expression<Func<T, TField>> fieldExpression)
-        => il.Ldflda(fieldExpression);
+    public static ILGenerator Ldflda<T, TField>(this ILGenerator il, Expression<Func<T, TField>> fieldExpression)
+        => il.Ldflda(GetFieldInfo(fieldExpression));
 }
