@@ -9,14 +9,15 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="type">The type to unbox to</param>
-    public static ILGenerator UnboxAny(this ILGenerator il, Type type)
+    public static ILGenerator Unbox_Any(this ILGenerator il, Type type)
     {
         if (il == null)
             throw new ArgumentNullException(nameof(il));
         if (type == null)
             throw new ArgumentNullException(nameof(type));
-        il.Emit(type.IsValueType ? OpCodes.Unbox_Any : OpCodes.Castclass, type);
-        return il;
+        if (!type.IsValueType)
+            throw new InvalidOperationException("Cannot unbox.any a non-value type");
+        return il.FluentEmit(OpCodes.Unbox_Any, type);
     }
 
     /// <summary>
@@ -25,5 +26,5 @@ public static partial class Extensions
     /// </summary>
     /// <typeparam name="T">The type to unbox to</typeparam>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator UnboxAny<T>(this ILGenerator il) => il.UnboxAny(typeof(T));
+    public static ILGenerator Unbox_Any<T>(this ILGenerator il) => il.Unbox_Any(typeof(T));
 }

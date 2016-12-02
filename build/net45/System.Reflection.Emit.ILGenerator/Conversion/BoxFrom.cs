@@ -14,8 +14,7 @@ public static partial class Extensions
             throw new ArgumentNullException(nameof(il));
         if (type == null)
             throw new ArgumentNullException(nameof(type));
-        il.Emit(type.IsValueType ? OpCodes.Box : OpCodes.Castclass, type);
-        return il;
+        return type.IsValueType ? il.Box(type) : il.Castclass(type);
     }
 
     /// <summary>
@@ -23,8 +22,5 @@ public static partial class Extensions
     /// </summary>
     /// <typeparam name="T">The type of the value type object</typeparam>
     /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
-    public static ILGenerator BoxFrom<T>(this ILGenerator il)
-    {
-        return il.BoxFrom(typeof(T));
-    }
+    public static ILGenerator BoxFrom<T>(this ILGenerator il) => il.BoxFrom(typeof(T));
 }

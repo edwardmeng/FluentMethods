@@ -3,43 +3,34 @@ using System.Reflection.Emit;
 
 public static partial class Extensions
 {
-    public static ILGenerator ConvertToChecked(this ILGenerator il, Type type)
+    public static ILGenerator Conv_Ovf(this ILGenerator il, Type type)
     {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        if (type == null)
-            throw new ArgumentNullException(nameof(type));
         // Converts the signed value on the top of the evaluation stack to a signed byte (8 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
         if (type == typeof(sbyte))
-            il.Emit(OpCodes.Conv_Ovf_I1);
+            return il.FluentEmit(OpCodes.Conv_Ovf_I1);
         // Converts the signed value on the top of the evaluation stack to an unsigned byte (8 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(byte))
-            il.Emit(OpCodes.Conv_Ovf_U1);
+        if (type == typeof(byte))
+            return il.FluentEmit(OpCodes.Conv_Ovf_U1);
         // Converts the signed value on the top of the evaluation stack to an unsigned short (16 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(ushort) || type == typeof(char))
-            il.Emit(OpCodes.Conv_Ovf_U2);
+        if (type == typeof(ushort) || type == typeof(char))
+            return il.FluentEmit(OpCodes.Conv_Ovf_U2);
         // Converts the signed value on the top of the evaluation stack to a signed short (16 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(short))
-            il.Emit(OpCodes.Conv_Ovf_I2);
+        if (type == typeof(short))
+            return il.FluentEmit(OpCodes.Conv_Ovf_I2);
         // Converts the signed value on the top of the evaluation stack to an unsigned integer (32 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(uint))
-            il.Emit(OpCodes.Conv_Ovf_U4);
+        if (type == typeof(uint))
+            return il.FluentEmit(OpCodes.Conv_Ovf_U4);
         // Converts the signed value on the top of the evaluation stack to a signed integer (32 bit integer) with an overflow check. Pushes an int32 value onto the evaluation stack.
-        else if (type == typeof(int))
-            il.Emit(OpCodes.Conv_Ovf_I4);
+        if (type == typeof(int))
+            return il.FluentEmit(OpCodes.Conv_Ovf_I4);
         // Converts the signed value on the top of the evaluation stack to an unsigned long (64 bit integer) with an overflow check. Pushes an int64 value onto the evaluation stack.
-        else if (type == typeof(ulong))
-            il.Emit(OpCodes.Conv_Ovf_U8);
+        if (type == typeof(ulong))
+            return il.FluentEmit(OpCodes.Conv_Ovf_U8);
         // Converts the signed value on the top of the evaluation stack to a signed long (64 bit integer) with an overflow check. Pushes an int64 value onto the evaluation stack.
-        else if (type == typeof(long))
-            il.Emit(OpCodes.Conv_Ovf_I8);
-        else
-            throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "ConvertToChecked"));
-        return il;
+        if (type == typeof(long))
+            return il.FluentEmit(OpCodes.Conv_Ovf_I8);
+        throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "ConvertToChecked"));
     }
 
-    public static ILGenerator ConvertToChecked<T>(this ILGenerator il)
-    {
-        return il.ConvertToChecked(typeof(T));
-    }
+    public static ILGenerator Conv_Ovf<T>(this ILGenerator il) => il.Conv_Ovf(typeof(T));
 }
