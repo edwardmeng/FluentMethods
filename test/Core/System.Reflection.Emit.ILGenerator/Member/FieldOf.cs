@@ -14,7 +14,7 @@ namespace FluentMethods.UnitTests
 #endif
         public void FieldOfNonGeneric()
         {
-            var info = typeof(Guid).GetField("Empty",BindingFlags.Static|BindingFlags.Public);
+            var info = typeof(Guid).GetField("Empty", BindingFlags.Static | BindingFlags.Public);
             var method = new DynamicMethod("x", typeof(FieldInfo), new Type[0]);
             var il = method.GetILGenerator();
             il.FieldOf(info);
@@ -23,7 +23,7 @@ namespace FluentMethods.UnitTests
             var func = (Func<FieldInfo>)method.CreateDelegate(typeof(Func<FieldInfo>));
             Assert.Equal(info, func());
         }
-
+#if !Net35
 #if NetCore
         [Xunit.Fact]
 #else
@@ -40,5 +40,6 @@ namespace FluentMethods.UnitTests
             var func = (Func<FieldInfo>)method.CreateDelegate(typeof(Func<FieldInfo>));
             Assert.Equal(info, func());
         }
+#endif
     }
 }

@@ -76,10 +76,6 @@ namespace FluentMethods.UnitTests
                 {
                     il.ConvertTo<Exception>().StoreLocal(local);
                 }
-                using (il.Catch<NotFiniteNumberException>())
-                {
-                    il.ConvertTo<Exception>().StoreLocal(local);
-                }
             }
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
@@ -147,9 +143,12 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
-            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
-            Assert.IsInstanceOf<ArgumentNullException>(func());
+#endif
+            Assert.IsInstanceOf<ArgumentNullException>(type.GetMethod("x").Invoke(null, new object[0]));
         }
 
 #if NetCore
@@ -188,9 +187,12 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
-            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
-            Assert.Null(func());
+#endif
+            Assert.Null(type.GetMethod("x").Invoke(null, new object[0]));
         }
 
 #if NetCore
@@ -224,9 +226,12 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
-            var func = (Func<Exception>)Delegate.CreateDelegate(typeof(Func<Exception>), type.GetMethod("x"));
-            Assert.IsInstanceOf<ArgumentNullException>(func());
+#endif
+            Assert.IsInstanceOf<ArgumentNullException>(type.GetMethod("x").Invoke(null, new object[0]));
         }
 
 #if NetCore
@@ -263,9 +268,12 @@ namespace FluentMethods.UnitTests
             il.LoadLocal(local);
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
-            var func = (Func<ArgumentNullException>)Delegate.CreateDelegate(typeof(Func<ArgumentNullException>), type.GetMethod("x"));
-            Assert.Null(func());
+#endif
+            Assert.Null(type.GetMethod("x").Invoke(null, new object[0]));
         }
     }
 }

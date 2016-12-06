@@ -19,7 +19,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<sbyte, sbyte>)method.CreateDelegate(typeof(Func<sbyte, sbyte>));
-            Assert.Equal(-20, func(20));
+            Assert.Equal((sbyte)-20, func(20));
         }
 
 #if NetCore
@@ -36,7 +36,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<short, short>)method.CreateDelegate(typeof(Func<short, short>));
-            Assert.Equal(-20, func(20));
+            Assert.Equal((short)-20, func(20));
         }
 
 #if NetCore

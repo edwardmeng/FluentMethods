@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Reflection.Emit;
 
 namespace FluentMethods.UnitTests
@@ -39,6 +40,8 @@ namespace FluentMethods.UnitTests
             Assert.Equal(new decimal(25), func(25));
         }
 
+#if !NetCore
+         
 #if NetCore
         [Xunit.Fact]
 #else
@@ -54,6 +57,7 @@ namespace FluentMethods.UnitTests
             var func = (Func<Version>)method.CreateDelegate(typeof(Func<Version>));
             Assert.Equal(new Version(), func());
         }
+#endif
 
 #if NetCore
         [Xunit.Fact]

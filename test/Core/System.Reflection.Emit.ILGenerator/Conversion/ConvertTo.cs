@@ -121,7 +121,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<long, uint>)method.CreateDelegate(typeof(Func<long, uint>));
-            Assert.Equal(32, func(32));
+            Assert.Equal((uint)32, func(32));
         }
 
 #if NetCore

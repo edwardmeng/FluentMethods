@@ -124,7 +124,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<byte, byte>)method.CreateDelegate(typeof(Func<byte, byte>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((byte)20, func(30));
         }
 
 #if NetCore
@@ -141,7 +141,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<sbyte, sbyte>)method.CreateDelegate(typeof(Func<sbyte, sbyte>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((sbyte)20, func(30));
         }
 
 #if NetCore
@@ -158,7 +158,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<short, short>)method.CreateDelegate(typeof(Func<short, short>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((short)20, func(30));
         }
 
 #if NetCore
@@ -175,7 +175,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<ushort, ushort>)method.CreateDelegate(typeof(Func<ushort, ushort>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((ushort)20, func(30));
         }
 
 #if NetCore
@@ -209,7 +209,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<uint, uint>)method.CreateDelegate(typeof(Func<uint, uint>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((uint)20, func(30));
         }
 
 #if NetCore
@@ -226,7 +226,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<long, long>)method.CreateDelegate(typeof(Func<long, long>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((long)20, func(30));
         }
 
 #if NetCore
@@ -243,7 +243,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<ulong, ulong>)method.CreateDelegate(typeof(Func<ulong, ulong>));
-            Assert.Equal(20, func(30));
+            Assert.Equal((ulong)20, func(30));
         }
 
 #if NetCore

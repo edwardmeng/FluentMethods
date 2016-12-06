@@ -14,7 +14,7 @@ namespace FluentMethods.UnitTests
 #endif
         public void MethodOfNonGeneric()
         {
-            var info = typeof(string).GetMethod("Clone");
+            var info = typeof(string).GetMethod("GetHashCode");
             var method = new DynamicMethod("x", typeof(MethodBase), new Type[0]);
             var il = method.GetILGenerator();
             il.MethodOf(info);

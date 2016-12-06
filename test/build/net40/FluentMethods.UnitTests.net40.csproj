@@ -758,6 +758,279 @@
     <Compile Include="..\..\Core\System.Linq.Expressions.Expression\PowerAssign.cs">
       <Link>System.Linq.Expressions.Expression\PowerAssign.cs</Link>
     </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Add.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\AddChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\InitializeBlock.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\InitializeBlock.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Local\LoadLocal.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Local\LoadLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Local\LoadLocalAddress.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Local\LoadLocalAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\AddToEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\AddUnsignedChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\And.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\And.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Array\ArrayLength.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Array\ArrayLength.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Conversion\BoxFrom.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Conversion\BoxFrom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfEqual.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfEqualTo.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfEqualTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfFalse.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfFalse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreater.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterOrEqual.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterOrEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterOrEqualUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterOrEqualUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterThan.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterThan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanOrEqualTo.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanOrEqualTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanOrEqualToUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanOrEqualToUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterThanUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfGreaterUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfGreaterUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLess.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessOrEqual.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessOrEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessOrEqualUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessOrEqualUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessThan.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessThan.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessThanOrEqualTo.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessThanOrEqualTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessThanOrEqualToUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessThanOrEqualToUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessThanUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessThanUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfLessUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfLessUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfNotEqualToUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfNotEqualToUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfNotEqualUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfNotEqualUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfNull.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\IfTrue.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\IfTrue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Branch\Unconditionally.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Branch\Unconditionally.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\Call.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\Call.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Compare\CompareEqual.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Compare\CompareEqual.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Compare\CompareGreater.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Compare\CompareGreater.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Compare\CompareGreaterUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Compare\CompareGreaterUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Compare\CompareLess.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Compare\CompareLess.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Compare\CompareLessUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Compare\CompareLessUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\ConstrainedCall.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\ConstrainedCall.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Conversion\ConvertTo.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Conversion\ConvertTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Conversion\ConvertToChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Conversion\ConvertToChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Local\DeclareLocal.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Local\DeclareLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Constant\Default.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Constant\Default.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Divide.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Divide.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\DivideUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\DivideUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Duplicate.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Duplicate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\FieldOf.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\FieldOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Conversion\FromUnsignedTo.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Conversion\FromUnsignedTo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\InitializeValue.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\InitializeValue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Conversion\IsInstanceOf.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Conversion\IsInstanceOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Argument\LoadArg.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Argument\LoadArg.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Argument\LoadArgAddress.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Argument\LoadArgAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Constant\LoadConst.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Constant\LoadConst.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\LoadField.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\LoadField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\GetProperty.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\GetProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\LoadFieldAddress.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\LoadFieldAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Constant\LoadNull.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Constant\LoadNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Constant\LoadString.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Constant\LoadString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Argument\LoadThis.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Argument\LoadThis.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\MethodOf.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\MethodOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Multiply.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Multiply.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\MultiplyChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\MultiplyChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\MultiplyUnsignedChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\MultiplyUnsignedChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Negate.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Negate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\New.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\New.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Array\NewArray.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Array\NewArray.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\Not.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\Not.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\Or.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\Or.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Remainder.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Remainder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\RemainderUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\RemainderUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\RemoveFromEvent.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\RemoveFromEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\ShiftLeft.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\ShiftLeft.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\ShiftRight.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\ShiftRight.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\ShiftRightUnsigned.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\ShiftRightUnsigned.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\StoreField.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\StoreField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\Subtract.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\Subtract.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\SubtractChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\SubtractChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Arithmetic\SubtractUnsignedChecked.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Arithmetic\SubtractUnsignedChecked.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Exception\TryCatch.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Exception\TryCatch.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Exception\TryFault.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Exception\TryFault.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Exception\TryFinally.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Exception\TryFinally.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Exception\Throw.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Exception\Throw.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Pop.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Pop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Return.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Return.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Argument\StoreArg.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Argument\StoreArg.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Local\StoreLocal.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Local\StoreLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Switch.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Switch.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Member\TypeOf.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Member\TypeOf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs" >
+      <Link>System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -33,7 +33,11 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ldfld, field);
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
+#endif
             var instance = type.GetConstructor(new Type[0]).Invoke(new object[0]);
             type.GetField("Value").SetValue(instance, 25);
             Assert.Equal(25, type.GetMethod("GetValue").Invoke(instance, new object[0]));

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace FluentMethods.UnitTests
 {
+    public delegate void TitleChangeHandler(object sender, string title);
     public class Product
     {
         public static string State;
@@ -34,7 +34,7 @@ namespace FluentMethods.UnitTests
             return Price.To<T>();
         }
 
-        public event EventHandler<string> TitleChanged;
+        public event TitleChangeHandler TitleChanged;
     }
     public partial class ObjectFixture
     {

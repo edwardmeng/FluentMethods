@@ -121,7 +121,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<ulong, uint>)method.CreateDelegate(typeof(Func<ulong, uint>));
-            Assert.Equal(32, func(32));
+            Assert.Equal((uint)32, func(32));
         }
 
 #if NetCore
@@ -189,7 +189,7 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Ret);
 
             var func = (Func<ulong, double>)method.CreateDelegate(typeof(Func<ulong, double>));
-            Assert.Equal(32, func(32));
+            Assert.Equal((double)32, func(32));
         }
     }
 }

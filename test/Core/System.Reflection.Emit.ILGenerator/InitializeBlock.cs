@@ -23,8 +23,8 @@ namespace FluentMethods.UnitTests
             var buffer = new byte[25];
             var gcHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
             func(gcHandle.AddrOfPinnedObject());
-            Assert.Equal(25, buffer[19]);
-            Assert.Equal(0, buffer[20]);
+            Assert.Equal((byte)25, buffer[19]);
+            Assert.Equal((byte)0, buffer[20]);
         }
     }
 }

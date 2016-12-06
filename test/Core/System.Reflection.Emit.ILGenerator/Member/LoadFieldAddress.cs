@@ -27,7 +27,11 @@ namespace FluentMethods.UnitTests
             il.Emit(OpCodes.Call, typeof(int).GetMethods(BindingFlags.Public | BindingFlags.Static).Single(x => x.Name == "TryParse" && x.GetParameters().Length == 2));
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
+#endif
             var instance = type.GetConstructor(new Type[0]).Invoke(new object[0]);
             Assert.True((bool)type.GetMethod("TryParse").Invoke(instance, new object[] { "25" }));
             Assert.Equal(25, type.GetField("Value").GetValue(instance));

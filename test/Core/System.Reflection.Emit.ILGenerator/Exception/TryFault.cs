@@ -15,10 +15,10 @@ namespace FluentMethods.UnitTests
         public void TryFaultWithThrow()
         {
             var typeBuilder = _moduleBuilder.DefineType("TryFaultWithThrow",
-               TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
+                TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass | TypeAttributes.BeforeFieldInit);
             var method = typeBuilder.DefineMethod("x",
                 MethodAttributes.Public | MethodAttributes.Static | MethodAttributes.HideBySig, null,
-                new[] { typeof(List<int>) });
+                new[] {typeof(List<int>)});
             var il = method.GetILGenerator();
             using (il.Try())
             {
@@ -31,11 +31,13 @@ namespace FluentMethods.UnitTests
                 }
             }
             il.Emit(OpCodes.Ret);
-
-            var type = typeBuilder.CreateType();
-            var func = (Action<List<int>>)Delegate.CreateDelegate(typeof(Action<List<int>>), type.GetMethod("x"));
             var l = new List<int>();
-            Assert.Throws<ArgumentNullException>(() => func(l));
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
+            var type = typeBuilder.CreateType();
+#endif
+            Assert.Throws<TargetInvocationException>(() => type.GetMethod("x").Invoke(null, new object[] { l }));
             Assert.Equal(1, l.Count);
         }
 
@@ -63,10 +65,13 @@ namespace FluentMethods.UnitTests
             }
             il.Emit(OpCodes.Ret);
 
+#if NetCore
+            var type = typeBuilder.CreateTypeInfo();
+#else
             var type = typeBuilder.CreateType();
-            var func = (Action<List<int>>)Delegate.CreateDelegate(typeof(Action<List<int>>), type.GetMethod("x"));
+#endif
             var l = new List<int>();
-            func(l);
+            type.GetMethod("x").Invoke(null, new object[] { l });
             Assert.Equal(0, l.Count);
         }
     }

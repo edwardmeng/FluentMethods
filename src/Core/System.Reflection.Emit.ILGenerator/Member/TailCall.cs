@@ -11,15 +11,8 @@ public static partial class Extensions
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
     /// <param name="method">The method to call</param>
-    public static ILGenerator TailCall(this ILGenerator il, MethodInfo method)
-    {
-        if (il == null)
-            throw new ArgumentNullException(nameof(il));
-        if (method == null)
-            throw new ArgumentNullException(nameof(method));
-        il.Emit(OpCodes.Tailcall);
-        return il.Call(method);
-    }
+    public static ILGenerator TailCall(this ILGenerator il, MethodInfo method) 
+        => il.FluentEmit(OpCodes.Tailcall).Call(method);
 
     /// <summary>
     ///     Performs a tail call to the method represented by the given expression, popping the requisite number of arguments

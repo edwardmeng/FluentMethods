@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Reflection.Emit;
 
 namespace FluentMethods.UnitTests
@@ -15,7 +16,7 @@ namespace FluentMethods.UnitTests
             var method = new DynamicMethod("x", typeof(string), new[] { typeof(string) });
             var il = method.GetILGenerator();
             il.LoadArg(0);
-            il.Emit(OpCodes.Call, typeof(string).GetMethod("ToUpper",Type.EmptyTypes));
+            il.Emit(OpCodes.Call, typeof(string).GetMethod("ToUpper", Type.EmptyTypes));
             il.Emit(OpCodes.Ret);
 
             var func = (Func<string, string>)method.CreateDelegate(typeof(Func<string, string>));
