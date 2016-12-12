@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Reflection;
 using System.Reflection.Emit;
 
@@ -18,7 +19,7 @@ public static partial class Extensions
 #else
         if (!type.IsValueType)
 #endif
-            throw new InvalidOperationException("Cannot initialize a non-value type");
+            throw new InvalidOperationException(string.Format(Strings.CannotInitialize, type.FullName));
 
         return il.FluentEmit(OpCodes.Initobj, type);
     }

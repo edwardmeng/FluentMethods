@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -39,7 +40,7 @@ public static partial class Extensions
         }
         if (attributes.Length != 1)
         {
-            throw new AmbiguousMatchException("Multiple custom attributes of the same type found.");
+            throw new AmbiguousMatchException(string.Format(Strings.AmbiguousAttributes, attributeType.FullName));
         }
         return attributes[0];
     }

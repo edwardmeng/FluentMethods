@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Reflection;
 using System.Reflection.Emit;
 
@@ -62,7 +63,7 @@ public static partial class Extensions
         var eventInfo = type.GetEvent(eventName, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
 #endif
         if (eventInfo == null)
-            throw new InvalidOperationException("There is no event called `" + eventName + "` on the type " + type.Name);
+            throw new InvalidOperationException(string.Format(Strings.NoEvent, eventName, type.FullName));
         return eventInfo;
     }
 }

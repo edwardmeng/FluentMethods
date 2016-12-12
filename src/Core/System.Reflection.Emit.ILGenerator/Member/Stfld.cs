@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -12,7 +13,7 @@ public static partial class Extensions
         if (field == null)
             throw new ArgumentNullException(nameof(field));
         if (field.FieldType != typeof(T))
-            throw new InvalidOperationException("Type mismatch - field is of type " + field.FieldType);
+            throw new InvalidOperationException(string.Format(Strings.FieldTypeNotMatch, field.Name, field.DeclaringType?.FullName, typeof(T).FullName));
 
         return il.Ldc(value).Stfld(field);
     }
@@ -41,7 +42,7 @@ public static partial class Extensions
         if (field == null)
             throw new ArgumentNullException(nameof(field));
         if (field.IsInitOnly || field.IsLiteral)
-            throw new InvalidOperationException("Cannot write to this field.");
+            throw new InvalidOperationException(string.Format(Strings.CannotWriteField, field.Name, field.DeclaringType?.FullName));
         return il.FluentEmit(field.IsStatic ? OpCodes.Stsfld : OpCodes.Stfld, field);
     }
 

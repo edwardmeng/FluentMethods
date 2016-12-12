@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -12,7 +13,7 @@ public static partial class Extensions
         var field = (expression.Body as MemberExpression)?.Member as FieldInfo;
 
         if (field == null)
-            throw new ArgumentException("Expression does not represent a field", nameof(expression));
+            throw new ArgumentException(Strings.NotFieldExpression, nameof(expression));
 
         return field;
     }
@@ -28,7 +29,7 @@ public static partial class Extensions
 #endif
 
         if (field == null)
-            throw new InvalidOperationException("Field with name `" + fieldName + "` cannot be found on type " + type.Name);
+            throw new InvalidOperationException(string.Format(Strings.NoField, fieldName, type.FullName));
 
         return field;
     }

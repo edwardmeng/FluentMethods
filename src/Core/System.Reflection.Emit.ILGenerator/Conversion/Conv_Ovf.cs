@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -29,7 +30,7 @@ public static partial class Extensions
         // Converts the signed value on the top of the evaluation stack to a signed long (64 bit integer) with an overflow check. Pushes an int64 value onto the evaluation stack.
         if (type == typeof(long))
             return il.FluentEmit(OpCodes.Conv_Ovf_I8);
-        throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "ConvertToChecked"));
+        throw new NotSupportedException(string.Format(Strings.CannotConvertChecked, type));
     }
 
     public static ILGenerator Conv_Ovf<T>(this ILGenerator il) => il.Conv_Ovf(typeof(T));

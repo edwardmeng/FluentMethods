@@ -171,4 +171,70 @@
   <data name="NoMatch" xml:space="preserve">
     <value>Sequence contains no matching element</value>
   </data>
+  <data name="AmbiguousAttributes" xml:space="preserve">
+    <value>Multiple custom attributes of the same type found: {0}.</value>
+  </data>
+  <data name="CannotBox" xml:space="preserve">
+    <value>Cannot box the non-value type {0}.</value>
+  </data>
+  <data name="CannotCast" xml:space="preserve">
+    <value>Cannot cast the value type {0}.</value>
+  </data>
+  <data name="CannotConvert" xml:space="preserve">
+    <value>Cannot convert to the value type {0}.</value>
+  </data>
+  <data name="CannotConvertChecked" xml:space="preserve">
+    <value>Cannot convert to the type {0} with overflow check.</value>
+  </data>
+  <data name="CannotConvertCheckedUnsigned" xml:space="preserve">
+    <value>Cannot convert to the type {0} with unsigned overflow check.</value>
+  </data>
+  <data name="CannotInitialize" xml:space="preserve">
+    <value>Cannot initialize the non-value type {0}.</value>
+  </data>
+  <data name="CannotReadProperty" xml:space="preserve">
+    <value>Cannot read from the property `{0}` on the type {1}.</value>
+  </data>
+  <data name="CannotStoreLocal" xml:space="preserve">
+    <value>Cannot store a {0} value in a local of type {1}.</value>
+  </data>
+  <data name="CannotUnbox" xml:space="preserve">
+    <value>Cannot unbox the non-value type {0}.</value>
+  </data>
+  <data name="CannotUnboxAny" xml:space="preserve">
+    <value>Cannot unbox.any the non-value type {0}.</value>
+  </data>
+  <data name="CannotWriteField" xml:space="preserve">
+    <value>Cannot write to the field `{0}` on the type {1}.</value>
+  </data>
+  <data name="CannotWriteProperty" xml:space="preserve">
+    <value>Cannot write to the property `{0}` on the type {1}.</value>
+  </data>
+  <data name="FieldTypeNotMatch" xml:space="preserve">
+    <value>The field `{0}` on the type {1} is not of type {2}.</value>
+  </data>
+  <data name="NoEvent" xml:space="preserve">
+    <value>There is no event named with `{0}` on the type {1}.</value>
+  </data>
+  <data name="NoExceptionConstructor" xml:space="preserve">
+    <value>The exception type {0} does not have a public constructor taking only a string parameter.</value>
+  </data>
+  <data name="NoField" xml:space="preserve">
+    <value>There is no field named with `{0}` on the type {1}.</value>
+  </data>
+  <data name="NoProperty" xml:space="preserve">
+    <value>There is no property named with `{0}` on the type {1}.</value>
+  </data>
+  <data name="NotFieldExpression" xml:space="preserve">
+    <value>Expression does not represent a field.</value>
+  </data>
+  <data name="NotMethodExpression" xml:space="preserve">
+    <value>Expression does not represent a method call.</value>
+  </data>
+  <data name="NotPropertyExpression" xml:space="preserve">
+    <value>Expression does not represent a property.</value>
+  </data>
+  <data name="PropertyTypeNotMatch" xml:space="preserve">
+    <value>The property `{0}` on the type {1} is not of type {2}.</value>
+  </data>
 </root>

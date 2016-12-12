@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Reflection;
 using System.Reflection.Emit;
 
@@ -21,7 +22,7 @@ public static partial class Extensions
 #else
         if (!type.IsValueType)
 #endif
-            throw new InvalidOperationException("Cannot unbox.any a non-value type");
+            throw new InvalidOperationException(string.Format(Strings.CannotUnboxAny, type.FullName));
         return il.FluentEmit(OpCodes.Unbox_Any, type);
     }
 

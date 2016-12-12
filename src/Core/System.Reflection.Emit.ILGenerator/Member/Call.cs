@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -189,7 +190,7 @@ public static partial class Extensions
         var method = (expression.Body as MethodCallExpression)?.Method;
 
         if (method == null)
-            throw new InvalidOperationException("Expression does not represent a method call");
+            throw new ArgumentException(Strings.NotMethodExpression, nameof(expression));
 
         return method;
     }

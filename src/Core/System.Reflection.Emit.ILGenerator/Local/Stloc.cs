@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Reflection.Emit;
 
 public static partial class Extensions
@@ -34,7 +35,7 @@ public static partial class Extensions
         if (local == null)
             throw new ArgumentNullException(nameof(local));
         if (local.LocalType != typeof(T))
-            throw new ArgumentException($"Cannot store a {typeof(T).Name} value in a local of type {local.LocalType.Name}.");
+            throw new ArgumentException(string.Format(Strings.CannotStoreLocal, typeof(T).FullName, local.LocalType.FullName));
 
         return il.Ldc(value).Stloc(local);
     }

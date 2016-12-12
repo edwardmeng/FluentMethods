@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -12,7 +13,7 @@ public static partial class Extensions
         if (property == null)
             throw new ArgumentNullException(nameof(property));
         if (property.PropertyType != typeof(T))
-            throw new InvalidOperationException("Property is not of type " + typeof(T).Name);
+            throw new InvalidOperationException(string.Format(Strings.PropertyTypeNotMatch, property.Name, property.DeclaringType?.FullName, typeof(T).FullName));
         return il.Ldc(value).SetProperty(property);
     }
 
@@ -41,7 +42,7 @@ public static partial class Extensions
         if (property == null)
             throw new ArgumentNullException(nameof(property));
         if (!property.CanWrite)
-            throw new InvalidOperationException("Cannot write to this property");
+            throw new InvalidOperationException(string.Format(Strings.CannotWriteProperty, property.Name, property.DeclaringType?.FullName));
         return il.Call(property.GetSetMethod());
     }
 

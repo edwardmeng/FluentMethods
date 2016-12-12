@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentMethods;
+using System;
 using System.Reflection.Emit;
 
 public static partial class Extensions
@@ -32,7 +33,7 @@ public static partial class Extensions
         // Converts the unsigned value on the top of the evaluation stack to a signed byte (8 bit integer) with an overflow check. Pushes an F value onto the evaluation stack.
         if (type == typeof(double) || type == typeof(float))
             return il.FluentEmit(OpCodes.Conv_R_Un);
-        throw new NotSupportedException(string.Format("The type {0} is not supported for the {1} operation.", type, "Conv_Ovf_Un"));
+        throw new NotSupportedException(string.Format(Strings.CannotConvertCheckedUnsigned, type));
     }
 
     public static ILGenerator Conv_Ovf_Un<T>(this ILGenerator il) where T : struct => il.Conv_Ovf_Un(typeof(T));

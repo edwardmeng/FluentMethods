@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -20,7 +21,7 @@ public static partial class Extensions
 #else
         if (type.IsValueType)
 #endif
-            throw new InvalidOperationException("Cannot cast a value type");
+            throw new InvalidOperationException(string.Format(Strings.CannotCast, type.FullName));
         return il.FluentEmit(OpCodes.Castclass, type);
     }
 

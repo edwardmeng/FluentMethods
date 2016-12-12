@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -17,7 +18,7 @@ public static partial class Extensions
         if (property == null)
             throw new ArgumentNullException(nameof(property));
         if (!property.CanRead)
-            throw new InvalidOperationException("Cannot read from this property");
+            throw new InvalidOperationException(string.Format(Strings.CannotReadProperty, property.Name, property.DeclaringType?.FullName));
         var method = property.GetGetMethod();
         return il.Call(method);
     }
@@ -89,7 +90,7 @@ public static partial class Extensions
         var property = type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance);
 #endif
         if (property == null)
-            throw new InvalidOperationException("There is no property named with `" + propertyName + "` on the type " + type.Name);
+            throw new InvalidOperationException(string.Format(Strings.NoProperty, propertyName, type.FullName));
         return property;
     }
 
@@ -100,7 +101,7 @@ public static partial class Extensions
         var property = (expression.Body as MemberExpression)?.Member as PropertyInfo;
 
         if (property == null)
-            throw new InvalidOperationException("Expression does not represent a property");
+            throw new ArgumentException(Strings.NotPropertyExpression, nameof(expression));
 
         return property;
     }

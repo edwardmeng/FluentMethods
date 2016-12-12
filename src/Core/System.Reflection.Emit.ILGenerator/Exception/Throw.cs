@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -56,7 +57,7 @@ public static partial class Extensions
         var constructor = typeof(T).GetConstructor(BindingFlags.Public | BindingFlags.Instance, null, StringTypeArray, null);
 #endif
         if (constructor == null)
-            throw new InvalidOperationException("Exception type " + typeof(T).Name + " does not have a public constructor taking only a string");
+            throw new InvalidOperationException(string.Format(Strings.NoExceptionConstructor, typeof(T).FullName));
 
         return il.LoadString(message).New(constructor).Throw();
     }

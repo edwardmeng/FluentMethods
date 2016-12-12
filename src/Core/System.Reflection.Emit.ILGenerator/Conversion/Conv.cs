@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Reflection.Emit;
+using FluentMethods;
 
 public static partial class Extensions
 {
@@ -42,7 +43,7 @@ public static partial class Extensions
         if (!type.IsValueType)
 #endif
             return il.FluentEmit(OpCodes.Castclass, type);
-        throw new InvalidOperationException("Cannot convert to a value type.");
+        throw new InvalidOperationException(string.Format(Strings.CannotConvert, type.FullName));
     }
 
     public static ILGenerator Conv<T>(this ILGenerator il) => il.ConvertTo(typeof(T));
