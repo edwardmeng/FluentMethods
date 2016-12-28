@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection.Emit;
 
+/// <summary>
+/// Scope of the exception handling for the IL emitting.
+/// </summary>
 public sealed class ILGeneratorScope : IDisposable
 {
     private ILGenerator _il;

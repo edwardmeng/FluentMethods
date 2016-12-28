@@ -5,6 +5,11 @@ using FluentMethods;
 
 public static partial class Extensions
 {
+    /// <summary>
+    ///     Attempts to convert an object to the specified type.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="type">The type to convert to.</param>
     public static ILGenerator Conv(this ILGenerator il, Type type)
     {
         // Converts the signed value on the top of the evaluation stack to a signed byte (8 bit integer) with no overflow check. Pushes an int32 value onto the evaluation stack.
@@ -46,9 +51,20 @@ public static partial class Extensions
         throw new InvalidOperationException(string.Format(Strings.CannotConvert, type.FullName));
     }
 
+    /// <summary>
+    ///     Attempts to convert an object to the specified type.
+    /// </summary>
+    /// <typeparam name="T">The type to convert to.</typeparam>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <returns></returns>
     public static ILGenerator Conv<T>(this ILGenerator il) => il.ConvertTo(typeof(T));
 
 #if NetCore || Net45
+    /// <summary>
+    ///     Attempts to convert an object to the specified type.
+    /// </summary>
+    /// <param name="il">The <see cref="ILGenerator" /> to emit instructions from</param>
+    /// <param name="type">The type to convert to.</param>
     public static ILGenerator Conv(this ILGenerator il, TypeInfo type) => il.Conv(type?.AsType());
 #endif
 }

@@ -8,7 +8,6 @@ public static partial class Extensions
     ///     second, without regard for sign
     /// </summary>
     /// <param name="il">The <see cref="T:System.Reflection.Emit.ILGenerator" /> to emit instructions from</param>
-    /// <param name="label">The label to branch to</param>
     public static ILGenerator IfGreaterUnsigned(this BranchILGenerator il)
     {
         if (il == null)

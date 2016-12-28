@@ -23,9 +23,6 @@ public static partial class Extensions
     private static ILGenerator SetProperty<T, TProp>(this ILGenerator il, string propertyName, TProp value)
         => il.SetProperty(typeof(T), propertyName, value);
 
-    public static ILGenerator SetProperty<T>(this ILGenerator il, Expression<Func<T>> expression, T value)
-        => il.SetProperty(GetPropertyInfo(expression), value);
-
     private static ILGenerator SetProperty<T, TProp>(this ILGenerator il, Expression<Func<T, TProp>> expression, TProp value)
     => il.SetProperty(GetPropertyInfo(expression), value);
 
@@ -65,6 +62,15 @@ public static partial class Extensions
     /// <param name="propertyName">The name of the property on <typeparamref name="T" /></param>
     public static ILGenerator SetProperty<T>(this ILGenerator il, string propertyName)
         => il.SetProperty(typeof(T), propertyName);
+
+    /// <summary>
+    ///     Calls the setter of the static property represented by the given expression with the given value
+    /// </summary>
+    /// <param name="il"></param>
+    /// <param name="expression">An expression that accesses the relevant property</param>
+    /// <param name="value">The value to set the property to</param>
+    public static ILGenerator SetProperty<T>(this ILGenerator il, Expression<Func<T>> expression, T value)
+        => il.SetProperty(GetPropertyInfo(expression), value);
 
     /// <summary>
     ///     Pops a reference off the evaluation stack and calls the setter of the given property on the object
