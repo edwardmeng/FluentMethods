@@ -15,21 +15,22 @@
   "buildOptions": {
     "compile": {
       "include": [ "../../*.cs", "../../src/Core/**/*.cs" ],
-      "excludeFiles": [
-        "../../src/Core/System.String/ToPlural.cs",
-        "../../src/Core/System.String/ToTitle.cs",
-        "../../src/Core/System.Char/GetUnicodeCategory.cs",
-        "../../src/Core/System.Type/IsNullable.cs",
-        "../../src/Core/ParameterMissedException.cs",
-        "../../src/Core/System.String/HtmlAttributeEncode.cs",
-        "../../src/Core/System.String/HtmlDecode.cs",
-        "../../src/Core/System.String/HtmlEncode.cs",
-        "../../src/Core/System.String/ParseQueryString.cs",
-        "../../src/Core/System.String/UrlDecode.cs",
-        "../../src/Core/System.String/UrlEncode.cs",
-        "../../src/Core/System.String/UrlPathEncode.cs",
-        "../../src/Core/System.String/JavaScriptStringEncode.cs"
-      ],
+        "excludeFiles": [
+            "../../src/Core/System.String/ToPlural.cs",
+            "../../src/Core/System.String/ToTitle.cs",
+            "../../src/Core/System.Char/GetUnicodeCategory.cs",
+            "../../src/Core/System.Type/IsNullable.cs",
+            "../../src/Core/ParameterMissedException.cs",
+            "../../src/Core/System.String/HtmlAttributeEncode.cs",
+            "../../src/Core/System.String/HtmlDecode.cs",
+            "../../src/Core/System.String/HtmlEncode.cs",
+            "../../src/Core/System.String/ParseQueryString.cs",
+            "../../src/Core/System.String/UrlDecode.cs",
+            "../../src/Core/System.String/UrlEncode.cs",
+            "../../src/Core/System.String/UrlPathEncode.cs",
+            "../../src/Core/System.String/JavaScriptStringEncode.cs",
+            "../../src/Core/System.IServiceProvider/GetService.cs"
+        ],
       "exclude": [
         "../../src/Core/*Serialization*/*.cs",
         "../../src/Core/System.Web.*/*.cs"
