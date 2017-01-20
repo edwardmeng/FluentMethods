@@ -1561,6 +1561,18 @@
     <Compile Include="..\..\src\Core\System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs">
       <Link>System.Reflection.Emit.ILGenerator\Bitwise\Xor.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.DependencyInjection.IServiceCollection\Replace.cs">
+      <Link>Microsoft.Extensions.DependencyInjection.IServiceCollection\Replace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceScoped.cs">
+      <Link>Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceScoped.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceSingleton.cs">
+      <Link>Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceSingleton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceTransient.cs">
+      <Link>Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceTransient.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
