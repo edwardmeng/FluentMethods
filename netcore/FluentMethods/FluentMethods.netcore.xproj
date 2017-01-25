@@ -1573,6 +1573,27 @@
     <Compile Include="..\..\src\Core\Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceTransient.cs">
       <Link>Microsoft.Extensions.DependencyInjection.IServiceCollection\ReplaceTransient.cs</Link>
     </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Critical.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Critical.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Debug.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Debug.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Error.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Info.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Info.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\LogBuilder.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\LogBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Trace.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Trace.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Core\Microsoft.Extensions.Logging.ILogger\Warn.cs">
+      <Link>Microsoft.Extensions.Logging.ILogger\Warn.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\FluentMethods.snk">
